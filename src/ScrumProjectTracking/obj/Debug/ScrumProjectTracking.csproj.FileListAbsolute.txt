@@ -1,0 +1,9 @@
+C:\Users\Scott\source\repos\ScrumProjectTracking\bin\Debug\ScrumProjectTracking.exe.config
+C:\Users\Scott\source\repos\ScrumProjectTracking\bin\Debug\ScrumProjectTracking.exe
+C:\Users\Scott\source\repos\ScrumProjectTracking\bin\Debug\ScrumProjectTracking.pdb
+C:\Users\Scott\source\repos\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csprojAssemblyReference.cache
+C:\Users\Scott\source\repos\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Properties.Resources.resources
+C:\Users\Scott\source\repos\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csproj.GenerateResource.cache
+C:\Users\Scott\source\repos\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csproj.CoreCompileInputs.cache
+C:\Users\Scott\source\repos\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.exe
+C:\Users\Scott\source\repos\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.pdb
