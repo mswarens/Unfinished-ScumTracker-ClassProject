@@ -13,10 +13,10 @@ namespace ScrumProjectTracking
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class scrumbucketsEntities : DbContext
+    public partial class ScrumEntities : DbContext
     {
-        public scrumbucketsEntities()
-            : base("name=scrumbucketsEntities")
+        public ScrumEntities()
+            : base("name=ScrumEntities")
         {
         }
     
@@ -25,5 +25,8 @@ namespace ScrumProjectTracking
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Tbl_Sprints> Tbl_Sprints { get; set; }
+        public virtual DbSet<Tbl_Teams> Tbl_Teams { get; set; }
+        public virtual DbSet<Tbl_Users> Tbl_Users { get; set; }
     }
 }
