@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using ScrumProjectTracking.DataModels;
 namespace ScrumProjectTracking
 {
     public partial class Form_Main : Form
@@ -25,9 +25,9 @@ namespace ScrumProjectTracking
 
        private void fillSprintData ()
         {
-            using (ScrumEntities scrumEntity = new ScrumEntities())
+            using (ScrumContext scrumContext = new ScrumContext())
             {
-                var sprintInfo = from s in scrumEntity.Tbl_Sprints
+                var sprintInfo = from s in scrumContext.Sprints
                               where s.BeginDate <= DateTime.Today && s.EndDate >= DateTime.Today
                               select new { s.SprintName, s.BeginDate, s.EndDate, };
                 if (sprintInfo.Count() > 0)
