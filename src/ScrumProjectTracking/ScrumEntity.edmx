@@ -17,6 +17,19 @@
           <Property Name="UpdatedBy" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="UpdatedDateTime" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="Tbl_Sprints_Tasks">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="TeamID" Type="int" Nullable="false" />
+          <Property Name="SprintName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AssignedUserID" Type="nvarchar" MaxLength="15" />
+          <Property Name="TaskName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="StoryPoints" Type="int" />
+        </EntityType>
         <EntityType Name="Tbl_Teams">
           <Key>
             <PropertyRef Name="TeamID" />
@@ -45,6 +58,7 @@
         </EntityType>
         <EntityContainer Name="ScrumModelStoreContainer">
           <EntitySet Name="Tbl_Sprints" EntityType="Self.Tbl_Sprints" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Sprints_Tasks" EntityType="Self.Tbl_Sprints_Tasks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Teams" EntityType="Self.Tbl_Teams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Users" EntityType="Self.Tbl_Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -56,6 +70,7 @@
           <EntitySet Name="Tbl_Sprints" EntityType="ScrumModel.Tbl_Sprints" />
           <EntitySet Name="Tbl_Teams" EntityType="ScrumModel.Tbl_Teams" />
           <EntitySet Name="Tbl_Users" EntityType="ScrumModel.Tbl_Users" />
+          <EntitySet Name="Tbl_Sprints_Tasks" EntityType="ScrumModel.Tbl_Sprints_Tasks" />
         </EntityContainer>
         <EntityType Name="Tbl_Sprints">
           <Key>
@@ -94,6 +109,19 @@
           <Property Name="AddedDateTime" Type="DateTime" Precision="3" />
           <Property Name="UpdatedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="UpdatedDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tbl_Sprints_Tasks">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="TeamID" Type="Int32" Nullable="false" />
+          <Property Name="SprintName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedUserID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="TaskName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="StoryPoints" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -139,6 +167,20 @@
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Sprints_Tasks">
+            <EntityTypeMapping TypeName="ScrumModel.Tbl_Sprints_Tasks">
+              <MappingFragment StoreEntitySet="Tbl_Sprints_Tasks">
+                <ScalarProperty Name="StoryPoints" ColumnName="StoryPoints" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+                <ScalarProperty Name="AssignedUserID" ColumnName="AssignedUserID" />
+                <ScalarProperty Name="SprintName" ColumnName="SprintName" />
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

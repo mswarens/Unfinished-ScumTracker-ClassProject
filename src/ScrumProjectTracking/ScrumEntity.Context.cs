@@ -28,5 +28,6 @@ namespace ScrumProjectTracking
         public virtual DbSet<Tbl_Sprints> Tbl_Sprints { get; set; }
         public virtual DbSet<Tbl_Teams> Tbl_Teams { get; set; }
         public virtual DbSet<Tbl_Users> Tbl_Users { get; set; }
+        public virtual DbSet<Tbl_Sprints_Tasks> Tbl_Sprints_Tasks { get; set; }
     }
 }

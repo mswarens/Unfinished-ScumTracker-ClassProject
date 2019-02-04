@@ -27,17 +27,36 @@ namespace ScrumProjectTracking
         {
             using (ScrumEntities scrumEntity = new ScrumEntities())
             {
-                var results = from s in scrumEntity.Tbl_Sprints
+                var sprintInfo = from s in scrumEntity.Tbl_Sprints
                               where s.BeginDate <= DateTime.Today && s.EndDate >= DateTime.Today
-                              select new { s.SprintName, s.BeginDate, s.EndDate };
-                if (results.Count() > 0)
+                              select new { s.SprintName, s.BeginDate, s.EndDate, };
+                if (sprintInfo.Count() > 0)
                 {
-                    lbSprintName.Text = results.First().SprintName;
-                    lbSprintBeginDate.Text = results.First().BeginDate.ToShortDateString();
-                    lbSprintEndDate.Text = results.First().EndDate.ToShortDateString();
+                    lbSprintName.Text = sprintInfo.First().SprintName;
+                    lbSprintBeginDate.Text = sprintInfo.First().BeginDate.ToShortDateString();
+                    lbSprintEndDate.Text = sprintInfo.First().EndDate.ToShortDateString();
+
+
+
+
+
+
+
                 }
+                
+                
+                
                 
             }
         }
+
+
+
+
+
+
+
+
+
     }
 }

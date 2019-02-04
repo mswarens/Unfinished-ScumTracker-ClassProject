@@ -22,3 +22,5 @@ Z:\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\EntityFramework.SqlServer.
 Z:\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\EntityFramework.xml
 Z:\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\EntityFramework.SqlServer.xml
 Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csproj.CopyComplete
+Z:\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.ValueTuple.dll
+Z:\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.ValueTuple.xml
