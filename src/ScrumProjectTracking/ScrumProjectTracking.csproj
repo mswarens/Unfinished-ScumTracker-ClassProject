@@ -135,8 +135,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataModels\Project.cs" />
     <Compile Include="DataModels\ScrumContext.cs" />
     <Compile Include="DataModels\Sprint.cs" />
+    <Compile Include="DataModels\SprintTask.cs" />
     <Compile Include="DataModels\Team.cs" />
     <Compile Include="Form_Main.cs">
       <SubType>Form</SubType>
