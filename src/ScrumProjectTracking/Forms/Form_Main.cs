@@ -19,8 +19,8 @@ namespace ScrumProjectTracking
 
         private void Form_Main_Load(object sender, EventArgs e)
         {
-            dgvCurrentSprintTasks.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
             dgvCurrentSprintTasks.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
+            dgvCurrentSprintTasks.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
             fillSprintData();
 
         }
