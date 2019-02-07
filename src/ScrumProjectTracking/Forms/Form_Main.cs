@@ -47,6 +47,11 @@ namespace ScrumProjectTracking
                     dgvCurrentSprintTasks.AutoGenerateColumns = false;
                     dgvCurrentSprintTasks.DataSource = pendingTasks.ToList();
 
+                    int totalTasks = (from s in scrumContext.SprintTasks
+                                      where s.SprintID == sprintInfo.First().SprintID
+                                      select s).Count();
+
+                    pbMyBackLogTasks.Value = totalTasks - pendingTasks.Count() / totalTasks;
 
 
 
