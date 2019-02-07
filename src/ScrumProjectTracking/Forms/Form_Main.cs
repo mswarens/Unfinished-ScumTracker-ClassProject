@@ -47,13 +47,21 @@ namespace ScrumProjectTracking
                     dgvCurrentSprintTasks.AutoGenerateColumns = false;
                     dgvCurrentSprintTasks.DataSource = pendingTasks.ToList();
 
-                    int totalTasks = (from s in scrumContext.SprintTasks
+                    var totalTasks = (from s in scrumContext.SprintTasks
                                       where s.SprintID == sprintInfo.First().SprintID
                                       select s).Count();
 
-                    pbMyBackLogTasks.Value = totalTasks - pendingTasks.Count() / totalTasks;
+                    var totalStoryPoints = (from s in scrumContext.SprintTasks
+                                            where s.SprintID == sprintInfo.First().SprintID
+                                            select s.StoryPoints).Sum();
 
 
+
+                    pbMyBackLogTasks.Value = (int)(((double)totalTasks - (double)pendingTasks.Count()) / (double)totalTasks * 100);
+                    pbMyBackLogTasks.Update();
+                    lbMyBackLogTasks.Text = (totalTasks - pendingTasks.Count()).ToString() + "/" + totalTasks.ToString();
+                    pbMyStoryPoints.Value = ((int)(((double)totalStoryPoints - (double)pendingTasks.Sum(a => a.StoryPoints) / (double)totalStoryPoints)));
+                    pbMyStoryPoints.Update();
 
                 }
 
