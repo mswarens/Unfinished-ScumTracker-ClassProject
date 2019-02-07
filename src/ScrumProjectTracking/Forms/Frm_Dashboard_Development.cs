@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using ScrumProjectTracking.DataModels;
 namespace ScrumProjectTracking
 {
-    public partial class Form_Main : Form
+    public partial class Frm_Dashboard_Development : Form
     {
-        public Form_Main()
+        public Frm_Dashboard_Development()
         {
             InitializeComponent();
         }

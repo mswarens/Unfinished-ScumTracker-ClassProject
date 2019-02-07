@@ -1,6 +1,6 @@
 ﻿namespace ScrumProjectTracking
 {
-    partial class Form_Main
+    partial class Frm_Dashboard_Development
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.mainFormMenu = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sprintTrackingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.maintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.teamsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.usersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -76,66 +69,11 @@
             this.ProjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.View = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label11 = new System.Windows.Forms.Label();
-            this.mainFormMenu.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentSprintTasks)).BeginInit();
             this.SuspendLayout();
-            // 
-            // mainFormMenu
-            // 
-            this.mainFormMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.mainFormMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.sprintTrackingToolStripMenuItem,
-            this.maintenanceToolStripMenuItem});
-            this.mainFormMenu.Location = new System.Drawing.Point(0, 0);
-            this.mainFormMenu.Name = "mainFormMenu";
-            this.mainFormMenu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.mainFormMenu.Size = new System.Drawing.Size(1922, 40);
-            this.mainFormMenu.TabIndex = 0;
-            this.mainFormMenu.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(64, 36);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // sprintTrackingToolStripMenuItem
-            // 
-            this.sprintTrackingToolStripMenuItem.Name = "sprintTrackingToolStripMenuItem";
-            this.sprintTrackingToolStripMenuItem.Size = new System.Drawing.Size(185, 36);
-            this.sprintTrackingToolStripMenuItem.Text = "Sprint Tracking";
-            // 
-            // maintenanceToolStripMenuItem
-            // 
-            this.maintenanceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.projectsToolStripMenuItem,
-            this.teamsToolStripMenuItem1,
-            this.usersToolStripMenuItem1});
-            this.maintenanceToolStripMenuItem.Name = "maintenanceToolStripMenuItem";
-            this.maintenanceToolStripMenuItem.Size = new System.Drawing.Size(166, 36);
-            this.maintenanceToolStripMenuItem.Text = "Maintenance";
-            // 
-            // projectsToolStripMenuItem
-            // 
-            this.projectsToolStripMenuItem.Name = "projectsToolStripMenuItem";
-            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(324, 38);
-            this.projectsToolStripMenuItem.Text = "Projects";
-            // 
-            // teamsToolStripMenuItem1
-            // 
-            this.teamsToolStripMenuItem1.Name = "teamsToolStripMenuItem1";
-            this.teamsToolStripMenuItem1.Size = new System.Drawing.Size(324, 38);
-            this.teamsToolStripMenuItem1.Text = "Teams";
-            // 
-            // usersToolStripMenuItem1
-            // 
-            this.usersToolStripMenuItem1.Name = "usersToolStripMenuItem1";
-            this.usersToolStripMenuItem1.Size = new System.Drawing.Size(324, 38);
-            this.usersToolStripMenuItem1.Text = "Users";
             // 
             // panel3
             // 
@@ -161,7 +99,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(0, 50);
+            this.panel3.Location = new System.Drawing.Point(1, 7);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(766, 415);
@@ -390,7 +328,7 @@
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.label17);
-            this.panel4.Location = new System.Drawing.Point(0, 471);
+            this.panel4.Location = new System.Drawing.Point(1, 428);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(764, 152);
@@ -475,10 +413,10 @@
             this.panel2.BackColor = System.Drawing.Color.GhostWhite;
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.dgvCurrentSprintTasks);
-            this.panel2.Location = new System.Drawing.Point(770, 50);
+            this.panel2.Location = new System.Drawing.Point(771, 7);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1146, 596);
+            this.panel2.Size = new System.Drawing.Size(1142, 573);
             this.panel2.TabIndex = 2;
             // 
             // dgvCurrentSprintTasks
@@ -503,7 +441,7 @@
             this.dgvCurrentSprintTasks.ReadOnly = true;
             this.dgvCurrentSprintTasks.RowHeadersVisible = false;
             this.dgvCurrentSprintTasks.RowTemplate.Height = 33;
-            this.dgvCurrentSprintTasks.Size = new System.Drawing.Size(1112, 533);
+            this.dgvCurrentSprintTasks.Size = new System.Drawing.Size(1112, 515);
             this.dgvCurrentSprintTasks.TabIndex = 0;
             // 
             // EventTaskID
@@ -519,10 +457,10 @@
             // TaskCompletionPercent
             // 
             this.TaskCompletionPercent.DataPropertyName = "TaskCompletionPercent";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle2.Format = "#\\%";
-            dataGridViewCellStyle2.NullValue = null;
-            this.TaskCompletionPercent.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle17.Format = "#\\%";
+            dataGridViewCellStyle17.NullValue = null;
+            this.TaskCompletionPercent.DefaultCellStyle = dataGridViewCellStyle17;
             this.TaskCompletionPercent.FillWeight = 107.5167F;
             this.TaskCompletionPercent.HeaderText = "Completed";
             this.TaskCompletionPercent.MinimumWidth = 35;
@@ -532,8 +470,8 @@
             // StoryPoints
             // 
             this.StoryPoints.DataPropertyName = "StoryPoints";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.StoryPoints.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.StoryPoints.DefaultCellStyle = dataGridViewCellStyle18;
             this.StoryPoints.FillWeight = 107.5167F;
             this.StoryPoints.HeaderText = "Story Points";
             this.StoryPoints.Name = "StoryPoints";
@@ -582,19 +520,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1922, 627);
+            this.ClientSize = new System.Drawing.Size(1922, 593);
+            this.ControlBox = false;
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.mainFormMenu);
-            this.MainMenuStrip = this.mainFormMenu;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form_Main";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Scrum Project Tracking System";
             this.Load += new System.EventHandler(this.Form_Main_Load);
-            this.mainFormMenu.ResumeLayout(false);
-            this.mainFormMenu.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -603,19 +543,10 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentSprintTasks)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip mainFormMenu;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem maintenanceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sprintTrackingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem projectsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem teamsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbTeamStoryPoints;
         private System.Windows.Forms.Label lbTeamBacklogTasks;
