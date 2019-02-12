@@ -14,7 +14,7 @@ The purpose of our project is to develop an application that could potentially b
 
 As scrum development requires consistent and efficient collaboration among several members of a development team, our project tracking application is intended for multi-user transactional activity.  Accordingly, it will utilize a SQL database backend for data storage.  The frontend will be written in C#, utilizing the Windows Forms (Winforms) library for GUI development and Entity Framework for data access.
 
-##Instructions for Building and Running Project
+## Instructions for Building and Running Project
 
 1.) Download all contents of the /src/ScrumProjectTracking directory.
 2.) Open the ScrumProjectingTracking.sln file in the /src/ScrumProjectTracking directory using Microsoft Visual Studio Professional 2017.
