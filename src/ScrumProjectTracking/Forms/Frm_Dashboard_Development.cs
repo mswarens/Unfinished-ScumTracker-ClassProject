@@ -19,6 +19,8 @@ namespace ScrumProjectTracking
 
         private void Form_Main_Load(object sender, EventArgs e)
         {
+            panel2.Size = new Size(this.Width - panel2.Location.X, panel2.Height);
+            dgvCurrentSprintTasks.Size = new Size(panel2.Width - dgvCurrentSprintTasks.Location.X - 5, dgvCurrentSprintTasks.Height);
             dgvCurrentSprintTasks.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
             dgvCurrentSprintTasks.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
             fillSprintData();
@@ -57,11 +59,12 @@ namespace ScrumProjectTracking
 
 
 
-                    pbMyBackLogTasks.Value = (int)(((double)totalTasks - (double)pendingTasks.Count()) / (double)totalTasks * 100);
-                    pbMyBackLogTasks.Update();
+                    pbMyBackLogTasks.setValue(((double)totalTasks - (double)pendingTasks.Count()) / (double)totalTasks);
+                    
                     lbMyBackLogTasks.Text = (totalTasks - pendingTasks.Count()).ToString() + "/" + totalTasks.ToString();
-                    pbMyStoryPoints.Value = ((int)(((double)totalStoryPoints - (double)pendingTasks.Sum(a => a.StoryPoints) / (double)totalStoryPoints)));
-                    pbMyStoryPoints.Update();
+                    pbMyStoryPoints.setValue (((((double)totalStoryPoints - (double)pendingTasks.Sum(a => a.StoryPoints)) / (double)totalStoryPoints)));
+                    lbMyStoryPoints.Text = (totalStoryPoints - pendingTasks.Sum(a => a.StoryPoints)).ToString() + "/" +  totalStoryPoints.ToString();
+                  
 
                 }
 
