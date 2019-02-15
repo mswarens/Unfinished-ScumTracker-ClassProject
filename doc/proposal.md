@@ -1,7 +1,7 @@
 # Scrum Project Tracking System
 ## Project Proposal
 
-Scrum, a subset of agile, is a software development framework with a focus on developing applications in an iterative, highly adaptive manner.  Commonly used across a wide variety of industries, scrum development generally consists of '93sprints'94 lasting 2-4 weeks during which products are designed, coded, and tested.  Because scrum development is very time sensitive and averse to mid-sprint changes, it is important for development teams to carefully and consistently prioritize, estimate, and monitor the status of project deliverables.  To this end, we propose the development of an application intended for use by a scrum development team that allows for detailed sprint planning and tracking.  
+Scrum, a subset of agile, is a software development framework with a focus on developing applications in an iterative, highly adaptive manner.  Commonly used across a wide variety of industries, scrum development generally consists of "sprints" lasting 2-4 weeks during which products are designed, coded, and tested.  Because scrum development is very time sensitive and averse to mid-sprint changes, it is important for development teams to carefully and consistently prioritize, estimate, and monitor the status of project deliverables.  To this end, we propose the development of an application intended for use by a scrum development team that allows for detailed sprint planning and tracking.  
 
  Major features planned for this application include:
 * The ability to plan development sprints, including associated backlog tasks 
