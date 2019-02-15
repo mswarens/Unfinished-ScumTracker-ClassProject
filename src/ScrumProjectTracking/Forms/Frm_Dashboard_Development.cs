@@ -40,6 +40,8 @@ namespace ScrumProjectTracking
                     lbSprintBeginDate.Text = sprintInfo.First().BeginDate.ToShortDateString();
                     lbSprintEndDate.Text = sprintInfo.First().EndDate.ToShortDateString();
 
+                    dgvCurrentSprintTasks.Columns[0].Width = 35;
+                    
                     var pendingTasks = (from s in scrumContext.SprintTasks
                                         join p in scrumContext.Projects on s.ProjectID equals p.ProjectID
                                         where s.TaskStatus == "Pending" && s.SprintID == sprintInfo.First().SprintID
@@ -83,13 +85,12 @@ namespace ScrumProjectTracking
             }
         }
 
-
-
-
-
-
-
-
-
+        private void dgvCurrentSprintTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                
+            }
+        }
     }
 }

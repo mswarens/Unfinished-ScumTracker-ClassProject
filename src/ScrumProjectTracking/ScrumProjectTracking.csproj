@@ -152,12 +152,6 @@
     <Compile Include="Forms\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SubFormTabControl.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SubFormTabControl.Designer.cs">
-      <DependentUpon>SubFormTabControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\TaskDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,9 +172,6 @@
     <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SubFormTabControl.resx">
-      <DependentUpon>SubFormTabControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskDetail.resx">
       <DependentUpon>TaskDetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,8 +186,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ScrumProjectTracking.DataModels.SprintTask.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -215,6 +208,5 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

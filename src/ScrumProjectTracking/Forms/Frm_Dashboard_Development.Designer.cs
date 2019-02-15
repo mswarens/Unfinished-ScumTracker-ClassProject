@@ -59,16 +59,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvCurrentSprintTasks = new System.Windows.Forms.DataGridView();
-            this.progressBar4 = new ScrumProjectTracking.ProgressBar();
-            this.progressBar3 = new ScrumProjectTracking.ProgressBar();
-            this.pbMyStoryPoints = new ScrumProjectTracking.ProgressBar();
-            this.pbMyBackLogTasks = new ScrumProjectTracking.ProgressBar();
             this.View = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ProjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StoryPoints = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TaskCompletionPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EventTaskID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.progressBar4 = new ScrumProjectTracking.ProgressBar();
+            this.progressBar3 = new ScrumProjectTracking.ProgressBar();
+            this.pbMyStoryPoints = new ScrumProjectTracking.ProgressBar();
+            this.pbMyBackLogTasks = new ScrumProjectTracking.ProgressBar();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -397,8 +397,10 @@
             // 
             this.dgvCurrentSprintTasks.AllowUserToAddRows = false;
             this.dgvCurrentSprintTasks.AllowUserToDeleteRows = false;
+            this.dgvCurrentSprintTasks.AllowUserToResizeColumns = false;
+            this.dgvCurrentSprintTasks.AllowUserToResizeRows = false;
             this.dgvCurrentSprintTasks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCurrentSprintTasks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dgvCurrentSprintTasks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCurrentSprintTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCurrentSprintTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCurrentSprintTasks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -417,42 +419,17 @@
             this.dgvCurrentSprintTasks.RowTemplate.Height = 33;
             this.dgvCurrentSprintTasks.Size = new System.Drawing.Size(1112, 515);
             this.dgvCurrentSprintTasks.TabIndex = 0;
-            // 
-            // progressBar4
-            // 
-            this.progressBar4.Location = new System.Drawing.Point(205, 308);
-            this.progressBar4.Name = "progressBar4";
-            this.progressBar4.Size = new System.Drawing.Size(435, 42);
-            this.progressBar4.TabIndex = 24;
-            // 
-            // progressBar3
-            // 
-            this.progressBar3.Location = new System.Drawing.Point(205, 260);
-            this.progressBar3.Name = "progressBar3";
-            this.progressBar3.Size = new System.Drawing.Size(435, 42);
-            this.progressBar3.TabIndex = 23;
-            // 
-            // pbMyStoryPoints
-            // 
-            this.pbMyStoryPoints.Location = new System.Drawing.Point(205, 165);
-            this.pbMyStoryPoints.Name = "pbMyStoryPoints";
-            this.pbMyStoryPoints.Size = new System.Drawing.Size(435, 42);
-            this.pbMyStoryPoints.TabIndex = 22;
-            // 
-            // pbMyBackLogTasks
-            // 
-            this.pbMyBackLogTasks.Location = new System.Drawing.Point(205, 117);
-            this.pbMyBackLogTasks.Name = "pbMyBackLogTasks";
-            this.pbMyBackLogTasks.Size = new System.Drawing.Size(435, 42);
-            this.pbMyBackLogTasks.TabIndex = 21;
+            this.dgvCurrentSprintTasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCurrentSprintTasks_CellContentClick);
             // 
             // View
             // 
             this.View.FillWeight = 63.45178F;
-            this.View.HeaderText = "";
+            this.View.HeaderText = "View";
             this.View.MinimumWidth = 15;
             this.View.Name = "View";
             this.View.ReadOnly = true;
+            this.View.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.View.ToolTipText = "View";
             // 
             // ProjectName
             // 
@@ -504,6 +481,34 @@
             this.EventTaskID.ReadOnly = true;
             this.EventTaskID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.EventTaskID.Visible = false;
+            // 
+            // progressBar4
+            // 
+            this.progressBar4.Location = new System.Drawing.Point(205, 308);
+            this.progressBar4.Name = "progressBar4";
+            this.progressBar4.Size = new System.Drawing.Size(435, 42);
+            this.progressBar4.TabIndex = 24;
+            // 
+            // progressBar3
+            // 
+            this.progressBar3.Location = new System.Drawing.Point(205, 260);
+            this.progressBar3.Name = "progressBar3";
+            this.progressBar3.Size = new System.Drawing.Size(435, 42);
+            this.progressBar3.TabIndex = 23;
+            // 
+            // pbMyStoryPoints
+            // 
+            this.pbMyStoryPoints.Location = new System.Drawing.Point(205, 165);
+            this.pbMyStoryPoints.Name = "pbMyStoryPoints";
+            this.pbMyStoryPoints.Size = new System.Drawing.Size(435, 42);
+            this.pbMyStoryPoints.TabIndex = 22;
+            // 
+            // pbMyBackLogTasks
+            // 
+            this.pbMyBackLogTasks.Location = new System.Drawing.Point(205, 117);
+            this.pbMyBackLogTasks.Name = "pbMyBackLogTasks";
+            this.pbMyBackLogTasks.Size = new System.Drawing.Size(435, 42);
+            this.pbMyBackLogTasks.TabIndex = 21;
             // 
             // Frm_Dashboard_Development
             // 

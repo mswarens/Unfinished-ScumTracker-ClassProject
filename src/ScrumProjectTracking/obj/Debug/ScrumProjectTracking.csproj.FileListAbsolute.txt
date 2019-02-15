@@ -171,4 +171,3 @@ Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.exe
 Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.pdb
 Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.ProgressBar.resources
 Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Forms.TaskDetail.resources
-Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Forms.SubFormTabControl.resources

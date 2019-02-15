@@ -26,13 +26,21 @@ namespace ScrumProjectTracking.Forms
                 var taskDetail = from t in context.SprintTasks
                                  where t.SprintTaskID == taskID
                                  select t;
-                bindingSource1.DataSource = taskDetail.ToList();
+                sprintTaskBindingSource.DataSource = taskDetail.ToList();
+
+                var sprintData = from s in context.Sprints
+                                 select new { s.SprintID, s.SprintName };
+
+                SprintID.DataSource = sprintData.ToList();
+                SprintID.DisplayMember = "SprintName";
+
+
 
             }
+
+
+
+
         }
-
-
-
-
     }
 }
