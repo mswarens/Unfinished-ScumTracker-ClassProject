@@ -161,10 +161,13 @@ Z:\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.Runtime.CompilerSer
 Z:\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.ValueTuple.xml
 Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csprojAssemblyReference.cache
 Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.exe.config
-Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Form_Main.resources
+Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Frm_Dashboard_Development.resources
+Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Forms.FrmMain.resources
 Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Properties.Resources.resources
 Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csproj.GenerateResource.cache
 Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csproj.CoreCompileInputs.cache
 Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csproj.CopyComplete
 Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.exe
 Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.pdb
+Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.ProgressBar.resources
+Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Forms.TaskDetail.resources

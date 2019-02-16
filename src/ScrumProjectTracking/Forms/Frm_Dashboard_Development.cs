@@ -10,15 +10,17 @@ using System.Windows.Forms;
 using ScrumProjectTracking.DataModels;
 namespace ScrumProjectTracking
 {
-    public partial class Form_Main : Form
+    public partial class Frm_Dashboard_Development : Form
     {
-        public Form_Main()
+        public Frm_Dashboard_Development()
         {
             InitializeComponent();
         }
 
         private void Form_Main_Load(object sender, EventArgs e)
         {
+            panel2.Size = new Size(this.Width - panel2.Location.X, panel2.Height);
+            dgvCurrentSprintTasks.Size = new Size(panel2.Width - dgvCurrentSprintTasks.Location.X - 5, dgvCurrentSprintTasks.Height);
             dgvCurrentSprintTasks.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
             dgvCurrentSprintTasks.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
             fillSprintData();
@@ -38,6 +40,8 @@ namespace ScrumProjectTracking
                     lbSprintBeginDate.Text = sprintInfo.First().BeginDate.ToShortDateString();
                     lbSprintEndDate.Text = sprintInfo.First().EndDate.ToShortDateString();
 
+                    dgvCurrentSprintTasks.Columns[0].Width = 35;
+                    
                     var pendingTasks = (from s in scrumContext.SprintTasks
                                         join p in scrumContext.Projects on s.ProjectID equals p.ProjectID
                                         where s.TaskStatus == "Pending" && s.SprintID == sprintInfo.First().SprintID
@@ -47,13 +51,22 @@ namespace ScrumProjectTracking
                     dgvCurrentSprintTasks.AutoGenerateColumns = false;
                     dgvCurrentSprintTasks.DataSource = pendingTasks.ToList();
 
-                    int totalTasks = (from s in scrumContext.SprintTasks
+                    var totalTasks = (from s in scrumContext.SprintTasks
                                       where s.SprintID == sprintInfo.First().SprintID
                                       select s).Count();
 
-                    pbMyBackLogTasks.Value = totalTasks - pendingTasks.Count() / totalTasks;
+                    var totalStoryPoints = (from s in scrumContext.SprintTasks
+                                            where s.SprintID == sprintInfo.First().SprintID
+                                            select s.StoryPoints).Sum();
 
 
+
+                    pbMyBackLogTasks.setValue(((double)totalTasks - (double)pendingTasks.Count()) / (double)totalTasks);
+                    
+                    lbMyBackLogTasks.Text = (totalTasks - pendingTasks.Count()).ToString() + "/" + totalTasks.ToString();
+                    pbMyStoryPoints.setValue (((((double)totalStoryPoints - (double)pendingTasks.Sum(a => a.StoryPoints)) / (double)totalStoryPoints)));
+                    lbMyStoryPoints.Text = (totalStoryPoints - pendingTasks.Sum(a => a.StoryPoints)).ToString() + "/" +  totalStoryPoints.ToString();
+                  
 
                 }
 
@@ -72,13 +85,12 @@ namespace ScrumProjectTracking
             }
         }
 
-
-
-
-
-
-
-
-
+        private void dgvCurrentSprintTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                
+            }
+        }
     }
 }

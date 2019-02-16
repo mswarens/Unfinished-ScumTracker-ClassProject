@@ -10,5 +10,5 @@ Scrum, a subset of agile, is a software development framework with a focus on de
 * The ability for business users to submit stories to the product backlog
 * The ability for users to export sprint and project data to various file formats, including spreadsheet and PDF
 * The ability to maintain user accounts
-
+ 
 As scrum development requires consistent and efficient collaboration among several members of a development team, our project tracking application is intended for multi-user transactional activity.  Accordingly, it will utilize a SQL database backend for data storage.  The frontend will be written in C#, utilizing the Windows Forms (Winform) library for GUI development and Entity Framework for data access.
