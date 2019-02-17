@@ -140,6 +140,12 @@
     <Compile Include="DataModels\Sprint.cs" />
     <Compile Include="DataModels\SprintTask.cs" />
     <Compile Include="DataModels\Team.cs" />
+    <Compile Include="Forms\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_Dashboard_Development.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
       <DependentUpon>ProgressBar.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Dashboard_Development.resx">
       <DependentUpon>Frm_Dashboard_Development.cs</DependentUpon>
     </EmbeddedResource>
