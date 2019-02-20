@@ -140,6 +140,7 @@
     <Compile Include="DataModels\Sprint.cs" />
     <Compile Include="DataModels\SprintTask.cs" />
     <Compile Include="DataModels\Team.cs" />
+    <Compile Include="DataModels\User.cs" />
     <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>

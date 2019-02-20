@@ -36,5 +36,10 @@ namespace ScrumProjectTracking
         {
 
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ScrumProjectTracking.DataModels
 {
     public class SprintTask
     {
-        
+       
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SprintTaskID { get; set; }
         public int ProjectID { get; set; }
         public int SprintID { get; set; }
