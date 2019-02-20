@@ -24,35 +24,31 @@ namespace ScrumProjectTracking.Forms
             
             Dashboard.MdiParent = this;
             Dashboard.Dock = DockStyle.Bottom;
-              //  Dashboard.Size = new Size(this.Width, this.Height - mainFormMenu.Height - tabControl.Height - 50);
-           
-           
-
-
-            // tabControl.Dock = DockStyle.Top;
-            // tabControl.Size = new Size(this.Width, Dashboard.Location.Y);
-
-            //// tabControl.Location = new Point(0, mainFormMenu.Height);
-            // tabControl.Margin = new Padding(0);
-
+          
            
             tabControl1.Dock = DockStyle.Top;
             Dashboard.Show();
             tabControl1.Size = new Size(this.Width, Dashboard.Location.Y);
-            
+
+            TaskDetail frm = new TaskDetail();
+            LoadChildForm(frm);
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+    private void LoadChildForm(Form form)
         {
-            MessageBox.Show(Dashboard.Location.Y.ToString());
+            form.MdiParent = this;
+            TabPage newtab = new TabPage(nameof(form));
+            newtab.Controls.Add(form);
+            tabControl1.Controls.Add(newtab);
+
+            if (tabControl1.TabCount == 1)
+                tabControl1.Show();
+            form.Show();
         }
 
-        private void FrmMain_Shown(object sender, EventArgs e)
-        {
-            tabControl1.Size = new Size(this.Width, Dashboard.Location.Y);
-        }
+     
 
-       
+      
     }
 }
