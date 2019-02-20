@@ -488,7 +488,6 @@ C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\S
 C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.ValueTuple.xml
-C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csprojAssemblyReference.cache
 C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.exe.config
 C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.FrmLogin.resources
 C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Frm_Dashboard_Development.resources
@@ -501,3 +500,4 @@ C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\S
 C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csproj.CopyComplete
 C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.exe
 C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.pdb
+C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csprojAssemblyReference.cache

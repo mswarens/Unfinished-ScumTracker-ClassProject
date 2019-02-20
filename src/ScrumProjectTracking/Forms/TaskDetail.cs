@@ -12,34 +12,46 @@ namespace ScrumProjectTracking.Forms
 {
     public partial class TaskDetail : Form
     {
+        ScrumContext context;
+        SprintTask currentTask;
         public TaskDetail(int taskID)
         {
             InitializeComponent();
+            context = new ScrumContext();
             FillDropDownSelections();
+            this.TeamID.SelectedIndexChanged += new System.EventHandler(this.TeamID_SelectedIndexChanged);
             fillData(taskID);
+            
+            
         }
 
         public TaskDetail()
         {
+            
             InitializeComponent();
+            context = new ScrumContext();
             FillDropDownSelections();
+            currentTask = new SprintTask();
+            sprintTaskBindingSource.DataSource = currentTask;
+            this.TeamID.SelectedIndexChanged += new System.EventHandler(this.TeamID_SelectedIndexChanged);
+
         }
 
         private void fillData(int taskID)
         {
 
-            using (ScrumContext context = new ScrumContext())
-            {
+         
+         
                 var taskDetail = from t in context.SprintTasks
                                  where t.SprintTaskID == taskID
                                  select t;
                 sprintTaskBindingSource.DataSource = taskDetail.ToList();
 
-               
+            lbCompletionPercent.Text = trackBar1.Value.ToString(@"#\%");
 
 
 
-            }
+
 
 
 
@@ -48,8 +60,7 @@ namespace ScrumProjectTracking.Forms
 
         private void FillDropDownSelections()
         {
-            using (ScrumContext context = new ScrumContext())
-            {
+            
                 var sprintData = from s in context.Sprints
                                  select new { s.SprintID, s.SprintName };
 
@@ -71,34 +82,79 @@ namespace ScrumProjectTracking.Forms
 
 
 
-            }
+           
 
 
         }
 
-        private void TeamID_ValueMemberChanged(object sender, EventArgs e)
+        private void TeamID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TeamID.Text == null)
+            if (TeamID.SelectedValue == null)
             {
                 AssignedUserID.Enabled = false;
-                AssignedUserID.SelectedIndex = -1;
+               
             }
             else
             {
-                using (ScrumContext context = new ScrumContext())
-                {
+               
                     var UserData = from u in context.Users
                                    where u.TeamID == int.Parse(TeamID.SelectedValue.ToString())
                                    select new { u.UserID, UsersName = u.LastName + ',' + u.FirstName };
                     AssignedUserID.DataSource = UserData.ToList();
                     AssignedUserID.DisplayMember = "UsersName";
                     AssignedUserID.ValueMember = "UserID";
-
-                }
+                AssignedUserID.Enabled = true;
+               
                 
             }
             
 
         }
+
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            lbCompletionPercent.Text = trackBar1.Value.ToString(@"#\%");
+
+        }
+
+        private void ValidateData()
+        {
+
+
+        }
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+
+
+            currentTask.UpdatedBy = "CURRUSER";
+            currentTask.UpdatedDateTime = DateTime.Now;
+
+         
+            if (currentTask.SprintTaskID == 0)
+            {
+                currentTask.AddedBy = "CURRUSER";
+                currentTask.AddedDateTime = DateTime.Now;
+                context.SprintTasks.Add(currentTask);
+                context.SaveChanges();
+                sprintTaskBindingSource.ResetBindings(false);
+             
+    
+            }
+            else
+            {
+                this.Validate();
+                context.SaveChanges();
+                                                         
+            }
+         
+          
+                  
+                      
+        }
+
+ 
+
+      
     }
 }

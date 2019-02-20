@@ -40,6 +40,7 @@
             System.Windows.Forms.Label updatedByLabel;
             System.Windows.Forms.Label addedDateTimeLabel;
             System.Windows.Forms.Label updatedDateTimeLabel;
+            System.Windows.Forms.Label label5;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskDetail));
             this.SprintTaskID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,6 +60,8 @@
             this.updatedDateTimeTextBox = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.lbCompletionPercent = new System.Windows.Forms.Label();
             this.sprintTaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             sprintIDLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -71,8 +74,10 @@
             updatedByLabel = new System.Windows.Forms.Label();
             addedDateTimeLabel = new System.Windows.Forms.Label();
             updatedDateTimeLabel = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,6 +148,51 @@
             taskStatusLabel.Size = new System.Drawing.Size(40, 13);
             taskStatusLabel.TabIndex = 14;
             taskStatusLabel.Text = "Status:";
+            // 
+            // addedByLabel
+            // 
+            addedByLabel.AutoSize = true;
+            addedByLabel.Location = new System.Drawing.Point(24, 228);
+            addedByLabel.Name = "addedByLabel";
+            addedByLabel.Size = new System.Drawing.Size(56, 13);
+            addedByLabel.TabIndex = 14;
+            addedByLabel.Text = "Added By:";
+            // 
+            // updatedByLabel
+            // 
+            updatedByLabel.AutoSize = true;
+            updatedByLabel.Location = new System.Drawing.Point(24, 248);
+            updatedByLabel.Name = "updatedByLabel";
+            updatedByLabel.Size = new System.Drawing.Size(66, 13);
+            updatedByLabel.TabIndex = 15;
+            updatedByLabel.Text = "Updated By:";
+            // 
+            // addedDateTimeLabel
+            // 
+            addedDateTimeLabel.AutoSize = true;
+            addedDateTimeLabel.Location = new System.Drawing.Point(201, 228);
+            addedDateTimeLabel.Name = "addedDateTimeLabel";
+            addedDateTimeLabel.Size = new System.Drawing.Size(95, 13);
+            addedDateTimeLabel.TabIndex = 16;
+            addedDateTimeLabel.Text = "Added Date/Time:";
+            // 
+            // updatedDateTimeLabel
+            // 
+            updatedDateTimeLabel.AutoSize = true;
+            updatedDateTimeLabel.Location = new System.Drawing.Point(201, 248);
+            updatedDateTimeLabel.Name = "updatedDateTimeLabel";
+            updatedDateTimeLabel.Size = new System.Drawing.Size(105, 13);
+            updatedDateTimeLabel.TabIndex = 17;
+            updatedDateTimeLabel.Text = "Updated Date/Time:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(170, 173);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(106, 13);
+            label5.TabIndex = 21;
+            label5.Text = "Completion Progress:";
             // 
             // SprintTaskID
             // 
@@ -218,11 +268,10 @@
             this.TeamID.Name = "TeamID";
             this.TeamID.Size = new System.Drawing.Size(126, 21);
             this.TeamID.TabIndex = 9;
-            this.TeamID.ValueMemberChanged += new System.EventHandler(this.TeamID_ValueMemberChanged);
             // 
             // AssignedUserID
             // 
-            this.AssignedUserID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.sprintTaskBindingSource, "TeamID", true));
+            this.AssignedUserID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.sprintTaskBindingSource, "AssignedUserID", true));
             this.AssignedUserID.Enabled = false;
             this.AssignedUserID.FormattingEnabled = true;
             this.AssignedUserID.Location = new System.Drawing.Point(61, 110);
@@ -281,76 +330,40 @@
             this.storyPointsTextBox.Size = new System.Drawing.Size(49, 20);
             this.storyPointsTextBox.TabIndex = 14;
             // 
-            // addedByLabel
-            // 
-            addedByLabel.AutoSize = true;
-            addedByLabel.Location = new System.Drawing.Point(24, 208);
-            addedByLabel.Name = "addedByLabel";
-            addedByLabel.Size = new System.Drawing.Size(56, 13);
-            addedByLabel.TabIndex = 14;
-            addedByLabel.Text = "Added By:";
-            // 
             // addedByTextBox
             // 
             this.addedByTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "AddedBy", true));
-            this.addedByTextBox.Location = new System.Drawing.Point(96, 205);
+            this.addedByTextBox.Location = new System.Drawing.Point(96, 225);
             this.addedByTextBox.Name = "addedByTextBox";
             this.addedByTextBox.ReadOnly = true;
             this.addedByTextBox.Size = new System.Drawing.Size(89, 20);
             this.addedByTextBox.TabIndex = 15;
             this.addedByTextBox.TabStop = false;
             // 
-            // updatedByLabel
-            // 
-            updatedByLabel.AutoSize = true;
-            updatedByLabel.Location = new System.Drawing.Point(24, 228);
-            updatedByLabel.Name = "updatedByLabel";
-            updatedByLabel.Size = new System.Drawing.Size(66, 13);
-            updatedByLabel.TabIndex = 15;
-            updatedByLabel.Text = "Updated By:";
-            // 
             // updatedByTextBox
             // 
             this.updatedByTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "UpdatedBy", true));
-            this.updatedByTextBox.Location = new System.Drawing.Point(96, 228);
+            this.updatedByTextBox.Location = new System.Drawing.Point(96, 248);
             this.updatedByTextBox.Name = "updatedByTextBox";
             this.updatedByTextBox.ReadOnly = true;
             this.updatedByTextBox.Size = new System.Drawing.Size(89, 20);
             this.updatedByTextBox.TabIndex = 16;
             this.updatedByTextBox.TabStop = false;
             // 
-            // addedDateTimeLabel
-            // 
-            addedDateTimeLabel.AutoSize = true;
-            addedDateTimeLabel.Location = new System.Drawing.Point(201, 208);
-            addedDateTimeLabel.Name = "addedDateTimeLabel";
-            addedDateTimeLabel.Size = new System.Drawing.Size(95, 13);
-            addedDateTimeLabel.TabIndex = 16;
-            addedDateTimeLabel.Text = "Added Date/Time:";
-            // 
             // addedDateTimeTextBox
             // 
             this.addedDateTimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "AddedDateTime", true));
-            this.addedDateTimeTextBox.Location = new System.Drawing.Point(310, 205);
+            this.addedDateTimeTextBox.Location = new System.Drawing.Point(310, 225);
             this.addedDateTimeTextBox.Name = "addedDateTimeTextBox";
             this.addedDateTimeTextBox.ReadOnly = true;
             this.addedDateTimeTextBox.Size = new System.Drawing.Size(150, 20);
             this.addedDateTimeTextBox.TabIndex = 17;
             this.addedDateTimeTextBox.TabStop = false;
             // 
-            // updatedDateTimeLabel
-            // 
-            updatedDateTimeLabel.AutoSize = true;
-            updatedDateTimeLabel.Location = new System.Drawing.Point(201, 228);
-            updatedDateTimeLabel.Name = "updatedDateTimeLabel";
-            updatedDateTimeLabel.Size = new System.Drawing.Size(105, 13);
-            updatedDateTimeLabel.TabIndex = 17;
-            updatedDateTimeLabel.Text = "Updated Date/Time:";
-            // 
             // updatedDateTimeTextBox
             // 
             this.updatedDateTimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "UpdatedDateTime", true));
-            this.updatedDateTimeTextBox.Location = new System.Drawing.Point(310, 228);
+            this.updatedDateTimeTextBox.Location = new System.Drawing.Point(310, 248);
             this.updatedDateTimeTextBox.Name = "updatedDateTimeTextBox";
             this.updatedDateTimeTextBox.ReadOnly = true;
             this.updatedDateTimeTextBox.Size = new System.Drawing.Size(150, 20);
@@ -375,6 +388,27 @@
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.saveToolStripButton.Text = "&Save";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.sprintTaskBindingSource, "TaskCompletionPercent", true));
+            this.trackBar1.LargeChange = 10;
+            this.trackBar1.Location = new System.Drawing.Point(282, 170);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(263, 45);
+            this.trackBar1.SmallChange = 5;
+            this.trackBar1.TabIndex = 20;
+            this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
+            // 
+            // lbCompletionPercent
+            // 
+            this.lbCompletionPercent.AutoSize = true;
+            this.lbCompletionPercent.Location = new System.Drawing.Point(543, 177);
+            this.lbCompletionPercent.Name = "lbCompletionPercent";
+            this.lbCompletionPercent.Size = new System.Drawing.Size(0, 13);
+            this.lbCompletionPercent.TabIndex = 22;
             // 
             // sprintTaskBindingSource
             // 
@@ -386,6 +420,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 294);
             this.ControlBox = false;
+            this.Controls.Add(this.lbCompletionPercent);
+            this.Controls.Add(label5);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(updatedDateTimeLabel);
             this.Controls.Add(this.updatedDateTimeTextBox);
@@ -417,6 +454,7 @@
             this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -444,5 +482,7 @@
         private System.Windows.Forms.TextBox updatedDateTimeTextBox;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label lbCompletionPercent;
     }
 }
