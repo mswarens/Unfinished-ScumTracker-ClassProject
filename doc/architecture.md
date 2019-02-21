@@ -12,34 +12,20 @@ Version 1.0
 ### Table of Contents
 
 1. Introduction
-	 
 	 1.1 Purpose
-	 
 	 1.2 Scope
-	 
 	 1.3 Glossary of Terms/Reference
-	 
 2. Architecture
-
     2.1 Overview
-    
 	2.1 Representation
-	
 	2.2 Constraints
-	
 3. Use-Case View
-
 	3.1 Architecturally Significant Use Cases
-	
 4. Logical View
-
    4.1 Data Entities
-   
    4.2 Use-Case Realizations
-
-5. Process View
-
-6. Deployment View
+6. Process View
+7. Deployment View
 
 
 
@@ -57,18 +43,13 @@ Terms used in this document include:
 
 **C#** - C Sharp - a general purpose object-oriented programming language used to develop web and desktop applications running on the .NET Framework.
 https://docs.microsoft.com/en-us/dotnet/csharp/getting-started/introduction-to-the-csharp-language-and-the-net-framework
-
 **.NET Framework** - a software framework developed by Microsoft to support application development primarily for the Microsoft Windows operating system.
 https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview
-
 **Winforms**  - Windows Forms, a class library included in the .NET Framework used    in the development of graphic user interfaces (GUIs) for the Microsoft Windows operating system.
 https://docs.microsoft.com/en-us/dotnet/framework/winforms/
-
 **Entity Framework** - an object-relational mapping framework used in .NET applications to allow for database access.
-
 **SQL** - Structured Query Language - a standard language used for various relationship database management systems that allows for the retrieval and modification of database assets.
 http://www.sqlcourse.com/intro.html
-
 **SQL Server** - Microsoft SQL Server - a relational database management system (RDBMS) developed by Microsoft; commonly used in small to enterprise level applications.
 https://www.microsoft.com/en-us/sql-server/default.aspx
 
@@ -81,7 +62,7 @@ This application uses a client-server architecture in which the client applicati
 The architecture of the application is examined within this document using the following views:
 
  - **Use-Case View** - documents the use cases for the system along with associated actors
- - **Logical View** - documents the architecturally significant classes, packages, and layers associated with the system
+ - **Logical View** - documents the architecturally significant data entities, use case realizations, and overall system design.
  - **Process View** - documents significant processes involved in the execution of the application along with their interactions
  - **Deployment View** - documents the various physical components involved in deployment and maintenance of the system
 
@@ -150,4 +131,18 @@ Development team members, scrum masters, business team members
 ### 4.1 Data Entities
 ![Data Entities](imgs/DataEntities.jpg)
 
+### 4.2 Use Case Realizations
+#### Login to the System
+![Login to the System](imgs/UseCaseRealization-Login.jpg)
+
+#### Add Sprint Task
+![Add Sprint Task](imgs/UseCaseRealization-AddSprintTask.jpg)
+
+Additional use case realizations TBD
+
+## 6. Process View
+TBD
+
+## 7. Deployment View
+TBD
 
