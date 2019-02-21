@@ -12,6 +12,7 @@ namespace ScrumProjectTracking
 {
     public partial class FrmLogin : Form
     {
+        bool closedCorrectly = false;
         public FrmLogin()
         {
             InitializeComponent();
@@ -29,12 +30,16 @@ namespace ScrumProjectTracking
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            closedCorrectly = true;
             this.Close();
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if (!closedCorrectly)
+            {
+                Application.Exit();
+            }
         }
     }
 }

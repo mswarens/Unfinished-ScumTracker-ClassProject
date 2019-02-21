@@ -33,8 +33,6 @@ namespace ScrumProjectTracking.Forms
             tabControl1.Dock = DockStyle.Top;
             Dashboard.Show();
             tabControl1.Size = new Size(this.Width, Dashboard.Location.Y);
-
-     
         }
 
     public void LoadChildForm(Form form)
