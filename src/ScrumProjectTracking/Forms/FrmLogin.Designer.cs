@@ -34,7 +34,7 @@
             this.projectTitleLogin = new System.Windows.Forms.Label();
             this.usernameLabelLogin = new System.Windows.Forms.Label();
             this.passwordLabelLogin = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.FrmLoginMsg = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // loginUsername
@@ -43,7 +43,6 @@
             this.loginUsername.Name = "loginUsername";
             this.loginUsername.Size = new System.Drawing.Size(303, 20);
             this.loginUsername.TabIndex = 1;
-            this.loginUsername.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // loginPassword
             // 
@@ -62,6 +61,7 @@
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // projectTitleLogin
             // 
@@ -93,24 +93,23 @@
             this.passwordLabelLogin.Size = new System.Drawing.Size(79, 20);
             this.passwordLabelLogin.TabIndex = 6;
             this.passwordLabelLogin.Text = "Password";
-            this.passwordLabelLogin.Click += new System.EventHandler(this.passwordLabelLogin_Click);
             // 
-            // button1
+            // FrmLoginMsg
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(241, 450);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(303, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "New Account Creation";
-            this.button1.UseVisualStyleBackColor = true;
+            this.FrmLoginMsg.AutoSize = true;
+            this.FrmLoginMsg.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.FrmLoginMsg.Location = new System.Drawing.Point(208, 441);
+            this.FrmLoginMsg.Name = "FrmLoginMsg";
+            this.FrmLoginMsg.Size = new System.Drawing.Size(369, 17);
+            this.FrmLoginMsg.TabIndex = 7;
+            this.FrmLoginMsg.Text = "Press Login To Continue, No Username/Password Required";
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 485);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FrmLoginMsg);
             this.Controls.Add(this.passwordLabelLogin);
             this.Controls.Add(this.usernameLabelLogin);
             this.Controls.Add(this.projectTitleLogin);
@@ -133,6 +132,6 @@
         private System.Windows.Forms.Label projectTitleLogin;
         private System.Windows.Forms.Label usernameLabelLogin;
         private System.Windows.Forms.Label passwordLabelLogin;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label FrmLoginMsg;
     }
 }

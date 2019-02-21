@@ -20,8 +20,11 @@ namespace ScrumProjectTracking.Forms
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            this.Hide();
+            Form login = new FrmLogin();
+            login.ShowDialog();
+            this.Show();
 
-            
             Dashboard.MdiParent = this;
             Dashboard.Dock = DockStyle.Bottom;
               //  Dashboard.Size = new Size(this.Width, this.Height - mainFormMenu.Height - tabControl.Height - 50);

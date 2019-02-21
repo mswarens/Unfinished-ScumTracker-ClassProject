@@ -22,19 +22,14 @@ namespace ScrumProjectTracking
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void passwordLabelLogin_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
