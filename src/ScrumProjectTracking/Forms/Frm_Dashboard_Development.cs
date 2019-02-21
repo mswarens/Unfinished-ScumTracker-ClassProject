@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ScrumProjectTracking.DataModels;
+using ScrumProjectTracking.Forms;
 namespace ScrumProjectTracking
 {
     public partial class Frm_Dashboard_Development : Form
     {
-        public Frm_Dashboard_Development()
+        FrmMain parentForm;
+        public Frm_Dashboard_Development(FrmMain parent)
         {
             InitializeComponent();
+            parentForm = parent;
         }
 
         private void Form_Main_Load(object sender, EventArgs e)
@@ -68,6 +71,8 @@ namespace ScrumProjectTracking
                     lbMyStoryPoints.Text = (totalStoryPoints - pendingTasks.Sum(a => a.StoryPoints)).ToString() + "/" +  totalStoryPoints.ToString();
                   
 
+
+
                 }
 
                 var nextSprintInfo = (from s in scrumContext.Sprints
@@ -89,8 +94,15 @@ namespace ScrumProjectTracking
         {
             if (e.ColumnIndex == 0)
             {
-                
+                TaskDetail newTask = new TaskDetail((int)dgvCurrentSprintTasks.Rows[e.RowIndex].Cells[5].Value);
+                parentForm.LoadChildForm(newTask);
             }
+        }
+
+        private void btnAddNewTask_Click(object sender, EventArgs e)
+        {
+            TaskDetail newTask = new TaskDetail();
+            parentForm.LoadChildForm(newTask); 
         }
     }
 }
