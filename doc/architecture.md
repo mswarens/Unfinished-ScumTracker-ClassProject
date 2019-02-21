@@ -12,19 +12,31 @@ Version 1.0
 ### Table of Contents
 
 1. Introduction
-	 1.1 Purpose
-	 1.2 Scope
-	 1.3 Glossary of Terms/Reference
+
+	1.1 Purpose
+
+	1.2 Scope
+	
+	1.3 Glossary of Terms/Reference
+
 2. Architecture
-    2.1 Overview
-	2.1 Representation
-	2.2 Constraints
+
+	2.1 Overview
+	
+	2.2 Representation
+	
 3. Use-Case View
+
 	3.1 Architecturally Significant Use Cases
+
 4. Logical View
-   4.1 Data Entities
-   4.2 Use-Case Realizations
+
+	4.1 Data Entities
+	
+	4.2 Use-Case Realizations
+	
 6. Process View
+
 7. Deployment View
 
 
@@ -43,13 +55,18 @@ Terms used in this document include:
 
 **C#** - C Sharp - a general purpose object-oriented programming language used to develop web and desktop applications running on the .NET Framework.
 https://docs.microsoft.com/en-us/dotnet/csharp/getting-started/introduction-to-the-csharp-language-and-the-net-framework
+
 **.NET Framework** - a software framework developed by Microsoft to support application development primarily for the Microsoft Windows operating system.
 https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview
+
 **Winforms**  - Windows Forms, a class library included in the .NET Framework used    in the development of graphic user interfaces (GUIs) for the Microsoft Windows operating system.
 https://docs.microsoft.com/en-us/dotnet/framework/winforms/
+
 **Entity Framework** - an object-relational mapping framework used in .NET applications to allow for database access.
+
 **SQL** - Structured Query Language - a standard language used for various relationship database management systems that allows for the retrieval and modification of database assets.
 http://www.sqlcourse.com/intro.html
+
 **SQL Server** - Microsoft SQL Server - a relational database management system (RDBMS) developed by Microsoft; commonly used in small to enterprise level applications.
 https://www.microsoft.com/en-us/sql-server/default.aspx
 
