@@ -12,34 +12,32 @@ Version 1.0
 ### Table of Contents
 
 1. Introduction
-	 
-	 1.1 Purpose
-	 
-	 1.2 Scope
-	 
-	 1.3 Glossary of Terms/Reference
-	 
+
+	1.1 Purpose
+
+	1.2 Scope
+	
+	1.3 Glossary of Terms/Reference
+
 2. Architecture
 
-    2.1 Overview
-    
-	2.1 Representation
+	2.1 Overview
 	
-	2.2 Constraints
+	2.2 Representation
 	
 3. Use-Case View
 
 	3.1 Architecturally Significant Use Cases
-	
+
 4. Logical View
 
-   4.1 Data Entities
-   
-   4.2 Use-Case Realizations
+	4.1 Data Entities
+	
+	4.2 Use-Case Realizations
+	
+6. Process View
 
-5. Process View
-
-6. Deployment View
+7. Deployment View
 
 
 
@@ -81,7 +79,7 @@ This application uses a client-server architecture in which the client applicati
 The architecture of the application is examined within this document using the following views:
 
  - **Use-Case View** - documents the use cases for the system along with associated actors
- - **Logical View** - documents the architecturally significant classes, packages, and layers associated with the system
+ - **Logical View** - documents the architecturally significant data entities, use case realizations, and overall system design.
  - **Process View** - documents significant processes involved in the execution of the application along with their interactions
  - **Deployment View** - documents the various physical components involved in deployment and maintenance of the system
 
@@ -150,4 +148,18 @@ Development team members, scrum masters, business team members
 ### 4.1 Data Entities
 ![Data Entities](imgs/DataEntities.jpg)
 
+### 4.2 Use Case Realizations
+#### Login to the System
+![Login to the System](imgs/UseCaseRealization-Login.jpg)
+
+#### Add Sprint Task
+![Add Sprint Task](imgs/UseCaseRealization-AddSprintTask.jpg)
+
+Additional use case realizations TBD
+
+## 6. Process View
+TBD
+
+## 7. Deployment View
+TBD
 

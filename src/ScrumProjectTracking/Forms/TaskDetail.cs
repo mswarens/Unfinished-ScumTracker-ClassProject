@@ -20,9 +20,10 @@ namespace ScrumProjectTracking.Forms
             context = new ScrumContext();
             FillDropDownSelections();
             this.TeamID.SelectedIndexChanged += new System.EventHandler(this.TeamID_SelectedIndexChanged);
-            fillData(taskID);
-            
-            
+            currentTask = context.SprintTasks.Where(t => t.SprintTaskID == taskID).First();
+            sprintTaskBindingSource.DataSource = currentTask;
+            lbCompletionPercent.Text = trackBar1.Value.ToString(@"#\%");
+
         }
 
         public TaskDetail()
@@ -37,26 +38,7 @@ namespace ScrumProjectTracking.Forms
 
         }
 
-        private void fillData(int taskID)
-        {
 
-         
-         
-                var taskDetail = from t in context.SprintTasks
-                                 where t.SprintTaskID == taskID
-                                 select t;
-                sprintTaskBindingSource.DataSource = taskDetail.ToList();
-
-            lbCompletionPercent.Text = trackBar1.Value.ToString(@"#\%");
-
-
-
-
-
-
-
-
-        }
 
         private void FillDropDownSelections()
         {
@@ -103,7 +85,7 @@ namespace ScrumProjectTracking.Forms
                     AssignedUserID.DataSource = UserData.ToList();
                     AssignedUserID.DisplayMember = "UsersName";
                     AssignedUserID.ValueMember = "UserID";
-                AssignedUserID.Enabled = true;
+                    AssignedUserID.Enabled = true;
                
                 
             }
@@ -126,7 +108,7 @@ namespace ScrumProjectTracking.Forms
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
 
-
+            this.Validate();
             currentTask.UpdatedBy = "CURRUSER";
             currentTask.UpdatedDateTime = DateTime.Now;
 
@@ -143,7 +125,7 @@ namespace ScrumProjectTracking.Forms
             }
             else
             {
-                this.Validate();
+                
                 context.SaveChanges();
                                                          
             }

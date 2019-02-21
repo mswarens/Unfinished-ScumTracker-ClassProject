@@ -279,6 +279,7 @@
             this.AssignedUserID.Name = "AssignedUserID";
             this.AssignedUserID.Size = new System.Drawing.Size(126, 21);
             this.AssignedUserID.TabIndex = 11;
+            this.AssignedUserID.Tag = "Sprint Task Detail";
             // 
             // groupBox1
             // 
