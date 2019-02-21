@@ -21,8 +21,11 @@ namespace ScrumProjectTracking.Forms
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            this.Hide();
+            Form login = new FrmLogin();
+            login.ShowDialog();
+            this.Show();
 
-            
             Dashboard.MdiParent = this;
             Dashboard.Dock = DockStyle.Bottom;
           
@@ -30,8 +33,6 @@ namespace ScrumProjectTracking.Forms
             tabControl1.Dock = DockStyle.Top;
             Dashboard.Show();
             tabControl1.Size = new Size(this.Width, Dashboard.Location.Y);
-
-     
         }
 
     public void LoadChildForm(Form form)
