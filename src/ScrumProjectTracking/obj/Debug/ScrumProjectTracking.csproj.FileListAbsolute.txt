@@ -500,3 +500,4 @@ C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\S
 C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csproj.CopyComplete
 C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.exe
 C:\Users\Scott\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.pdb
+Z:\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.FrmLogin.resources

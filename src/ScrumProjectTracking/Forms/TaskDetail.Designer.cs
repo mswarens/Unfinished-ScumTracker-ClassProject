@@ -84,113 +84,120 @@
             // sprintIDLabel
             // 
             sprintIDLabel.AutoSize = true;
-            sprintIDLabel.Location = new System.Drawing.Point(2, 41);
+            sprintIDLabel.Location = new System.Drawing.Point(4, 79);
             sprintIDLabel.Margin = new System.Windows.Forms.Padding(0);
             sprintIDLabel.Name = "sprintIDLabel";
-            sprintIDLabel.Size = new System.Drawing.Size(34, 13);
+            sprintIDLabel.Size = new System.Drawing.Size(68, 25);
             sprintIDLabel.TabIndex = 4;
             sprintIDLabel.Text = "Sprint";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(2, 65);
+            label3.Location = new System.Drawing.Point(4, 125);
             label3.Margin = new System.Windows.Forms.Padding(0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(40, 13);
+            label3.Size = new System.Drawing.Size(79, 25);
             label3.TabIndex = 6;
             label3.Text = "Project";
             // 
             // Team
             // 
             Team.AutoSize = true;
-            Team.Location = new System.Drawing.Point(2, 89);
+            Team.Location = new System.Drawing.Point(4, 171);
             Team.Margin = new System.Windows.Forms.Padding(0);
             Team.Name = "Team";
-            Team.Size = new System.Drawing.Size(34, 13);
+            Team.Size = new System.Drawing.Size(66, 25);
             Team.TabIndex = 8;
             Team.Text = "Team";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(2, 112);
+            label4.Location = new System.Drawing.Point(4, 215);
             label4.Margin = new System.Windows.Forms.Padding(0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(50, 13);
+            label4.Size = new System.Drawing.Size(101, 25);
             label4.TabIndex = 10;
             label4.Text = "Assignee";
             // 
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(24, 60);
+            descriptionLabel.Location = new System.Drawing.Point(48, 115);
+            descriptionLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(63, 13);
+            descriptionLabel.Size = new System.Drawing.Size(126, 25);
             descriptionLabel.TabIndex = 12;
             descriptionLabel.Text = "Description:";
             // 
             // storyPointsLabel
             // 
             storyPointsLabel.AutoSize = true;
-            storyPointsLabel.Location = new System.Drawing.Point(24, 173);
+            storyPointsLabel.Location = new System.Drawing.Point(48, 333);
+            storyPointsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             storyPointsLabel.Name = "storyPointsLabel";
-            storyPointsLabel.Size = new System.Drawing.Size(66, 13);
+            storyPointsLabel.Size = new System.Drawing.Size(134, 25);
             storyPointsLabel.TabIndex = 13;
             storyPointsLabel.Text = "Story Points:";
             // 
             // taskStatusLabel
             // 
             taskStatusLabel.AutoSize = true;
-            taskStatusLabel.Location = new System.Drawing.Point(3, 16);
+            taskStatusLabel.Location = new System.Drawing.Point(6, 31);
             taskStatusLabel.Margin = new System.Windows.Forms.Padding(0);
             taskStatusLabel.Name = "taskStatusLabel";
-            taskStatusLabel.Size = new System.Drawing.Size(40, 13);
+            taskStatusLabel.Size = new System.Drawing.Size(79, 25);
             taskStatusLabel.TabIndex = 14;
             taskStatusLabel.Text = "Status:";
             // 
             // addedByLabel
             // 
             addedByLabel.AutoSize = true;
-            addedByLabel.Location = new System.Drawing.Point(24, 228);
+            addedByLabel.Location = new System.Drawing.Point(48, 438);
+            addedByLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             addedByLabel.Name = "addedByLabel";
-            addedByLabel.Size = new System.Drawing.Size(56, 13);
+            addedByLabel.Size = new System.Drawing.Size(111, 25);
             addedByLabel.TabIndex = 14;
             addedByLabel.Text = "Added By:";
             // 
             // updatedByLabel
             // 
             updatedByLabel.AutoSize = true;
-            updatedByLabel.Location = new System.Drawing.Point(24, 248);
+            updatedByLabel.Location = new System.Drawing.Point(48, 477);
+            updatedByLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             updatedByLabel.Name = "updatedByLabel";
-            updatedByLabel.Size = new System.Drawing.Size(66, 13);
+            updatedByLabel.Size = new System.Drawing.Size(130, 25);
             updatedByLabel.TabIndex = 15;
             updatedByLabel.Text = "Updated By:";
             // 
             // addedDateTimeLabel
             // 
             addedDateTimeLabel.AutoSize = true;
-            addedDateTimeLabel.Location = new System.Drawing.Point(201, 228);
+            addedDateTimeLabel.Location = new System.Drawing.Point(402, 438);
+            addedDateTimeLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             addedDateTimeLabel.Name = "addedDateTimeLabel";
-            addedDateTimeLabel.Size = new System.Drawing.Size(95, 13);
+            addedDateTimeLabel.Size = new System.Drawing.Size(184, 25);
             addedDateTimeLabel.TabIndex = 16;
             addedDateTimeLabel.Text = "Added Date/Time:";
             // 
             // updatedDateTimeLabel
             // 
             updatedDateTimeLabel.AutoSize = true;
-            updatedDateTimeLabel.Location = new System.Drawing.Point(201, 248);
+            updatedDateTimeLabel.Location = new System.Drawing.Point(402, 477);
+            updatedDateTimeLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             updatedDateTimeLabel.Name = "updatedDateTimeLabel";
-            updatedDateTimeLabel.Size = new System.Drawing.Size(105, 13);
+            updatedDateTimeLabel.Size = new System.Drawing.Size(203, 25);
             updatedDateTimeLabel.TabIndex = 17;
             updatedDateTimeLabel.Text = "Updated Date/Time:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(170, 173);
+            label5.Location = new System.Drawing.Point(340, 333);
+            label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(106, 13);
+            label5.Size = new System.Drawing.Size(218, 25);
             label5.TabIndex = 21;
             label5.Text = "Completion Progress:";
             // 
@@ -198,21 +205,21 @@
             // 
             this.SprintTaskID.BackColor = System.Drawing.SystemColors.ControlLight;
             this.SprintTaskID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "SprintTaskID", true));
-            this.SprintTaskID.Location = new System.Drawing.Point(100, 32);
-            this.SprintTaskID.Margin = new System.Windows.Forms.Padding(2);
+            this.SprintTaskID.Location = new System.Drawing.Point(200, 62);
+            this.SprintTaskID.Margin = new System.Windows.Forms.Padding(4);
             this.SprintTaskID.Name = "SprintTaskID";
             this.SprintTaskID.ReadOnly = true;
-            this.SprintTaskID.Size = new System.Drawing.Size(65, 20);
+            this.SprintTaskID.Size = new System.Drawing.Size(126, 31);
             this.SprintTaskID.TabIndex = 0;
             this.SprintTaskID.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(48, 67);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.Size = new System.Drawing.Size(147, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Sprint Task ID";
             // 
@@ -220,10 +227,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(178, 35);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(356, 67);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.Size = new System.Drawing.Size(121, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Task Name";
             // 
@@ -231,11 +238,11 @@
             // 
             this.TaskName.BackColor = System.Drawing.SystemColors.Window;
             this.TaskName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "TaskName", true));
-            this.TaskName.Location = new System.Drawing.Point(242, 34);
-            this.TaskName.Margin = new System.Windows.Forms.Padding(2);
+            this.TaskName.Location = new System.Drawing.Point(484, 65);
+            this.TaskName.Margin = new System.Windows.Forms.Padding(4);
             this.TaskName.MaxLength = 100;
             this.TaskName.Name = "TaskName";
-            this.TaskName.Size = new System.Drawing.Size(288, 20);
+            this.TaskName.Size = new System.Drawing.Size(572, 31);
             this.TaskName.TabIndex = 2;
             this.TaskName.TabStop = false;
             // 
@@ -243,43 +250,43 @@
             // 
             this.SprintID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.sprintTaskBindingSource, "SprintID", true));
             this.SprintID.FormattingEnabled = true;
-            this.SprintID.Location = new System.Drawing.Point(61, 39);
+            this.SprintID.Location = new System.Drawing.Point(122, 75);
             this.SprintID.Margin = new System.Windows.Forms.Padding(0);
             this.SprintID.Name = "SprintID";
-            this.SprintID.Size = new System.Drawing.Size(126, 21);
+            this.SprintID.Size = new System.Drawing.Size(248, 33);
             this.SprintID.TabIndex = 5;
             // 
             // ProjectID
             // 
             this.ProjectID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.sprintTaskBindingSource, "ProjectID", true));
             this.ProjectID.FormattingEnabled = true;
-            this.ProjectID.Location = new System.Drawing.Point(61, 63);
+            this.ProjectID.Location = new System.Drawing.Point(122, 121);
             this.ProjectID.Margin = new System.Windows.Forms.Padding(0);
             this.ProjectID.Name = "ProjectID";
-            this.ProjectID.Size = new System.Drawing.Size(126, 21);
+            this.ProjectID.Size = new System.Drawing.Size(248, 33);
             this.ProjectID.TabIndex = 7;
             // 
             // TeamID
             // 
             this.TeamID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.sprintTaskBindingSource, "TeamID", true));
             this.TeamID.FormattingEnabled = true;
-            this.TeamID.Location = new System.Drawing.Point(61, 88);
+            this.TeamID.Location = new System.Drawing.Point(122, 169);
             this.TeamID.Margin = new System.Windows.Forms.Padding(0);
             this.TeamID.Name = "TeamID";
-            this.TeamID.Size = new System.Drawing.Size(126, 21);
+            this.TeamID.Size = new System.Drawing.Size(248, 33);
             this.TeamID.TabIndex = 9;
+            this.TeamID.Validated += new System.EventHandler(this.TeamID_Validated);
             // 
             // AssignedUserID
             // 
             this.AssignedUserID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.sprintTaskBindingSource, "AssignedUserID", true));
-            this.AssignedUserID.Enabled = false;
             this.AssignedUserID.FormattingEnabled = true;
-            this.AssignedUserID.Location = new System.Drawing.Point(61, 110);
+            this.AssignedUserID.Location = new System.Drawing.Point(122, 212);
             this.AssignedUserID.Margin = new System.Windows.Forms.Padding(0);
             this.AssignedUserID.Name = "AssignedUserID";
-            this.AssignedUserID.Size = new System.Drawing.Size(126, 21);
+            this.AssignedUserID.Size = new System.Drawing.Size(248, 33);
             this.AssignedUserID.TabIndex = 11;
-            this.AssignedUserID.Tag = "Sprint Task Detail";
+            this.AssignedUserID.Tag = "";
             // 
             // groupBox1
             // 
@@ -293,11 +300,11 @@
             this.groupBox1.Controls.Add(Team);
             this.groupBox1.Controls.Add(this.ProjectID);
             this.groupBox1.Controls.Add(this.TeamID);
-            this.groupBox1.Location = new System.Drawing.Point(535, 34);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(1070, 65);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(198, 140);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(396, 269);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
@@ -308,76 +315,84 @@
             this.taskStatusComboBox.Items.AddRange(new object[] {
             "Pending",
             "Completed"});
-            this.taskStatusComboBox.Location = new System.Drawing.Point(61, 13);
+            this.taskStatusComboBox.Location = new System.Drawing.Point(122, 25);
             this.taskStatusComboBox.Margin = new System.Windows.Forms.Padding(0);
             this.taskStatusComboBox.Name = "taskStatusComboBox";
-            this.taskStatusComboBox.Size = new System.Drawing.Size(126, 21);
+            this.taskStatusComboBox.Size = new System.Drawing.Size(248, 33);
             this.taskStatusComboBox.TabIndex = 15;
             // 
             // descriptionTextBox
             // 
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "Description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(100, 57);
+            this.descriptionTextBox.Location = new System.Drawing.Point(200, 110);
+            this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(430, 107);
+            this.descriptionTextBox.Size = new System.Drawing.Size(856, 202);
             this.descriptionTextBox.TabIndex = 13;
             // 
             // storyPointsTextBox
             // 
             this.storyPointsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "StoryPoints", true));
-            this.storyPointsTextBox.Location = new System.Drawing.Point(100, 170);
+            this.storyPointsTextBox.Location = new System.Drawing.Point(200, 327);
+            this.storyPointsTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.storyPointsTextBox.Name = "storyPointsTextBox";
-            this.storyPointsTextBox.Size = new System.Drawing.Size(49, 20);
+            this.storyPointsTextBox.Size = new System.Drawing.Size(94, 31);
             this.storyPointsTextBox.TabIndex = 14;
             // 
             // addedByTextBox
             // 
             this.addedByTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "AddedBy", true));
-            this.addedByTextBox.Location = new System.Drawing.Point(96, 225);
+            this.addedByTextBox.Location = new System.Drawing.Point(192, 433);
+            this.addedByTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.addedByTextBox.Name = "addedByTextBox";
             this.addedByTextBox.ReadOnly = true;
-            this.addedByTextBox.Size = new System.Drawing.Size(89, 20);
+            this.addedByTextBox.Size = new System.Drawing.Size(174, 31);
             this.addedByTextBox.TabIndex = 15;
             this.addedByTextBox.TabStop = false;
             // 
             // updatedByTextBox
             // 
             this.updatedByTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "UpdatedBy", true));
-            this.updatedByTextBox.Location = new System.Drawing.Point(96, 248);
+            this.updatedByTextBox.Location = new System.Drawing.Point(192, 477);
+            this.updatedByTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.updatedByTextBox.Name = "updatedByTextBox";
             this.updatedByTextBox.ReadOnly = true;
-            this.updatedByTextBox.Size = new System.Drawing.Size(89, 20);
+            this.updatedByTextBox.Size = new System.Drawing.Size(174, 31);
             this.updatedByTextBox.TabIndex = 16;
             this.updatedByTextBox.TabStop = false;
             // 
             // addedDateTimeTextBox
             // 
             this.addedDateTimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "AddedDateTime", true));
-            this.addedDateTimeTextBox.Location = new System.Drawing.Point(310, 225);
+            this.addedDateTimeTextBox.Location = new System.Drawing.Point(620, 433);
+            this.addedDateTimeTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.addedDateTimeTextBox.Name = "addedDateTimeTextBox";
             this.addedDateTimeTextBox.ReadOnly = true;
-            this.addedDateTimeTextBox.Size = new System.Drawing.Size(150, 20);
+            this.addedDateTimeTextBox.Size = new System.Drawing.Size(296, 31);
             this.addedDateTimeTextBox.TabIndex = 17;
             this.addedDateTimeTextBox.TabStop = false;
             // 
             // updatedDateTimeTextBox
             // 
             this.updatedDateTimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "UpdatedDateTime", true));
-            this.updatedDateTimeTextBox.Location = new System.Drawing.Point(310, 248);
+            this.updatedDateTimeTextBox.Location = new System.Drawing.Point(620, 477);
+            this.updatedDateTimeTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.updatedDateTimeTextBox.Name = "updatedDateTimeTextBox";
             this.updatedDateTimeTextBox.ReadOnly = true;
-            this.updatedDateTimeTextBox.Size = new System.Drawing.Size(150, 20);
+            this.updatedDateTimeTextBox.Size = new System.Drawing.Size(296, 31);
             this.updatedDateTimeTextBox.TabIndex = 18;
             this.updatedDateTimeTextBox.TabStop = false;
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(764, 25);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(1528, 39);
             this.toolStrip1.TabIndex = 19;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -387,7 +402,7 @@
             this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
             this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.saveToolStripButton.Size = new System.Drawing.Size(36, 36);
             this.saveToolStripButton.Text = "&Save";
             this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
@@ -395,10 +410,11 @@
             // 
             this.trackBar1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.sprintTaskBindingSource, "TaskCompletionPercent", true));
             this.trackBar1.LargeChange = 10;
-            this.trackBar1.Location = new System.Drawing.Point(282, 170);
+            this.trackBar1.Location = new System.Drawing.Point(564, 327);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(6);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(263, 45);
+            this.trackBar1.Size = new System.Drawing.Size(526, 90);
             this.trackBar1.SmallChange = 5;
             this.trackBar1.TabIndex = 20;
             this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
@@ -406,9 +422,10 @@
             // lbCompletionPercent
             // 
             this.lbCompletionPercent.AutoSize = true;
-            this.lbCompletionPercent.Location = new System.Drawing.Point(543, 177);
+            this.lbCompletionPercent.Location = new System.Drawing.Point(1086, 340);
+            this.lbCompletionPercent.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbCompletionPercent.Name = "lbCompletionPercent";
-            this.lbCompletionPercent.Size = new System.Drawing.Size(0, 13);
+            this.lbCompletionPercent.Size = new System.Drawing.Size(0, 25);
             this.lbCompletionPercent.TabIndex = 22;
             // 
             // sprintTaskBindingSource
@@ -417,9 +434,9 @@
             // 
             // TaskDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 294);
+            this.ClientSize = new System.Drawing.Size(1528, 565);
             this.ControlBox = false;
             this.Controls.Add(this.lbCompletionPercent);
             this.Controls.Add(label5);
@@ -443,7 +460,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SprintTaskID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TaskDetail";
@@ -451,6 +468,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Sprint Task Detail";
+            this.Load += new System.EventHandler(this.TaskDetail_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

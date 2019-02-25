@@ -18,12 +18,12 @@ namespace ScrumProjectTracking.Forms
         {
             InitializeComponent();
             context = new ScrumContext();
-            FillDropDownSelections();
-            this.TeamID.SelectedIndexChanged += new System.EventHandler(this.TeamID_SelectedIndexChanged);
+          
+            
             currentTask = context.SprintTasks.Where(t => t.SprintTaskID == taskID).First();
             sprintTaskBindingSource.DataSource = currentTask;
             lbCompletionPercent.Text = trackBar1.Value.ToString(@"#\%");
-
+            this.TeamID.SelectedIndexChanged += new System.EventHandler(this.TeamID_SelectedIndexChanged);
         }
 
         public TaskDetail()
@@ -31,11 +31,11 @@ namespace ScrumProjectTracking.Forms
             
             InitializeComponent();
             context = new ScrumContext();
-            FillDropDownSelections();
+           // FillDropDownSelections();
             currentTask = new SprintTask();
-            sprintTaskBindingSource.DataSource = currentTask;
+          
             this.TeamID.SelectedIndexChanged += new System.EventHandler(this.TeamID_SelectedIndexChanged);
-
+           // FillDropDownSelections();
         }
 
 
@@ -49,47 +49,38 @@ namespace ScrumProjectTracking.Forms
                 SprintID.DataSource = sprintData.ToList();
                 SprintID.DisplayMember = "SprintName";
                 SprintID.ValueMember = "SprintID";
-
-                var projectData = from p in context.Projects
+                SprintID.SelectedIndex = -1;
+            var projectData = from p in context.Projects
                                 select new { p.ProjectName, p.ProjectID };
                 ProjectID.DataSource = projectData.ToList();
                 ProjectID.DisplayMember = "ProjectName";
                 ProjectID.ValueMember = "ProjectID";
-
-                var teamData = from t in context.Teams
+            ProjectID.SelectedIndex = -1;
+            var teamData = from t in context.Teams
                                 select new { t.TeamName, t.TeamID };
                 TeamID.DataSource = teamData.ToList();
                 TeamID.DisplayMember = "TeamName";
                 TeamID.ValueMember = "TeamID";
+            TeamID.SelectedIndex = -1;
+          
+          
+            
 
 
-
-           
 
 
         }
 
         private void TeamID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TeamID.SelectedValue == null)
-            {
-                AssignedUserID.Enabled = false;
-               
-            }
-            else
-            {
-               
-                    var UserData = from u in context.Users
-                                   where u.TeamID == int.Parse(TeamID.SelectedValue.ToString())
-                                   select new { u.UserID, UsersName = u.LastName + ',' + u.FirstName };
-                    AssignedUserID.DataSource = UserData.ToList();
-                    AssignedUserID.DisplayMember = "UsersName";
-                    AssignedUserID.ValueMember = "UserID";
-                    AssignedUserID.Enabled = true;
-               
-                
-            }
-            
+            //MessageBox.Show(TeamID.ValueMember.ToString());
+            //var UserData = from u in context.Users
+            //               where u.TeamID == int.Parse(TeamID.SelectedValue.ToString())
+            //               select new { u.UserID, UserName = u.LastName + ", " + u.FirstName };
+            //AssignedUserID.DataSource = UserData.ToList();
+            //AssignedUserID.DisplayMember = "UserName";
+            //AssignedUserID.ValueMember = "UserID";
+            //AssignedUserID.Enabled = true;
 
         }
 
@@ -135,8 +126,32 @@ namespace ScrumProjectTracking.Forms
                       
         }
 
- 
 
-      
+        private void TeamID_ValueMemberChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Fired");
+        }
+
+        private void TeamID_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Fired");
+        }
+
+        private void TaskDetail_Load(object sender, EventArgs e)
+        {
+            FillDropDownSelections();
+            sprintTaskBindingSource.DataSource = currentTask;
+        }
+
+        private void TeamID_Validated(object sender, EventArgs e)
+        {
+            var UserData = from u in context.Users
+                           where u.TeamID == int.Parse(TeamID.SelectedValue.ToString())
+                           select new { u.UserID, UserName = u.LastName + ", " + u.FirstName };
+            AssignedUserID.DataSource = UserData.ToList();
+            AssignedUserID.DisplayMember = "UserName";
+            AssignedUserID.ValueMember = "UserID";
+            AssignedUserID.Enabled = true;
+        }
     }
 }
