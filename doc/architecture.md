@@ -57,13 +57,18 @@ Terms used in this document include:
 
 **C#** - C Sharp - a general purpose object-oriented programming language used to develop web and desktop applications running on the .NET Framework.
 https://docs.microsoft.com/en-us/dotnet/csharp/getting-started/introduction-to-the-csharp-language-and-the-net-framework
+
 **.NET Framework** - a software framework developed by Microsoft to support application development primarily for the Microsoft Windows operating system.
 https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview
+
 **Winforms**  - Windows Forms, a class library included in the .NET Framework used    in the development of graphic user interfaces (GUIs) for the Microsoft Windows operating system.
 https://docs.microsoft.com/en-us/dotnet/framework/winforms/
+
 **Entity Framework** - an object-relational mapping framework used in .NET applications to allow for database access.
+
 **SQL** - Structured Query Language - a standard language used for various relationship database management systems that allows for the retrieval and modification of database assets.
 http://www.sqlcourse.com/intro.html
+
 **SQL Server** - Microsoft SQL Server - a relational database management system (RDBMS) developed by Microsoft; commonly used in small to enterprise level applications.
 https://www.microsoft.com/en-us/sql-server/default.aspx
 
