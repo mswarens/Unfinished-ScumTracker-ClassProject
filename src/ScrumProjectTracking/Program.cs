@@ -15,9 +15,8 @@ namespace ScrumProjectTracking
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
-            Application.Run(new Main.FrmMain());
+            Application.SetCompatibleTextRenderingDefault(false);  
+            Application.Run(new FrmMain());
         }
     }
 }
