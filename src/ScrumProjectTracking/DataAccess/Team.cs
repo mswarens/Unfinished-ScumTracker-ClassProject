@@ -4,16 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScrumProjectTracking.DataModels
+namespace ScrumProjectTracking.DataAccess
 {
-    public class User
+    public class Team
     {
-        public string UserID { get; set;  }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
         public int TeamID { get; set; }
-        public string Password { get; set; }
-        public bool Disabled { get; set; }
+        public string TeamName { get; set; }
+        public string TeamType { get; set; }
+        public bool Active { get; set; }
         public string AddedBy { get; set; }
         public string UpdatedBy { get; set; }
         public DateTime AddedDateTime { get; set; }
