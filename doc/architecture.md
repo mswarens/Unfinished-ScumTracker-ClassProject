@@ -13,31 +13,33 @@ Version 1.0
 
 1. Introduction
 
-	1.1 Purpose
-
-	1.2 Scope
-	
-	1.3 Glossary of Terms/Reference
-
+	 1.1 Purpose
+	 
+	 1.2 Scope
+	 
+	 1.3 Glossary of Terms/Reference
+	 
 2. Architecture
 
-	2.1 Overview
+    2.1 Overview
+    
+	2.1 Representation
 	
-	2.2 Representation
+	2.2 Constraints
 	
 3. Use-Case View
 
 	3.1 Architecturally Significant Use Cases
-
+	
 4. Logical View
 
-	4.1 Data Entities
-	
-	4.2 Use-Case Realizations
-	
-6. Process View
+   4.1 Data Entities
+   
+   4.2 Use-Case Realizations
+   
+5. Process View
 
-7. Deployment View
+6. Deployment View
 
 
 
@@ -157,9 +159,9 @@ Development team members, scrum masters, business team members
 
 Additional use case realizations TBD
 
-## 6. Process View
+## 5. Process View
 TBD
 
-## 7. Deployment View
+## 6. Deployment View
 TBD
 

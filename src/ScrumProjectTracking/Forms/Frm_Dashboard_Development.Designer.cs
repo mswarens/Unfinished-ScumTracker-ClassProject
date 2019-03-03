@@ -31,6 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.progressBar4 = new ScrumProjectTracking.ProgressBar();
+            this.progressBar3 = new ScrumProjectTracking.ProgressBar();
+            this.pbMyStoryPoints = new ScrumProjectTracking.ProgressBar();
+            this.pbMyBackLogTasks = new ScrumProjectTracking.ProgressBar();
             this.lbTeamStoryPoints = new System.Windows.Forms.Label();
             this.lbTeamBacklogTasks = new System.Windows.Forms.Label();
             this.lbMyStoryPoints = new System.Windows.Forms.Label();
@@ -57,13 +61,9 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAddNewTask = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvCurrentSprintTasks = new System.Windows.Forms.DataGridView();
-            this.btnAddNewTask = new System.Windows.Forms.Button();
-            this.progressBar4 = new ScrumProjectTracking.ProgressBar();
-            this.progressBar3 = new ScrumProjectTracking.ProgressBar();
-            this.pbMyStoryPoints = new ScrumProjectTracking.ProgressBar();
-            this.pbMyBackLogTasks = new ScrumProjectTracking.ProgressBar();
             this.View = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ProjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,10 +101,42 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(0, 4);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(383, 216);
             this.panel3.TabIndex = 0;
+            // 
+            // progressBar4
+            // 
+            this.progressBar4.Location = new System.Drawing.Point(102, 160);
+            this.progressBar4.Margin = new System.Windows.Forms.Padding(1);
+            this.progressBar4.Name = "progressBar4";
+            this.progressBar4.Size = new System.Drawing.Size(218, 22);
+            this.progressBar4.TabIndex = 24;
+            // 
+            // progressBar3
+            // 
+            this.progressBar3.Location = new System.Drawing.Point(102, 135);
+            this.progressBar3.Margin = new System.Windows.Forms.Padding(1);
+            this.progressBar3.Name = "progressBar3";
+            this.progressBar3.Size = new System.Drawing.Size(218, 22);
+            this.progressBar3.TabIndex = 23;
+            // 
+            // pbMyStoryPoints
+            // 
+            this.pbMyStoryPoints.Location = new System.Drawing.Point(102, 86);
+            this.pbMyStoryPoints.Margin = new System.Windows.Forms.Padding(1);
+            this.pbMyStoryPoints.Name = "pbMyStoryPoints";
+            this.pbMyStoryPoints.Size = new System.Drawing.Size(218, 22);
+            this.pbMyStoryPoints.TabIndex = 22;
+            // 
+            // pbMyBackLogTasks
+            // 
+            this.pbMyBackLogTasks.Location = new System.Drawing.Point(102, 61);
+            this.pbMyBackLogTasks.Margin = new System.Windows.Forms.Padding(1);
+            this.pbMyBackLogTasks.Name = "pbMyBackLogTasks";
+            this.pbMyBackLogTasks.Size = new System.Drawing.Size(218, 22);
+            this.pbMyBackLogTasks.TabIndex = 21;
             // 
             // lbTeamStoryPoints
             // 
@@ -293,7 +325,7 @@
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.label17);
             this.panel4.Location = new System.Drawing.Point(0, 223);
-            this.panel4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel4.Margin = new System.Windows.Forms.Padding(1);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(382, 79);
             this.panel4.TabIndex = 1;
@@ -384,6 +416,16 @@
             this.panel2.Size = new System.Drawing.Size(571, 298);
             this.panel2.TabIndex = 2;
             // 
+            // btnAddNewTask
+            // 
+            this.btnAddNewTask.Location = new System.Drawing.Point(457, 11);
+            this.btnAddNewTask.Name = "btnAddNewTask";
+            this.btnAddNewTask.Size = new System.Drawing.Size(106, 23);
+            this.btnAddNewTask.TabIndex = 2;
+            this.btnAddNewTask.Text = "Add New Task";
+            this.btnAddNewTask.UseVisualStyleBackColor = true;
+            this.btnAddNewTask.Click += new System.EventHandler(this.btnAddNewTask_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -422,48 +464,6 @@
             this.dgvCurrentSprintTasks.Size = new System.Drawing.Size(556, 254);
             this.dgvCurrentSprintTasks.TabIndex = 0;
             this.dgvCurrentSprintTasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCurrentSprintTasks_CellContentClick);
-            // 
-            // btnAddNewTask
-            // 
-            this.btnAddNewTask.Location = new System.Drawing.Point(457, 11);
-            this.btnAddNewTask.Name = "btnAddNewTask";
-            this.btnAddNewTask.Size = new System.Drawing.Size(106, 23);
-            this.btnAddNewTask.TabIndex = 2;
-            this.btnAddNewTask.Text = "Add New Task";
-            this.btnAddNewTask.UseVisualStyleBackColor = true;
-            this.btnAddNewTask.Click += new System.EventHandler(this.btnAddNewTask_Click);
-            // 
-            // progressBar4
-            // 
-            this.progressBar4.Location = new System.Drawing.Point(102, 160);
-            this.progressBar4.Margin = new System.Windows.Forms.Padding(1);
-            this.progressBar4.Name = "progressBar4";
-            this.progressBar4.Size = new System.Drawing.Size(218, 22);
-            this.progressBar4.TabIndex = 24;
-            // 
-            // progressBar3
-            // 
-            this.progressBar3.Location = new System.Drawing.Point(102, 135);
-            this.progressBar3.Margin = new System.Windows.Forms.Padding(1);
-            this.progressBar3.Name = "progressBar3";
-            this.progressBar3.Size = new System.Drawing.Size(218, 22);
-            this.progressBar3.TabIndex = 23;
-            // 
-            // pbMyStoryPoints
-            // 
-            this.pbMyStoryPoints.Location = new System.Drawing.Point(102, 86);
-            this.pbMyStoryPoints.Margin = new System.Windows.Forms.Padding(1);
-            this.pbMyStoryPoints.Name = "pbMyStoryPoints";
-            this.pbMyStoryPoints.Size = new System.Drawing.Size(218, 22);
-            this.pbMyStoryPoints.TabIndex = 22;
-            // 
-            // pbMyBackLogTasks
-            // 
-            this.pbMyBackLogTasks.Location = new System.Drawing.Point(102, 61);
-            this.pbMyBackLogTasks.Margin = new System.Windows.Forms.Padding(1);
-            this.pbMyBackLogTasks.Name = "pbMyBackLogTasks";
-            this.pbMyBackLogTasks.Size = new System.Drawing.Size(218, 22);
-            this.pbMyBackLogTasks.TabIndex = 21;
             // 
             // View
             // 
@@ -538,7 +538,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_Dashboard_Development";
@@ -546,6 +546,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Scrum Project Tracking System";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Dashboard_Development_FormClosed);
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

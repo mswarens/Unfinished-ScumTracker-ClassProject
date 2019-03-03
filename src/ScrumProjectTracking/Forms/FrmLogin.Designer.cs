@@ -1,4 +1,4 @@
-﻿namespace ScrumProjectTracking
+namespace ScrumProjectTracking
 {
     partial class FrmLogin
     {
