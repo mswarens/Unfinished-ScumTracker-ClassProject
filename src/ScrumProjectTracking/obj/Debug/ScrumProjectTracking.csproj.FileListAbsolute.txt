@@ -326,8 +326,6 @@ C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\bin\Debug\
 C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csprojAssemblyReference.cache
 C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.exe.config
 C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Frm_Dashboard_Development.resources
-C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Forms.FrmMain.resources
-C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Forms.TaskDetail.resources
 C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.ProgressBar.resources
 C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Properties.Resources.resources
 C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csproj.GenerateResource.cache
@@ -664,3 +662,7 @@ C:\Users\qscot\Documents\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\o
 C:\Users\qscot\Documents\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.pdb
 C:\Users\qscot\Documents\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Main.FrmMain.resources
 C:\Users\qscot\Documents\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Sprints.SprintTaskDetail.TaskDetail.resources
+C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Main.FrmMain.resources
+C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Sprints.SprintTaskDetail.TaskDetail.resources
+C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\bin\Debug\BCrypt.Net-Next.xml
