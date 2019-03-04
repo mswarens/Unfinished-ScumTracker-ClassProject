@@ -167,6 +167,15 @@
     <Compile Include="Main\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sprints\SprintsList\ISprintsListDataAccess.cs" />
+    <Compile Include="Sprints\SprintsList\SprintsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sprints\SprintsList\SprintsList.Designer.cs">
+      <DependentUpon>SprintsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sprints\SprintsList\SprintsListDBAccess.cs" />
+    <Compile Include="Sprints\SprintsList\SprintsListItem.cs" />
     <Compile Include="Sprints\SprintTaskDetail\IFrmSprintTaskDetailDataAccess.cs" />
     <Compile Include="Sprints\SprintTaskDetail\FrmSprintTaskDetailDBAccess.cs" />
     <Compile Include="Sprints\SprintTaskDetail\ProjectListItem.cs" />
@@ -200,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sprints\SprintsList\SprintsList.resx">
+      <DependentUpon>SprintsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sprints\SprintTaskDetail\TaskDetail.resx">
       <DependentUpon>TaskDetail.cs</DependentUpon>

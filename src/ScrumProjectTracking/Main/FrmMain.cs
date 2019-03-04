@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ScrumProjectTracking.Forms;
 namespace ScrumProjectTracking.Main
 {
     public partial class FrmMain : Form
@@ -43,10 +44,13 @@ namespace ScrumProjectTracking.Main
                 MessageBox.Show("Additional windows cannot be opened.  Please close an existing window and try the operation again");
                 return;
             }
+            
             form.MdiParent = this;
             TabPage newtab = new TabPage(form.Text);
             newtab.Controls.Add(form);
+           
             tabControl1.Controls.Add(newtab);
+            
             tabControl1.SelectedIndex = tabControl1.TabCount - 1;
             if (tabControl1.TabCount == 1)
             {
@@ -62,6 +66,17 @@ namespace ScrumProjectTracking.Main
             tabControl1.TabPages.Remove(tabControl1.SelectedTab);
             if (tabControl1.TabPages.Count == 0)
                 closeCurrentTabToolStripMenuItem.Visible = false;
+        }
+
+        private void sprintTrackingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ScrumProjectTracking.Sprints.SprintsList.SprintsList sprintList = new Sprints.SprintsList.SprintsList();
+            LoadChildForm(sprintList);
+        }
+
+        public void refreshDashboard()
+        {
+            Dashboard.fillSprintData();
         }
     }
 }

@@ -35,8 +35,8 @@
             this.projectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.closeCurrentTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.mainFormMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,8 +64,9 @@
             // sprintTrackingToolStripMenuItem
             // 
             this.sprintTrackingToolStripMenuItem.Name = "sprintTrackingToolStripMenuItem";
-            this.sprintTrackingToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.sprintTrackingToolStripMenuItem.Text = "Sprint Tracking";
+            this.sprintTrackingToolStripMenuItem.Size = new System.Drawing.Size(55, 22);
+            this.sprintTrackingToolStripMenuItem.Text = "Sprints";
+            this.sprintTrackingToolStripMenuItem.Click += new System.EventHandler(this.sprintTrackingToolStripMenuItem_Click);
             // 
             // maintenanceToolStripMenuItem
             // 
@@ -95,16 +96,6 @@
             this.usersToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.usersToolStripMenuItem1.Text = "Users";
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Location = new System.Drawing.Point(0, 22);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(100, 52);
-            this.tabControl1.TabIndex = 3;
-            this.tabControl1.Visible = false;
-            // 
             // closeCurrentTabToolStripMenuItem
             // 
             this.closeCurrentTabToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -114,6 +105,17 @@
             this.closeCurrentTabToolStripMenuItem.Visible = false;
             this.closeCurrentTabToolStripMenuItem.Click += new System.EventHandler(this.closeCurrentTabToolStripMenuItem_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(0, 22);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(100, 52);
+            this.tabControl1.TabIndex = 3;
+            this.tabControl1.Visible = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,6 +123,7 @@
             this.ClientSize = new System.Drawing.Size(836, 450);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.mainFormMenu);
+            this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMain";

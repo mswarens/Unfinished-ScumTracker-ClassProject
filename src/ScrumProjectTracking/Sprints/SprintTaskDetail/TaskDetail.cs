@@ -29,6 +29,8 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
                 AssignedUserID.ValueMember = "UserID";
                 AssignedUserID.Enabled = true;
             }
+            if (currentTask.TaskStatus != "Cancelled")
+                trackBar1.Enabled = true;
         }
 
         public TaskDetail()
@@ -75,7 +77,10 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
             lbCompletionPercent.Text = trackBar1.Value.ToString(@"#\%");
-            
+            if (trackBar1.Value == trackBar1.Maximum)
+                currentTask.TaskStatus = "Completed";
+            else
+                currentTask.TaskStatus = "Pending";
         }
 
      
@@ -124,8 +129,43 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
 
                     context.saveSprintTask();
                     sprintTaskBindingSource.ResetBindings(false);
+                    ((ScrumProjectTracking.Main.FrmMain)this.ParentForm).refreshDashboard();
                 }
             }
+        }
+
+    
+
+        private void TeamID_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (TeamID.SelectedValue != null)
+            {
+                AssignedUserID.DataSource = context.getUserList((int)TeamID.SelectedValue).ToList();
+                AssignedUserID.DisplayMember = "DisplayName";
+                AssignedUserID.ValueMember = "UserID";
+                AssignedUserID.Enabled = true;
+                AssignedUserID.SelectedIndex = -1;
+
+            }
+            else
+            {
+
+                AssignedUserID.Enabled = false;
+                AssignedUserID.SelectedIndex = -1;
+
+            }
+        }
+
+        private void taskStatusComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (taskStatusComboBox.SelectedItem.ToString() == "Cancelled")
+            {
+                trackBar1.Enabled = false;
+                currentTask.TaskCompletionPercent = 0;
+
+            }
+            else
+                trackBar1.Enabled = true;
         }
     }
 }

@@ -87,6 +87,14 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
                 addValidationError("Task Name", "The value must not be blank.");
             if ((st.TaskStatus ?? "").Trim() == "")
                 addValidationError("Status", "The value must not be blank.");
+            if (st.TeamID == null)
+                addValidationError("Team", "The value must not be blank.");
+            if (st.SprintID == 0)
+                addValidationError("Sprint", "The value must not be blank.");
+            if (st.ProjectID == 0)
+                addValidationError("Project", "The value must not be blank.");
+            if ((st.Description ?? "").Trim() == "")
+                addValidationError("Description", "The value must not be blank.");
             return (validationErrors.Count() > 0) ? true: false;
         }
 
