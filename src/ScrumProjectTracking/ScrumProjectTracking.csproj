@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=3.1.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.Net-Next.3.1.3\lib\net452\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -99,6 +102,8 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.SqlClient, Version=4.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Data.SqlClient.4.6.0\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
@@ -135,12 +140,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataModels\Project.cs" />
-    <Compile Include="DataModels\ScrumContext.cs" />
-    <Compile Include="DataModels\Sprint.cs" />
-    <Compile Include="DataModels\SprintTask.cs" />
-    <Compile Include="DataModels\Team.cs" />
-    <Compile Include="DataModels\User.cs" />
+    <Compile Include="DataAccess\Project.cs" />
+    <Compile Include="DataAccess\ScrumContext.cs" />
+    <Compile Include="DataAccess\ScrumDBSource.cs" />
+    <Compile Include="DataAccess\ScrumTestSource.cs" />
+    <Compile Include="DataAccess\Sprint.cs" />
+    <Compile Include="DataAccess\SprintTask.cs" />
+    <Compile Include="DataAccess\Team.cs" />
+    <Compile Include="DataAccess\User.cs" />
     <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,18 +160,37 @@
     <Compile Include="Forms\Frm_Dashboard_Development.Designer.cs">
       <DependentUpon>Frm_Dashboard_Development.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmMain.cs">
+    <Compile Include="Forms\ValidationError.cs" />
+    <Compile Include="Main\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmMain.Designer.cs">
+    <Compile Include="Main\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TaskDetail.cs">
+    <Compile Include="Sprints\SprintsList\ISprintsListDataAccess.cs" />
+    <Compile Include="Sprints\SprintsList\SprintsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TaskDetail.Designer.cs">
+    <Compile Include="Sprints\SprintsList\SprintsList.Designer.cs">
+      <DependentUpon>SprintsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sprints\SprintsList\SprintsListDBAccess.cs" />
+    <Compile Include="Sprints\SprintsList\SprintsListItem.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\IFrmSprintTaskDetailDataAccess.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\FrmSprintTaskDetailDBAccess.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\ProjectListItem.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\SprintListItem.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\TaskDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sprints\SprintTaskDetail\TaskDetail.Designer.cs">
       <DependentUpon>TaskDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\IDataAccess.cs" />
+    <Compile Include="Main\FrmMainDBDataAccess.cs" />
+    <Compile Include="Main\IFrmMainDataAccess.cs" />
+    <Compile Include="Main\PendingSprintTask.cs" />
+    <Compile Include="Main\SprintInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgressBar.cs">
       <SubType>UserControl</SubType>
@@ -173,16 +199,21 @@
       <DependentUpon>ProgressBar.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\TeamListItem.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\UserListItem.cs" />
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Dashboard_Development.resx">
       <DependentUpon>Frm_Dashboard_Development.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmMain.resx">
+    <EmbeddedResource Include="Main\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TaskDetail.resx">
+    <EmbeddedResource Include="Sprints\SprintsList\SprintsList.resx">
+      <DependentUpon>SprintsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sprints\SprintTaskDetail\TaskDetail.resx">
       <DependentUpon>TaskDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressBar.resx">
@@ -218,5 +249,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

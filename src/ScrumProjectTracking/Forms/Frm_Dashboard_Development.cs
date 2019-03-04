@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ScrumProjectTracking.DataModels;
-using ScrumProjectTracking.Forms;
+using ScrumProjectTracking.Main;
+using ScrumProjectTracking.Sprints.SprintTaskDetail;
 namespace ScrumProjectTracking
 {
     public partial class Frm_Dashboard_Development : Form
     {
+        IFrmMainDataAccess dbSource;
+
         FrmMain parentForm;
         public Frm_Dashboard_Development(FrmMain parent)
         {
@@ -26,76 +28,61 @@ namespace ScrumProjectTracking
             dgvCurrentSprintTasks.Size = new Size(panel2.Width - dgvCurrentSprintTasks.Location.X - 5, dgvCurrentSprintTasks.Height);
             dgvCurrentSprintTasks.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
             dgvCurrentSprintTasks.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
+            dgvCurrentSprintTasks.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            
+            dgvCurrentSprintTasks.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.SystemColors.Menu;
+            
+           
             fillSprintData();
 
         }
 
-       private void fillSprintData ()
+
+
+
+
+
+        
+
+
+       public void fillSprintData ()
         {
-            using (ScrumContext scrumContext = new ScrumContext())
-            {
-                var sprintInfo = from s in scrumContext.Sprints
-                              where s.BeginDate <= DateTime.Today && s.EndDate >= DateTime.Today
-                              select new { s.SprintName, s.BeginDate, s.EndDate, s.SprintID };
-                if (sprintInfo.Count() > 0)
+            using (dbSource = new FrmMainDBDataAccess()) {
+                SprintInfo currentSprint = dbSource.getCurrentSprintInfo();
+                SprintInfo nextSprint = dbSource.getNextSprintInfo();
+                if (currentSprint != null)
                 {
-                    lbSprintName.Text = sprintInfo.First().SprintName;
-                    lbSprintBeginDate.Text = sprintInfo.First().BeginDate.ToShortDateString();
-                    lbSprintEndDate.Text = sprintInfo.First().EndDate.ToShortDateString();
-
+                    lbSprintName.Text = currentSprint.SprintName;
+                    lbSprintBeginDate.Text = currentSprint.BeginDate.ToShortDateString();
+                    lbSprintEndDate.Text = currentSprint.EndDate.ToShortDateString();
                     dgvCurrentSprintTasks.Columns[0].Width = 35;
-                    
-                    var pendingTasks = (from s in scrumContext.SprintTasks
-                                        join p in scrumContext.Projects on s.ProjectID equals p.ProjectID
-                                        where s.TaskStatus == "Pending" && s.SprintID == sprintInfo.First().SprintID
-                                        orderby p.ProjectName, s.TaskName
-                                        select new { s.TaskName, s.SprintTaskID, p.ProjectName, s.TaskCompletionPercent, s.StoryPoints}
-                                        );
                     dgvCurrentSprintTasks.AutoGenerateColumns = false;
-                    dgvCurrentSprintTasks.DataSource = pendingTasks.ToList();
-
-                    var totalTasks = (from s in scrumContext.SprintTasks
-                                      where s.SprintID == sprintInfo.First().SprintID
-                                      select s).Count();
-
-                    var totalStoryPoints = (from s in scrumContext.SprintTasks
-                                            where s.SprintID == sprintInfo.First().SprintID
-                                            select s.StoryPoints).Sum();
-
-
-
+                    List<PendingSprintTask> pendingTasks = dbSource.getPendingTasks("SSHROUT", currentSprint.SprintID);
+                    dgvCurrentSprintTasks.DataSource = pendingTasks;
+                    int totalTasks = dbSource.getTotalTasks("SSHROUT", currentSprint.SprintID);
+                    int totalStoryPoints = dbSource.getTotalStoryPoints("SSHROUT", currentSprint.SprintID);
                     pbMyBackLogTasks.setValue(((double)totalTasks - (double)pendingTasks.Count()) / (double)totalTasks);
-                    
+
                     lbMyBackLogTasks.Text = (totalTasks - pendingTasks.Count()).ToString() + "/" + totalTasks.ToString();
-                    pbMyStoryPoints.setValue (((((double)totalStoryPoints - (double)pendingTasks.Sum(a => a.StoryPoints)) / (double)totalStoryPoints)));
-                    lbMyStoryPoints.Text = (totalStoryPoints - pendingTasks.Sum(a => a.StoryPoints)).ToString() + "/" +  totalStoryPoints.ToString();
-                  
-
-
-
+                    pbMyStoryPoints.setValue(((((double)totalStoryPoints - (double)pendingTasks.Sum(a => a.StoryPoints)) / (double)totalStoryPoints)));
+                    lbMyStoryPoints.Text = (totalStoryPoints - pendingTasks.Sum(a => a.StoryPoints)).ToString() + "/" + totalStoryPoints.ToString();
                 }
-
-                var nextSprintInfo = (from s in scrumContext.Sprints
-                                      where s.BeginDate > DateTime.Today
-                                      orderby s.BeginDate
-                                      select new { s.SprintName, s.BeginDate, s.EndDate }).Take(1);
-                if (nextSprintInfo.Count() > 0)
+                if (nextSprint != null)
                 {
-                    lbNextSprintName.Text = nextSprintInfo.First().SprintName;
-                    lbNextSprintBeginDate.Text = nextSprintInfo.First().BeginDate.ToShortDateString();
-                    lbNextSprintEndDate.Text = nextSprintInfo.First().EndDate.ToShortDateString();
+                    lbNextSprintName.Text = nextSprint.SprintName;
+                    lbNextSprintBeginDate.Text = nextSprint.BeginDate.ToShortDateString();
+                    lbNextSprintEndDate.Text = nextSprint.EndDate.ToShortDateString();
                 }
-                
-                
             }
+           
         }
 
         private void dgvCurrentSprintTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
             {
-                TaskDetail newTask = new TaskDetail((int)dgvCurrentSprintTasks.Rows[e.RowIndex].Cells[5].Value);
-                parentForm.LoadChildForm(newTask);
+                TaskDetail openTask = new TaskDetail((int)dgvCurrentSprintTasks.CurrentRow.Cells[5].Value);
+                parentForm.LoadChildForm(openTask);
             }
         }
 
@@ -103,6 +90,16 @@ namespace ScrumProjectTracking
         {
             TaskDetail newTask = new TaskDetail();
             parentForm.LoadChildForm(newTask); 
+        }
+
+        private void Frm_Dashboard_Development_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dbSource.Dispose();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

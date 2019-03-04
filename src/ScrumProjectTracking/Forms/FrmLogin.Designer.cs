@@ -100,9 +100,9 @@
             this.FrmLoginMsg.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
             this.FrmLoginMsg.Location = new System.Drawing.Point(208, 441);
             this.FrmLoginMsg.Name = "FrmLoginMsg";
-            this.FrmLoginMsg.Size = new System.Drawing.Size(369, 17);
+            this.FrmLoginMsg.Size = new System.Drawing.Size(354, 17);
             this.FrmLoginMsg.TabIndex = 7;
-            this.FrmLoginMsg.Text = "Press Login To Continue, No Username/Password Required";
+            this.FrmLoginMsg.Text = "Username: MSWARENS or SSHROUT Password: test123";
             // 
             // FrmLogin
             // 

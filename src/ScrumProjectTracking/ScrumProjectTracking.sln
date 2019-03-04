@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrumProjectTracking", "ScrumProjectTracking.csproj", "{A30ED211-D73D-405C-8F09-78281A36E599}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrumProjectTrackingTest", "..\ScrumProjectTrackingTest\ScrumProjectTrackingTest.csproj", "{59B1026A-82F8-419C-A30F-F0E9016D0711}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A30ED211-D73D-405C-8F09-78281A36E599}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A30ED211-D73D-405C-8F09-78281A36E599}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A30ED211-D73D-405C-8F09-78281A36E599}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B1026A-82F8-419C-A30F-F0E9016D0711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B1026A-82F8-419C-A30F-F0E9016D0711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B1026A-82F8-419C-A30F-F0E9016D0711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B1026A-82F8-419C-A30F-F0E9016D0711}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
