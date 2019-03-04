@@ -10,5 +10,6 @@ namespace ScrumProjectTracking.Forms
     {
         public string FieldName { get; set; }
         public string ErrorMessage { get; set; }
+
     }
 }
