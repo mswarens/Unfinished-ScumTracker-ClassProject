@@ -831,3 +831,6 @@ C:\Users\qscot\Documents\ScrumBuckets - Copy (2)\TheScrumBuckets\src\ScrumProjec
 C:\Users\qscot\Documents\ScrumBuckets - Copy (2)\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\qscot\Documents\ScrumBuckets - Copy (2)\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.ValueTuple.xml
 C:\Users\qscot\Documents\ScrumBuckets - Copy (2)\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csproj.CopyComplete
+C:\Users\qscot\Documents\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csprojAssemblyReference.cache
+C:\Users\qscot\Documents\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\qscot\Documents\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\BCrypt.Net-Next.xml
