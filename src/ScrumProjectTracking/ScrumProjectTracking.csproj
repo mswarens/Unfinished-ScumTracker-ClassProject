@@ -143,9 +143,6 @@
     <Compile Include="DataAccess\SprintTask.cs" />
     <Compile Include="DataAccess\Team.cs" />
     <Compile Include="DataAccess\User.cs" />
-    <Compile Include="Forms\ChildForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
