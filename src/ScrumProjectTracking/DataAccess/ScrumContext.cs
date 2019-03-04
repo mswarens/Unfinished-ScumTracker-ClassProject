@@ -20,8 +20,6 @@ namespace ScrumProjectTracking.DataAccess
         {
             dbContextOptionsBuilder.UseSqlServer("Data Source=den1.mssql7.gear.host;Initial Catalog=scrumbuckets;Persist Security Info=True;User ID=scrumbuckets;Password=scrum8080!;MultipleActiveResultSets=True");
             base.OnConfiguring(dbContextOptionsBuilder);
-
-
         }
 
     
