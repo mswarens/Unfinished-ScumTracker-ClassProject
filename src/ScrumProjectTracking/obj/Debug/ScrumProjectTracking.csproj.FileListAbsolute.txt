@@ -664,3 +664,4 @@ C:\Users\qscot\Documents\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\o
 C:\Users\qscot\Documents\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.pdb
 C:\Users\qscot\Documents\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Main.FrmMain.resources
 C:\Users\qscot\Documents\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Sprints.SprintTaskDetail.TaskDetail.resources
+C:\Users\qscot\Documents\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Sprints.SprintsList.SprintsList.resources
