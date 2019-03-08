@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ScrumProjectTracking.DataModels;
+using ScrumProjectTracking.DataAccess;
 namespace ScrumProjectTracking.Forms
 {
     public partial class TaskDetail : Form

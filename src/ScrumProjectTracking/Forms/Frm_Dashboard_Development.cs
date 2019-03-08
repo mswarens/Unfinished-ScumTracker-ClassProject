@@ -57,10 +57,10 @@ namespace ScrumProjectTracking
                     lbSprintEndDate.Text = currentSprint.EndDate.ToShortDateString();
                     dgvCurrentSprintTasks.Columns[0].Width = 35;
                     dgvCurrentSprintTasks.AutoGenerateColumns = false;
-                    List<PendingSprintTask> pendingTasks = dbSource.getPendingTasks("SSHROUT", currentSprint.SprintID);
+                    List<PendingSprintTask> pendingTasks = dbSource.getPendingTasks(CurrentUser.UserID, currentSprint.SprintID);
                     dgvCurrentSprintTasks.DataSource = pendingTasks;
-                    int totalTasks = dbSource.getTotalTasks("SSHROUT", currentSprint.SprintID);
-                    int totalStoryPoints = dbSource.getTotalStoryPoints("SSHROUT", currentSprint.SprintID);
+                    int totalTasks = dbSource.getTotalTasks(CurrentUser.UserID, currentSprint.SprintID);
+                    int totalStoryPoints = dbSource.getTotalStoryPoints(CurrentUser.UserID, currentSprint.SprintID);
                     pbMyBackLogTasks.setValue(((double)totalTasks - (double)pendingTasks.Count()) / (double)totalTasks);
 
                     lbMyBackLogTasks.Text = (totalTasks - pendingTasks.Count()).ToString() + "/" + totalTasks.ToString();

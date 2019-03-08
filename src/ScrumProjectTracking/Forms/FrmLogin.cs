@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Crypt = BCrypt.Net.BCrypt;
 using ScrumProjectTracking.DataAccess;
-using ScrumProjectTracking.Forms;
+using ScrumProjectTracking.Main;
+
 
 namespace ScrumProjectTracking
 {
@@ -18,28 +19,21 @@ namespace ScrumProjectTracking
 
     public partial class FrmLogin : Form
     {
-
+        
         bool closedCorrectly = false;
         public FrmLogin()
         {
             InitializeComponent();
+            
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
             string userN = loginUsername.Text;
             IDataAccess dc = new ScrumDBSource();
-            var userNFromTable = from u in dc.Users where u.UserID == userN select u.UserID;
+            var userNFromTable = from u in dc.Users where u.UserID == userN select u;
 
             if (userNFromTable.FirstOrDefault() != null)
             {     
@@ -47,7 +41,9 @@ namespace ScrumProjectTracking
                 var hashTest = (from u in dc.Users where u.UserID == userN select u.PasswordHash).ToArray();
                 if (Crypt.Verify(passW, hashTest[0]))
                 {
-                    Console.WriteLine("Test");
+                    CurrentUser.authenticated = true;
+                    CurrentUser.UserID = userNFromTable.First().UserID;
+                    CurrentUser.TeamID = userNFromTable.First().TeamID;
                     closedCorrectly = true;
                     this.Close();
                 }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.mainFormMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sprintTrackingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,8 +37,8 @@
             this.projectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeCurrentTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.mainFormMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,8 +48,7 @@
             this.mainFormMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.sprintTrackingToolStripMenuItem,
-            this.maintenanceToolStripMenuItem,
-            this.closeCurrentTabToolStripMenuItem});
+            this.maintenanceToolStripMenuItem});
             this.mainFormMenu.Location = new System.Drawing.Point(0, 0);
             this.mainFormMenu.Name = "mainFormMenu";
             this.mainFormMenu.Padding = new System.Windows.Forms.Padding(2, 1, 0, 1);
@@ -96,18 +97,11 @@
             this.usersToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.usersToolStripMenuItem1.Text = "Users";
             // 
-            // closeCurrentTabToolStripMenuItem
-            // 
-            this.closeCurrentTabToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.closeCurrentTabToolStripMenuItem.Name = "closeCurrentTabToolStripMenuItem";
-            this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.closeCurrentTabToolStripMenuItem.Text = "Close Current Tab";
-            this.closeCurrentTabToolStripMenuItem.Visible = false;
-            this.closeCurrentTabToolStripMenuItem.Click += new System.EventHandler(this.closeCurrentTabToolStripMenuItem_Click);
-            // 
             // tabControl1
             // 
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.ImageList = this.imageList1;
             this.tabControl1.Location = new System.Drawing.Point(0, 22);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
@@ -115,6 +109,14 @@
             this.tabControl1.Size = new System.Drawing.Size(100, 52);
             this.tabControl1.TabIndex = 3;
             this.tabControl1.Visible = false;
+            this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
+            this.tabControl1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseUp);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "closeTab");
             // 
             // FrmMain
             // 
@@ -147,6 +149,6 @@
         private System.Windows.Forms.ToolStripMenuItem teamsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.ToolStripMenuItem closeCurrentTabToolStripMenuItem;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

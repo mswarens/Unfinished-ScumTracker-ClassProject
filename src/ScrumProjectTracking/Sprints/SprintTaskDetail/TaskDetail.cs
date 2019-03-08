@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ScrumProjectTracking.DataAccess;
 using ScrumProjectTracking.Forms;
+using ScrumProjectTracking.Main;
 namespace ScrumProjectTracking.Sprints.SprintTaskDetail
 {
     public partial class TaskDetail : Form
@@ -40,7 +41,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
             currentTask = context.getNewSprintTask();
             FillDropDownSelections();
             sprintTaskBindingSource.DataSource = currentTask;
-        
+            trackBar1.Enabled = true;
 
         }
 
@@ -119,12 +120,12 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
                 {
                     if (currentTask.AddedBy == null)
                     {
-                        currentTask.AddedBy = "CURRUSER";
+                        currentTask.AddedBy = CurrentUser.UserID;
                         currentTask.AddedDateTime = DateTime.Now;
                         context.getDBContext.getContext.Add(currentTask);
 
                     }
-                    currentTask.UpdatedBy = "CURRUSER";
+                    currentTask.UpdatedBy = CurrentUser.UserID;
                     currentTask.UpdatedDateTime = DateTime.Now;
 
                     context.saveSprintTask();
