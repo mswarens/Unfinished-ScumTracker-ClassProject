@@ -236,7 +236,7 @@
             this.TaskName.MaxLength = 100;
             this.TaskName.Name = "TaskName";
             this.TaskName.Size = new System.Drawing.Size(288, 20);
-            this.TaskName.TabIndex = 2;
+            this.TaskName.TabIndex = 1;
             this.TaskName.TabStop = false;
             // 
             // SprintID
@@ -247,7 +247,7 @@
             this.SprintID.Margin = new System.Windows.Forms.Padding(0);
             this.SprintID.Name = "SprintID";
             this.SprintID.Size = new System.Drawing.Size(126, 21);
-            this.SprintID.TabIndex = 5;
+            this.SprintID.TabIndex = 6;
             // 
             // ProjectID
             // 
@@ -267,7 +267,7 @@
             this.TeamID.Margin = new System.Windows.Forms.Padding(0);
             this.TeamID.Name = "TeamID";
             this.TeamID.Size = new System.Drawing.Size(126, 21);
-            this.TeamID.TabIndex = 9;
+            this.TeamID.TabIndex = 8;
             // 
             // AssignedUserID
             // 
@@ -278,7 +278,7 @@
             this.AssignedUserID.Margin = new System.Windows.Forms.Padding(0);
             this.AssignedUserID.Name = "AssignedUserID";
             this.AssignedUserID.Size = new System.Drawing.Size(126, 21);
-            this.AssignedUserID.TabIndex = 11;
+            this.AssignedUserID.TabIndex = 9;
             this.AssignedUserID.Tag = "Sprint Task Detail";
             // 
             // groupBox1
@@ -312,7 +312,7 @@
             this.taskStatusComboBox.Margin = new System.Windows.Forms.Padding(0);
             this.taskStatusComboBox.Name = "taskStatusComboBox";
             this.taskStatusComboBox.Size = new System.Drawing.Size(126, 21);
-            this.taskStatusComboBox.TabIndex = 15;
+            this.taskStatusComboBox.TabIndex = 5;
             // 
             // descriptionTextBox
             // 
@@ -321,7 +321,7 @@
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(430, 107);
-            this.descriptionTextBox.TabIndex = 13;
+            this.descriptionTextBox.TabIndex = 2;
             // 
             // storyPointsTextBox
             // 
@@ -329,7 +329,7 @@
             this.storyPointsTextBox.Location = new System.Drawing.Point(100, 170);
             this.storyPointsTextBox.Name = "storyPointsTextBox";
             this.storyPointsTextBox.Size = new System.Drawing.Size(49, 20);
-            this.storyPointsTextBox.TabIndex = 14;
+            this.storyPointsTextBox.TabIndex = 3;
             // 
             // addedByTextBox
             // 
@@ -373,6 +373,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -400,7 +401,7 @@
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(263, 45);
             this.trackBar1.SmallChange = 5;
-            this.trackBar1.TabIndex = 20;
+            this.trackBar1.TabIndex = 4;
             this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
             // 
             // lbCompletionPercent
@@ -413,7 +414,7 @@
             // 
             // sprintTaskBindingSource
             // 
-            this.sprintTaskBindingSource.DataSource = typeof(ScrumProjectTracking.DataModels.SprintTask);
+            this.sprintTaskBindingSource.DataSource = typeof(ScrumProjectTracking.DataAccess.SprintTask);
             // 
             // TaskDetail
             // 

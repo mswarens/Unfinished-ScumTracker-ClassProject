@@ -43,6 +43,7 @@
             System.Windows.Forms.Label label5;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskDetail));
             this.SprintTaskID = new System.Windows.Forms.TextBox();
+            this.sprintTaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TaskName = new System.Windows.Forms.TextBox();
@@ -62,7 +63,6 @@
             this.lbCompletionPercent = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.sprintTaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             sprintIDLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             Team = new System.Windows.Forms.Label();
@@ -75,10 +75,10 @@
             addedDateTimeLabel = new System.Windows.Forms.Label();
             updatedDateTimeLabel = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // sprintIDLabel
@@ -219,6 +219,10 @@
             this.SprintTaskID.TabIndex = 0;
             this.SprintTaskID.TabStop = false;
             // 
+            // sprintTaskBindingSource
+            // 
+            this.sprintTaskBindingSource.DataSource = typeof(ScrumProjectTracking.DataAccess.SprintTask);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -264,7 +268,7 @@
             this.SprintID.Margin = new System.Windows.Forms.Padding(0);
             this.SprintID.Name = "SprintID";
             this.SprintID.Size = new System.Drawing.Size(126, 23);
-            this.SprintID.TabIndex = 5;
+            this.SprintID.TabIndex = 7;
             // 
             // ProjectID
             // 
@@ -276,7 +280,7 @@
             this.ProjectID.Margin = new System.Windows.Forms.Padding(0);
             this.ProjectID.Name = "ProjectID";
             this.ProjectID.Size = new System.Drawing.Size(126, 23);
-            this.ProjectID.TabIndex = 7;
+            this.ProjectID.TabIndex = 8;
             // 
             // TeamID
             // 
@@ -303,7 +307,7 @@
             this.AssignedUserID.Margin = new System.Windows.Forms.Padding(0);
             this.AssignedUserID.Name = "AssignedUserID";
             this.AssignedUserID.Size = new System.Drawing.Size(126, 23);
-            this.AssignedUserID.TabIndex = 11;
+            this.AssignedUserID.TabIndex = 10;
             this.AssignedUserID.Tag = "Sprint Task Detail";
             // 
             // groupBox1
@@ -340,7 +344,7 @@
             this.taskStatusComboBox.Margin = new System.Windows.Forms.Padding(0);
             this.taskStatusComboBox.Name = "taskStatusComboBox";
             this.taskStatusComboBox.Size = new System.Drawing.Size(126, 23);
-            this.taskStatusComboBox.TabIndex = 15;
+            this.taskStatusComboBox.TabIndex = 6;
             this.taskStatusComboBox.SelectionChangeCommitted += new System.EventHandler(this.taskStatusComboBox_SelectionChangeCommitted);
             // 
             // descriptionTextBox
@@ -351,7 +355,7 @@
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(420, 107);
-            this.descriptionTextBox.TabIndex = 13;
+            this.descriptionTextBox.TabIndex = 3;
             // 
             // storyPointsTextBox
             // 
@@ -360,7 +364,7 @@
             this.storyPointsTextBox.Location = new System.Drawing.Point(110, 170);
             this.storyPointsTextBox.Name = "storyPointsTextBox";
             this.storyPointsTextBox.Size = new System.Drawing.Size(49, 23);
-            this.storyPointsTextBox.TabIndex = 14;
+            this.storyPointsTextBox.TabIndex = 4;
             // 
             // addedByTextBox
             // 
@@ -416,7 +420,7 @@
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(263, 45);
             this.trackBar1.SmallChange = 5;
-            this.trackBar1.TabIndex = 20;
+            this.trackBar1.TabIndex = 5;
             this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
             // 
             // lbCompletionPercent
@@ -429,6 +433,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -446,10 +451,6 @@
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.saveToolStripButton.Text = "&Save";
             this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
-            // 
-            // sprintTaskBindingSource
-            // 
-            this.sprintTaskBindingSource.DataSource = typeof(ScrumProjectTracking.DataAccess.SprintTask);
             // 
             // TaskDetail
             // 
@@ -486,12 +487,12 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Sprint Task Detail";
+            ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
