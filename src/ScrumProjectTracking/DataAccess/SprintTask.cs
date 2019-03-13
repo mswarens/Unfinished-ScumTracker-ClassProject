@@ -14,7 +14,7 @@ namespace ScrumProjectTracking.DataAccess
         public int SprintTaskID { get; set; }
         public int ProjectID { get; set; }
         public int SprintID { get; set; }
-        public int? TeamID { get; set; }
+        public int TeamID { get; set; }
         public string AssignedUserID { get; set; }
         public string TaskName { get; set; }
         public string TaskStatus { get; set; }

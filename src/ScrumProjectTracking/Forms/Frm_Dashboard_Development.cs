@@ -14,18 +14,17 @@ namespace ScrumProjectTracking
     public partial class Frm_Dashboard_Development : Form
     {
         IFrmMainDataAccess dbSource;
-
         FrmMain parentForm;
         public Frm_Dashboard_Development(FrmMain parent)
         {
             InitializeComponent();
             parentForm = parent;
+            
         }
 
         private void Form_Main_Load(object sender, EventArgs e)
         {
-            panel2.Size = new Size(this.Width - panel2.Location.X, panel2.Height);
-            dgvCurrentSprintTasks.Size = new Size(panel2.Width - dgvCurrentSprintTasks.Location.X - 5, dgvCurrentSprintTasks.Height);
+           
             dgvCurrentSprintTasks.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
             dgvCurrentSprintTasks.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
             dgvCurrentSprintTasks.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -34,11 +33,18 @@ namespace ScrumProjectTracking
             
            
             fillSprintData();
-
+            resizeWindow();
         }
 
 
-
+        public void resizeWindow ()
+        {
+           
+            panel2.Size = new Size(parentForm.Width - panel2.Location.X - 25, panel2.Height);
+            dgvCurrentSprintTasks.Size = new Size(panel2.Width - dgvCurrentSprintTasks.Location.X - 5, dgvCurrentSprintTasks.Height);
+            // dgvCurrentSprintTasks.PerformLayout();
+            dgvCurrentSprintTasks.AutoResizeColumns();
+        }
 
 
 
@@ -59,13 +65,23 @@ namespace ScrumProjectTracking
                     dgvCurrentSprintTasks.AutoGenerateColumns = false;
                     List<PendingSprintTask> pendingTasks = dbSource.getPendingTasks(CurrentUser.UserID, currentSprint.SprintID);
                     dgvCurrentSprintTasks.DataSource = pendingTasks;
-                    int totalTasks = dbSource.getTotalTasks(CurrentUser.UserID, currentSprint.SprintID);
-                    int totalStoryPoints = dbSource.getTotalStoryPoints(CurrentUser.UserID, currentSprint.SprintID);
+                    int totalTasks = dbSource.getTotalTasksUser(CurrentUser.UserID, currentSprint.SprintID);
+                    int totalStoryPoints = dbSource.getTotalStoryPointsUser(CurrentUser.UserID, currentSprint.SprintID);
                     pbMyBackLogTasks.setValue(((double)totalTasks - (double)pendingTasks.Count()) / (double)totalTasks);
 
                     lbMyBackLogTasks.Text = (totalTasks - pendingTasks.Count()).ToString() + "/" + totalTasks.ToString();
                     pbMyStoryPoints.setValue(((((double)totalStoryPoints - (double)pendingTasks.Sum(a => a.StoryPoints)) / (double)totalStoryPoints)));
                     lbMyStoryPoints.Text = (totalStoryPoints - pendingTasks.Sum(a => a.StoryPoints)).ToString() + "/" + totalStoryPoints.ToString();
+
+                    int totalTasksTeam = dbSource.getTotalTasksTeam(CurrentUser.TeamID, currentSprint.SprintID);
+                    int pendingTasksTeam = dbSource.getPendingTasksTeam(CurrentUser.TeamID, currentSprint.SprintID);
+                    int totalStoryPointsTeam = dbSource.getTotalStoryPointsTeam(CurrentUser.TeamID, currentSprint.SprintID);
+                    int pendingStoryPointsTeam = dbSource.getPendingStoryPointsTeam(CurrentUser.TeamID, currentSprint.SprintID);
+                    pbTeamBacklogTasks.setValue(((double)totalTasksTeam - (double)pendingTasksTeam) / (double)totalTasksTeam);
+                    pbTeamStoryPoints.setValue(((double)totalStoryPointsTeam - (double)pendingStoryPointsTeam) / (double)totalStoryPointsTeam);
+                    lbTeamBacklogTasks.Text = (totalTasksTeam - pendingTasksTeam).ToString() + "/" + totalTasksTeam.ToString();
+                    lbTeamStoryPoints.Text = (totalStoryPointsTeam - pendingStoryPointsTeam).ToString() + "/" + totalStoryPointsTeam.ToString();
+
                 }
                 if (nextSprint != null)
                 {

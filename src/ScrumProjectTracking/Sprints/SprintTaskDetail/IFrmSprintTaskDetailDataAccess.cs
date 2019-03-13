@@ -29,6 +29,10 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
 
         bool validateRecord(SprintTask st);
 
+        void addSprintTask(SprintTask newSprintTask);
+
+        bool sprintTaskChanged(SprintTask sprintTask);
+
 
     }
 }

@@ -17,7 +17,10 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
         public List<ValidationError> getValidationErrors() => validationErrors;
 
 
-        public ScrumDBSource getDBContext => dc;
+      //  public ScrumDBSource getDBContext => dc;
+
+        
+
 
         public void Dispose()
         {
@@ -38,6 +41,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
             var p = (from t in dc.Projects
                      orderby t.ProjectName
                      select new ProjectListItem { ProjectID = t.ProjectID, ProjectName = t.ProjectName }).ToList();
+            p.Insert(0, new ProjectListItem { ProjectID = 0, ProjectName = String.Empty });
             return p;
         }
 
@@ -46,6 +50,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
             var s = (from t in dc.Sprints
                      orderby t.SprintName
                      select new SprintListItem { SprintID = t.SprintID, SprintName = t.SprintName }).ToList();
+            s.Insert(0, new SprintListItem { SprintID = 0, SprintName = String.Empty });
             return s;
                     
         }
@@ -57,7 +62,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
             var s = (from t in dc.Teams
                      orderby t.TeamName
                      select new TeamListItem { TeamID = t.TeamID, TeamName = t.TeamName }).ToList();
-            
+            s.Insert(0, new TeamListItem { TeamID = 0, TeamName = String.Empty });
             return s;
         }
 
@@ -67,7 +72,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
                      where a.TeamID == teamID
                      orderby a.LastName + ", " + a.FirstName
                      select new UserListItem { UserID = a.UserID, DisplayName = a.LastName + ", " + a.FirstName }).ToList();
-
+            u.Insert(0, new UserListItem { UserID = String.Empty, DisplayName = String.Empty });
             return u;
 
 
@@ -87,7 +92,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
                 addValidationError("Task Name", "The value must not be blank.");
             if ((st.TaskStatus ?? "").Trim() == "")
                 addValidationError("Status", "The value must not be blank.");
-            if (st.TeamID == null)
+            if (st.TeamID == 0)
                 addValidationError("Team", "The value must not be blank.");
             if (st.SprintID == 0)
                 addValidationError("Sprint", "The value must not be blank.");
@@ -99,5 +104,15 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
         }
 
         private void addValidationError(string fieldName, string validationError) => validationErrors.Add(new ValidationError { ErrorMessage = validationError, FieldName = fieldName });
+
+        public void addSprintTask(SprintTask newSprintTask)
+        {
+            dc.getContext.Add(newSprintTask);
+        }
+
+        public bool sprintTaskChanged(SprintTask sprintTask)
+        {
+            return dc.getContext.Entry(sprintTask).State != Microsoft.EntityFrameworkCore.EntityState.Unchanged;
+        }
     }
 }

@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Tasks = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -52,11 +52,11 @@
             this.PendingStoryPoints = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SprintID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbEndDate = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbSprintName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbSprintName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbEndDate = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +89,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(944, 295);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Edit
             // 
@@ -107,8 +108,8 @@
             // SprintName
             // 
             this.SprintName.DataPropertyName = "SprintName";
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SprintName.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SprintName.DefaultCellStyle = dataGridViewCellStyle1;
             this.SprintName.HeaderText = "Sprint Name";
             this.SprintName.MinimumWidth = 35;
             this.SprintName.Name = "SprintName";
@@ -118,8 +119,8 @@
             // BeginDate
             // 
             this.BeginDate.DataPropertyName = "BeginDate";
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BeginDate.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BeginDate.DefaultCellStyle = dataGridViewCellStyle2;
             this.BeginDate.FillWeight = 28.97984F;
             this.BeginDate.HeaderText = "Begin Date";
             this.BeginDate.Name = "BeginDate";
@@ -129,8 +130,8 @@
             // EndDate
             // 
             this.EndDate.DataPropertyName = "EndDate";
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EndDate.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.EndDate.FillWeight = 28.97984F;
             this.EndDate.HeaderText = "End Date";
             this.EndDate.Name = "EndDate";
@@ -140,9 +141,9 @@
             // TotalTasks
             // 
             this.TotalTasks.DataPropertyName = "TotalTasks";
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalTasks.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalTasks.DefaultCellStyle = dataGridViewCellStyle4;
             this.TotalTasks.FillWeight = 28.97984F;
             this.TotalTasks.HeaderText = "Total Tasks";
             this.TotalTasks.Name = "TotalTasks";
@@ -152,9 +153,9 @@
             // TotalStoryPoints
             // 
             this.TotalStoryPoints.DataPropertyName = "TotalStoryPoints";
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle45.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalStoryPoints.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalStoryPoints.DefaultCellStyle = dataGridViewCellStyle5;
             this.TotalStoryPoints.FillWeight = 28.97984F;
             this.TotalStoryPoints.HeaderText = "Total Story Points";
             this.TotalStoryPoints.Name = "TotalStoryPoints";
@@ -164,9 +165,9 @@
             // CompletedTasks
             // 
             this.CompletedTasks.DataPropertyName = "CompletedTasks";
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CompletedTasks.DefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompletedTasks.DefaultCellStyle = dataGridViewCellStyle6;
             this.CompletedTasks.FillWeight = 28.97984F;
             this.CompletedTasks.HeaderText = "Completed Tasks";
             this.CompletedTasks.Name = "CompletedTasks";
@@ -176,9 +177,9 @@
             // CompletedStoryPoints
             // 
             this.CompletedStoryPoints.DataPropertyName = "CompletedStoryPoints";
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CompletedStoryPoints.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompletedStoryPoints.DefaultCellStyle = dataGridViewCellStyle7;
             this.CompletedStoryPoints.FillWeight = 28.97984F;
             this.CompletedStoryPoints.HeaderText = "Completed Story Points";
             this.CompletedStoryPoints.Name = "CompletedStoryPoints";
@@ -188,9 +189,9 @@
             // PendingTasks
             // 
             this.PendingTasks.DataPropertyName = "PendingTasks";
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PendingTasks.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PendingTasks.DefaultCellStyle = dataGridViewCellStyle8;
             this.PendingTasks.FillWeight = 28.97984F;
             this.PendingTasks.HeaderText = "Pending Tasks";
             this.PendingTasks.Name = "PendingTasks";
@@ -200,9 +201,9 @@
             // PendingStoryPoints
             // 
             this.PendingStoryPoints.DataPropertyName = "PendingStoryPoints";
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PendingStoryPoints.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PendingStoryPoints.DefaultCellStyle = dataGridViewCellStyle9;
             this.PendingStoryPoints.FillWeight = 28.97984F;
             this.PendingStoryPoints.HeaderText = "Pending Story Points";
             this.PendingStoryPoints.Name = "PendingStoryPoints";
@@ -212,8 +213,8 @@
             // SprintID
             // 
             this.SprintID.DataPropertyName = "SprintID";
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SprintID.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SprintID.DefaultCellStyle = dataGridViewCellStyle10;
             this.SprintID.HeaderText = "SprintID";
             this.SprintID.Name = "SprintID";
             this.SprintID.ReadOnly = true;
@@ -233,34 +234,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
             // 
-            // tbEndDate
+            // btnSearch
             // 
-            this.tbEndDate.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEndDate.Location = new System.Drawing.Point(87, 45);
-            this.tbEndDate.Mask = "00/00/0000";
-            this.tbEndDate.Name = "tbEndDate";
-            this.tbEndDate.Size = new System.Drawing.Size(72, 23);
-            this.tbEndDate.TabIndex = 0;
-            this.tbEndDate.ValidatingType = typeof(System.DateTime);
-            this.tbEndDate.Validated += new System.EventHandler(this.tbEndDate_Validated);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "End Date >=";
-            // 
-            // tbSprintName
-            // 
-            this.tbSprintName.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSprintName.Location = new System.Drawing.Point(87, 19);
-            this.tbSprintName.Name = "tbSprintName";
-            this.tbSprintName.Size = new System.Drawing.Size(161, 23);
-            this.tbSprintName.TabIndex = 2;
+            this.btnSearch.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(254, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label2
             // 
@@ -272,16 +255,34 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Sprint Name";
             // 
-            // btnSearch
+            // tbSprintName
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(254, 18);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.tbSprintName.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSprintName.Location = new System.Drawing.Point(87, 19);
+            this.tbSprintName.Name = "tbSprintName";
+            this.tbSprintName.Size = new System.Drawing.Size(161, 23);
+            this.tbSprintName.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "End Date >=";
+            // 
+            // tbEndDate
+            // 
+            this.tbEndDate.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEndDate.Location = new System.Drawing.Point(87, 45);
+            this.tbEndDate.Mask = "00/00/0000";
+            this.tbEndDate.Name = "tbEndDate";
+            this.tbEndDate.Size = new System.Drawing.Size(72, 23);
+            this.tbEndDate.TabIndex = 0;
+            this.tbEndDate.ValidatingType = typeof(System.DateTime);
+            this.tbEndDate.Validated += new System.EventHandler(this.tbEndDate_Validated);
             // 
             // SprintsList
             // 

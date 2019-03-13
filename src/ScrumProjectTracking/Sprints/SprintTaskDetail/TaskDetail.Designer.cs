@@ -294,7 +294,6 @@
             this.TeamID.Size = new System.Drawing.Size(126, 23);
             this.TeamID.TabIndex = 9;
             this.TeamID.SelectionChangeCommitted += new System.EventHandler(this.TeamID_SelectionChangeCommitted);
-            this.TeamID.Validated += new System.EventHandler(this.TeamID_Validated);
             // 
             // AssignedUserID
             // 
@@ -478,6 +477,7 @@
             this.Controls.Add(this.TaskName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SprintTaskID);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
