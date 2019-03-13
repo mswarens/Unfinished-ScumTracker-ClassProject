@@ -13,8 +13,4 @@ There is the potential opportunity to include the following additional design pa
 
  - **Observer** (Behavioral) -- Though it doesn't exist in our project exactly as specified, the intent and use case for this pattern as related to our project is fairly simple to recognize: the interface contains informational elements, displayed in a "dashboard" at the bottom of the screen that update when related entities change state.  This functionality could be modified to more exactly resemble the observer design pattern.
  - **Factory** (Creational) - As one of the planned features for the application allows a user to export data assets in multiple formats, such as PDF, Excel, and plain text, it is conceivable that the factory design pattern, which allows an object to be returned based on a subclass determined at run time,  may find use in the application.
- - 
- - 
- - 
-
  
