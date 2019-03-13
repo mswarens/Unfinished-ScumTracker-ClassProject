@@ -47,7 +47,6 @@ namespace ScrumProjectTracking
                 var hashTest = (from u in dc.Users where u.UserID == userN select u.PasswordHash).ToArray();
                 if (Crypt.Verify(passW, hashTest[0]))
                 {
-                    Console.WriteLine("Test");
                     closedCorrectly = true;
                     this.Close();
                 }
