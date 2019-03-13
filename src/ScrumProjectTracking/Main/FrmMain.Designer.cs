@@ -132,6 +132,7 @@
             this.Text = "Scrum Project Tracking System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.Resize += new System.EventHandler(this.FrmMain_Resize);
             this.mainFormMenu.ResumeLayout(false);
             this.mainFormMenu.PerformLayout();
             this.ResumeLayout(false);

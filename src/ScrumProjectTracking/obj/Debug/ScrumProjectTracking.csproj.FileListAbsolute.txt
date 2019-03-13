@@ -700,3 +700,7 @@ Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectT
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csproj.CopyComplete
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.exe
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.pdb
+Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.Linq.Dynamic.Core.dll
+Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.Linq.Dynamic.Core.pdb
+Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.Linq.Dynamic.Core.xml
+Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Sprints.SprintTaskList.SprintTaskList.resources

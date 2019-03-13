@@ -8,15 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ScrumProjectTracking.Forms;
-
+using ScrumProjectTracking.Sprints.SprintTaskList;
+using ScrumProjectTracking.Main;
 namespace ScrumProjectTracking.Sprints.SprintsList
 {
     public partial class SprintsList : Form
     {
         SprintsListDBAccess context;
-        public SprintsList()
+        FrmMain parent;
+        public SprintsList(FrmMain parentForm)
         {
             InitializeComponent();
+            parent = parentForm;
         }
 
         private void SprintsList_Load(object sender, EventArgs e)
@@ -57,6 +60,15 @@ namespace ScrumProjectTracking.Sprints.SprintsList
             if(DateTime.TryParse(tbEndDate.Text,out output) == false)
                 tbEndDate.Text = DateTime.Today.AddMonths(-3).ToString("MM/dd/yyyy");
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                SprintTaskList.SprintTaskList sprintTaskList = new SprintTaskList.SprintTaskList(int.Parse(dataGridView1.Rows[e.RowIndex].Cells["SprintID"].Value.ToString()));
+                ((FrmMain)parent).LoadChildForm(sprintTaskList);
+            }
         }
     }
 }

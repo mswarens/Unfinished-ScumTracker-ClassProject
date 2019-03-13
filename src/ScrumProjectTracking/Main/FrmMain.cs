@@ -73,7 +73,7 @@ namespace ScrumProjectTracking.Main
 
         private void sprintTrackingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ScrumProjectTracking.Sprints.SprintsList.SprintsList sprintList = new Sprints.SprintsList.SprintsList();
+            ScrumProjectTracking.Sprints.SprintsList.SprintsList sprintList = new Sprints.SprintsList.SprintsList(this);
             LoadChildForm(sprintList);
         }
 
@@ -108,6 +108,11 @@ namespace ScrumProjectTracking.Main
                 }
 
             }
+        }
+
+        private void FrmMain_Resize(object sender, EventArgs e)
+        {
+            Dashboard.resizeWindow();
         }
     }
 }
