@@ -33,19 +33,26 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel1.Location = new System.Drawing.Point(6, 4);
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.MaximumSize = new System.Drawing.Size(230, 20);
+            this.panel1.MinimumSize = new System.Drawing.Size(0, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(0, 55);
+            this.panel1.Size = new System.Drawing.Size(0, 20);
             this.panel1.TabIndex = 0;
             // 
             // ProgressBar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximumSize = new System.Drawing.Size(230, 20);
+            this.MinimumSize = new System.Drawing.Size(230, 20);
             this.Name = "ProgressBar";
-            this.Size = new System.Drawing.Size(532, 62);
+            this.Size = new System.Drawing.Size(230, 20);
             this.ResumeLayout(false);
 
         }

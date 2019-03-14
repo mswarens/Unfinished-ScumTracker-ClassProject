@@ -36,24 +36,36 @@ namespace ScrumProjectTracking.Main
             var pendingTasks = (from s in dc.SprintTasks
                                 join p in dc.Projects on s.ProjectID equals p.ProjectID
                                 where s.TaskStatus == "Pending" && s.SprintID == sprintID
+                                && s.AssignedUserID == userName
                                 orderby p.ProjectName, s.TaskName
                                 select new PendingSprintTask { TaskName = s.TaskName, TaskCompletionPercent = s.TaskCompletionPercent, StoryPoints = s.StoryPoints, ProjectName = p.ProjectName, SprintTaskID = s.SprintTaskID } );
             return pendingTasks.ToList<PendingSprintTask>();
 
         }
 
-        public int getTotalTasks(string userName, int sprintID) => (from s in dc.SprintTasks
-                                                                    where s.SprintID == sprintID
+        public int getTotalTasksUser(string userName, int sprintID) => (from s in dc.SprintTasks
+                                                                    where s.SprintID == sprintID && s.TaskStatus != "Cancelled"
+                                                                    && s.AssignedUserID == userName
                                                                     select s).Count();
         
 
-        public int getTotalStoryPoints(string username, int sprintID) => (from s in dc.SprintTasks
-                                                                          where s.SprintID == sprintID
+        public int getTotalStoryPointsUser(string username, int sprintID) => (from s in dc.SprintTasks
+                                                                          where s.SprintID == sprintID && s.TaskStatus != "Cancelled"
+                                                                          && s.AssignedUserID == username
                                                                           select s.StoryPoints).Sum();
 
         public void Dispose()
         {
             dc.Dispose();
         }
+
+        public int getTotalStoryPointsTeam(int teamID, int sprintID) => (from s in dc.SprintTasks where s.SprintID == sprintID && s.TeamID == teamID && s.TaskStatus != "Cancelled" select s.StoryPoints).Sum();
+
+        public int getTotalTasksTeam(int teamID, int sprintID) => (from s in dc.SprintTasks where s.SprintID == sprintID && s.TeamID == teamID && s.TaskStatus != "Cancelled" select s).Count();
+
+        public int getPendingTasksTeam(int teamID, int sprintID) => (from s in dc.SprintTasks where s.SprintID == sprintID && s.TeamID == teamID && s.TaskStatus == "Pending" select s).Count();
+
+        public int getPendingStoryPointsTeam(int teamID, int sprintID) => (from s in dc.SprintTasks where s.SprintID == sprintID && s.TeamID == teamID && s.TaskStatus == "Pending" select s.StoryPoints).Sum();
+
     }
 }

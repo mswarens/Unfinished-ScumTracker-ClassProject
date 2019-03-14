@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.progressBar4 = new ScrumProjectTracking.ProgressBar();
-            this.progressBar3 = new ScrumProjectTracking.ProgressBar();
+            this.pbTeamStoryPoints = new ScrumProjectTracking.ProgressBar();
+            this.pbTeamBacklogTasks = new ScrumProjectTracking.ProgressBar();
             this.pbMyStoryPoints = new ScrumProjectTracking.ProgressBar();
             this.pbMyBackLogTasks = new ScrumProjectTracking.ProgressBar();
             this.lbTeamStoryPoints = new System.Windows.Forms.Label();
@@ -79,8 +82,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel3.Controls.Add(this.progressBar4);
-            this.panel3.Controls.Add(this.progressBar3);
+            this.panel3.Controls.Add(this.pbTeamStoryPoints);
+            this.panel3.Controls.Add(this.pbTeamBacklogTasks);
             this.panel3.Controls.Add(this.pbMyStoryPoints);
             this.panel3.Controls.Add(this.pbMyBackLogTasks);
             this.panel3.Controls.Add(this.lbTeamStoryPoints);
@@ -106,42 +109,54 @@
             this.panel3.Size = new System.Drawing.Size(383, 216);
             this.panel3.TabIndex = 0;
             // 
-            // progressBar4
+            // pbTeamStoryPoints
             // 
-            this.progressBar4.Location = new System.Drawing.Point(102, 160);
-            this.progressBar4.Margin = new System.Windows.Forms.Padding(1);
-            this.progressBar4.Name = "progressBar4";
-            this.progressBar4.Size = new System.Drawing.Size(218, 22);
-            this.progressBar4.TabIndex = 24;
+            this.pbTeamStoryPoints.BackColor = System.Drawing.Color.Gainsboro;
+            this.pbTeamStoryPoints.Location = new System.Drawing.Point(102, 152);
+            this.pbTeamStoryPoints.Margin = new System.Windows.Forms.Padding(1);
+            this.pbTeamStoryPoints.MaximumSize = new System.Drawing.Size(230, 20);
+            this.pbTeamStoryPoints.MinimumSize = new System.Drawing.Size(230, 20);
+            this.pbTeamStoryPoints.Name = "pbTeamStoryPoints";
+            this.pbTeamStoryPoints.Size = new System.Drawing.Size(230, 20);
+            this.pbTeamStoryPoints.TabIndex = 24;
             // 
-            // progressBar3
+            // pbTeamBacklogTasks
             // 
-            this.progressBar3.Location = new System.Drawing.Point(102, 135);
-            this.progressBar3.Margin = new System.Windows.Forms.Padding(1);
-            this.progressBar3.Name = "progressBar3";
-            this.progressBar3.Size = new System.Drawing.Size(218, 22);
-            this.progressBar3.TabIndex = 23;
+            this.pbTeamBacklogTasks.BackColor = System.Drawing.Color.Gainsboro;
+            this.pbTeamBacklogTasks.Location = new System.Drawing.Point(102, 129);
+            this.pbTeamBacklogTasks.Margin = new System.Windows.Forms.Padding(1);
+            this.pbTeamBacklogTasks.MaximumSize = new System.Drawing.Size(230, 20);
+            this.pbTeamBacklogTasks.MinimumSize = new System.Drawing.Size(230, 20);
+            this.pbTeamBacklogTasks.Name = "pbTeamBacklogTasks";
+            this.pbTeamBacklogTasks.Size = new System.Drawing.Size(230, 20);
+            this.pbTeamBacklogTasks.TabIndex = 23;
             // 
             // pbMyStoryPoints
             // 
-            this.pbMyStoryPoints.Location = new System.Drawing.Point(102, 86);
+            this.pbMyStoryPoints.BackColor = System.Drawing.Color.Gainsboro;
+            this.pbMyStoryPoints.Location = new System.Drawing.Point(102, 84);
             this.pbMyStoryPoints.Margin = new System.Windows.Forms.Padding(1);
+            this.pbMyStoryPoints.MaximumSize = new System.Drawing.Size(230, 20);
+            this.pbMyStoryPoints.MinimumSize = new System.Drawing.Size(230, 20);
             this.pbMyStoryPoints.Name = "pbMyStoryPoints";
-            this.pbMyStoryPoints.Size = new System.Drawing.Size(218, 22);
+            this.pbMyStoryPoints.Size = new System.Drawing.Size(230, 20);
             this.pbMyStoryPoints.TabIndex = 22;
             // 
             // pbMyBackLogTasks
             // 
-            this.pbMyBackLogTasks.Location = new System.Drawing.Point(102, 61);
+            this.pbMyBackLogTasks.BackColor = System.Drawing.Color.Gainsboro;
+            this.pbMyBackLogTasks.Location = new System.Drawing.Point(102, 62);
             this.pbMyBackLogTasks.Margin = new System.Windows.Forms.Padding(1);
+            this.pbMyBackLogTasks.MaximumSize = new System.Drawing.Size(230, 20);
+            this.pbMyBackLogTasks.MinimumSize = new System.Drawing.Size(230, 20);
             this.pbMyBackLogTasks.Name = "pbMyBackLogTasks";
-            this.pbMyBackLogTasks.Size = new System.Drawing.Size(218, 22);
+            this.pbMyBackLogTasks.Size = new System.Drawing.Size(230, 20);
             this.pbMyBackLogTasks.TabIndex = 21;
             // 
             // lbTeamStoryPoints
             // 
             this.lbTeamStoryPoints.AutoSize = true;
-            this.lbTeamStoryPoints.Location = new System.Drawing.Point(276, 123);
+            this.lbTeamStoryPoints.Location = new System.Drawing.Point(340, 158);
             this.lbTeamStoryPoints.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTeamStoryPoints.Name = "lbTeamStoryPoints";
             this.lbTeamStoryPoints.Size = new System.Drawing.Size(0, 13);
@@ -150,7 +165,7 @@
             // lbTeamBacklogTasks
             // 
             this.lbTeamBacklogTasks.AutoSize = true;
-            this.lbTeamBacklogTasks.Location = new System.Drawing.Point(276, 109);
+            this.lbTeamBacklogTasks.Location = new System.Drawing.Point(340, 135);
             this.lbTeamBacklogTasks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTeamBacklogTasks.Name = "lbTeamBacklogTasks";
             this.lbTeamBacklogTasks.Size = new System.Drawing.Size(0, 13);
@@ -159,7 +174,8 @@
             // lbMyStoryPoints
             // 
             this.lbMyStoryPoints.AutoSize = true;
-            this.lbMyStoryPoints.Location = new System.Drawing.Point(328, 93);
+            this.lbMyStoryPoints.BackColor = System.Drawing.Color.GhostWhite;
+            this.lbMyStoryPoints.Location = new System.Drawing.Point(340, 90);
             this.lbMyStoryPoints.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMyStoryPoints.Name = "lbMyStoryPoints";
             this.lbMyStoryPoints.Size = new System.Drawing.Size(0, 13);
@@ -168,7 +184,8 @@
             // lbMyBackLogTasks
             // 
             this.lbMyBackLogTasks.AutoSize = true;
-            this.lbMyBackLogTasks.Location = new System.Drawing.Point(328, 72);
+            this.lbMyBackLogTasks.BackColor = System.Drawing.Color.GhostWhite;
+            this.lbMyBackLogTasks.Location = new System.Drawing.Point(340, 68);
             this.lbMyBackLogTasks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMyBackLogTasks.Name = "lbMyBackLogTasks";
             this.lbMyBackLogTasks.Size = new System.Drawing.Size(0, 13);
@@ -415,10 +432,11 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(571, 298);
             this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnAddNewTask
             // 
-            this.btnAddNewTask.Location = new System.Drawing.Point(457, 11);
+            this.btnAddNewTask.Location = new System.Drawing.Point(162, 4);
             this.btnAddNewTask.Name = "btnAddNewTask";
             this.btnAddNewTask.Size = new System.Drawing.Size(106, 23);
             this.btnAddNewTask.TabIndex = 2;
@@ -454,6 +472,7 @@
             this.StoryPoints,
             this.TaskCompletionPercent,
             this.EventTaskID});
+            this.dgvCurrentSprintTasks.EnableHeadersVisualStyles = false;
             this.dgvCurrentSprintTasks.Location = new System.Drawing.Point(8, 39);
             this.dgvCurrentSprintTasks.Margin = new System.Windows.Forms.Padding(0);
             this.dgvCurrentSprintTasks.MultiSelect = false;
@@ -467,9 +486,12 @@
             // 
             // View
             // 
-            this.View.FillWeight = 63.45178F;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.View.DefaultCellStyle = dataGridViewCellStyle6;
+            this.View.FillWeight = 85F;
             this.View.HeaderText = "View";
-            this.View.MinimumWidth = 15;
+            this.View.MinimumWidth = 50;
             this.View.Name = "View";
             this.View.ReadOnly = true;
             this.View.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -478,43 +500,53 @@
             // ProjectName
             // 
             this.ProjectName.DataPropertyName = "ProjectName";
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectName.DefaultCellStyle = dataGridViewCellStyle7;
             this.ProjectName.FillWeight = 113.998F;
             this.ProjectName.HeaderText = "Project";
             this.ProjectName.MinimumWidth = 160;
             this.ProjectName.Name = "ProjectName";
             this.ProjectName.ReadOnly = true;
+            this.ProjectName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // TaskName
             // 
             this.TaskName.DataPropertyName = "TaskName";
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskName.DefaultCellStyle = dataGridViewCellStyle8;
             this.TaskName.FillWeight = 107.5167F;
             this.TaskName.HeaderText = "Task Name";
             this.TaskName.MinimumWidth = 200;
             this.TaskName.Name = "TaskName";
             this.TaskName.ReadOnly = true;
+            this.TaskName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // StoryPoints
             // 
             this.StoryPoints.DataPropertyName = "StoryPoints";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.StoryPoints.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StoryPoints.DefaultCellStyle = dataGridViewCellStyle9;
             this.StoryPoints.FillWeight = 107.5167F;
             this.StoryPoints.HeaderText = "Story Points";
             this.StoryPoints.Name = "StoryPoints";
             this.StoryPoints.ReadOnly = true;
+            this.StoryPoints.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // TaskCompletionPercent
             // 
             this.TaskCompletionPercent.DataPropertyName = "TaskCompletionPercent";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle2.Format = "#\\%";
-            dataGridViewCellStyle2.NullValue = null;
-            this.TaskCompletionPercent.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.Format = "#\\%";
+            dataGridViewCellStyle10.NullValue = null;
+            this.TaskCompletionPercent.DefaultCellStyle = dataGridViewCellStyle10;
             this.TaskCompletionPercent.FillWeight = 107.5167F;
             this.TaskCompletionPercent.HeaderText = "Completed";
             this.TaskCompletionPercent.MinimumWidth = 35;
             this.TaskCompletionPercent.Name = "TaskCompletionPercent";
             this.TaskCompletionPercent.ReadOnly = true;
+            this.TaskCompletionPercent.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // EventTaskID
             // 
@@ -589,8 +621,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dgvCurrentSprintTasks;
-        private ProgressBar progressBar4;
-        private ProgressBar progressBar3;
+        private ProgressBar pbTeamStoryPoints;
+        private ProgressBar pbTeamBacklogTasks;
         private ProgressBar pbMyStoryPoints;
         private ProgressBar pbMyBackLogTasks;
         private System.Windows.Forms.Button btnAddNewTask;
