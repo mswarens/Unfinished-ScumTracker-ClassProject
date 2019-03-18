@@ -11,6 +11,7 @@ namespace ScrumProjectTracking.Main
         public int SprintTaskID { get; set;  }
         public string TaskName { get; set; }
         public string ProjectName { get; set; }
+        public string TaskSubStatus { get; set; }
         public int StoryPoints { get; set; }
         public int TaskCompletionPercent { get; set; }
     }

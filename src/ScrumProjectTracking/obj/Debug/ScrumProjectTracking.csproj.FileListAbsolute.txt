@@ -704,3 +704,4 @@ Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.Linq.D
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.Linq.Dynamic.Core.pdb
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\System.Linq.Dynamic.Core.xml
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Sprints.SprintTaskList.SprintTaskList.resources
+Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csprojAssemblyReference.cache

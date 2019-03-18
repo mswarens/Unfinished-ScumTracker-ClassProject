@@ -32,6 +32,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
         {
             SprintTask st = new SprintTask();
             st.TaskStatus = "Pending";
+            st.TaskSubStatus = "Requirements gathering";
             return st;
 
         }
@@ -92,6 +93,8 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
                 addValidationError("Task Name", "The value must not be blank.");
             if ((st.TaskStatus ?? "").Trim() == "")
                 addValidationError("Status", "The value must not be blank.");
+            if ((st.TaskSubStatus ?? "").Trim() == "")
+                addValidationError("Substatus", "The value must not be blank.");
             if (st.TeamID == 0)
                 addValidationError("Team", "The value must not be blank.");
             if (st.SprintID == 0)

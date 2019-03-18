@@ -54,7 +54,7 @@ namespace ScrumProjectTracking.Main
             }
             
             form.MdiParent = this;
-            TabPage newtab = new TabPage(form.Text);
+            TabPage newtab = new TabPage(form.Text.PadRight(form.Text.Length + 2));
             newtab.Controls.Add(form);
           
             tabControl1.Controls.Add(newtab);

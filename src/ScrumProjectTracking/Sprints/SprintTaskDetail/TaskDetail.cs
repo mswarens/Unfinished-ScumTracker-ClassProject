@@ -50,6 +50,19 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
         private void FillDropDownSelections()
         {
 
+            taskStatusComboBox.Items.Add(String.Empty);
+            taskStatusComboBox.Items.Add("Pending");
+            taskStatusComboBox.Items.Add("Completed");
+            taskStatusComboBox.Items.Add("Cancelled");
+
+            taskSubstatusComboBox.Items.Add(String.Empty);
+            taskSubstatusComboBox.Items.Add("Requirements gathering");
+            taskSubstatusComboBox.Items.Add("Design analysis");
+            taskSubstatusComboBox.Items.Add("Coding");
+            taskSubstatusComboBox.Items.Add("Unit testing");
+            taskSubstatusComboBox.Items.Add("Integration testing");
+            taskSubstatusComboBox.Items.Add("User acceptance testing");
+            taskSubstatusComboBox.Items.Add("Relese pending");
 
 
             SprintID.DataSource = DBSource.getSprintList();

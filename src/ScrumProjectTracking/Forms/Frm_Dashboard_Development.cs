@@ -25,8 +25,8 @@ namespace ScrumProjectTracking
         private void Form_Main_Load(object sender, EventArgs e)
         {
            
-            dgvCurrentSprintTasks.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
             dgvCurrentSprintTasks.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
+            dgvCurrentSprintTasks.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
             dgvCurrentSprintTasks.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             
             dgvCurrentSprintTasks.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.SystemColors.Menu;
@@ -97,7 +97,7 @@ namespace ScrumProjectTracking
         {
             if (e.ColumnIndex == 0)
             {
-                TaskDetail openTask = new TaskDetail((int)dgvCurrentSprintTasks.CurrentRow.Cells[5].Value);
+                TaskDetail openTask = new TaskDetail((int)dgvCurrentSprintTasks.CurrentRow.Cells[6].Value);
                 parentForm.LoadChildForm(openTask);
             }
         }

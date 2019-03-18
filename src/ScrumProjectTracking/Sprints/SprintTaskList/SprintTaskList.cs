@@ -8,21 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ScrumProjectTracking.Sprints.SprintTaskDetail;
+using ScrumProjectTracking.Main;
 namespace ScrumProjectTracking.Sprints.SprintTaskList
 {
     public partial class SprintTaskList : Form
     {
+        FrmMain parent;
         ISprintTaskListDataAccess DBSource = new SprintTaskListDBDataAccess();
         IFrmSprintTaskDetailDataAccess SprintTaskDetailDBSource;
-        public SprintTaskList()
+        public SprintTaskList(FrmMain parentForm)
         {
+            parent = parentForm;
             InitializeComponent();
             FillDropDownSelections();
             dgvTaskList.AutoGenerateColumns = false;
         }
 
 
-        public SprintTaskList (int sprintID) : this()
+        public SprintTaskList (int sprintID, FrmMain parentForm) : this(parentForm)
         {
             SprintID.SelectedValue = sprintID;
 
@@ -105,6 +108,15 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
             
                 dgvTaskList.DataSource = DBSource.getResults(tbTaskName.Text == String.Empty ? null : tbTaskName.Text, int.Parse(SprintID.SelectedValue.ToString()), int.Parse(ProjectID.SelectedValue.ToString()), int.Parse(TeamID.SelectedValue.ToString()), AssignedUserID.SelectedValue == null ? null : AssignedUserID.SelectedValue.ToString(), lbTaskStatus.SelectedItems.Cast<String>().ToList());
                             
+        }
+
+        private void dgvTaskList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                TaskDetail existingSprintTask = new TaskDetail(int.Parse(dgvTaskList.Rows[e.RowIndex].Cells["SprintTaskID"].Value.ToString()));
+                ((FrmMain)parent).LoadChildForm(existingSprintTask);
+            }
         }
     }
 }

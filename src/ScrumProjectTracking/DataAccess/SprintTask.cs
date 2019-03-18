@@ -18,6 +18,7 @@ namespace ScrumProjectTracking.DataAccess
         public string AssignedUserID { get; set; }
         public string TaskName { get; set; }
         public string TaskStatus { get; set; }
+        public string TaskSubStatus { get; set; }
         public int TaskCompletionPercent { get; set; }
         public string Description { get; set; }
         public int StoryPoints { get; set; }

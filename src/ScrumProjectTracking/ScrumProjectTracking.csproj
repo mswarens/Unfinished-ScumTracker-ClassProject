@@ -187,6 +187,7 @@
     </Compile>
     <Compile Include="Sprints\SprintsList\SprintsListDBAccess.cs" />
     <Compile Include="Sprints\SprintsList\SprintsListItem.cs" />
+    <Compile Include="Sprints\SprintsList\SprintsListTestAccess.cs" />
     <Compile Include="Sprints\SprintTaskDetail\IFrmSprintTaskDetailDataAccess.cs" />
     <Compile Include="Sprints\SprintTaskDetail\FrmSprintTaskDetailDBAccess.cs" />
     <Compile Include="Sprints\SprintTaskDetail\ProjectListItem.cs" />

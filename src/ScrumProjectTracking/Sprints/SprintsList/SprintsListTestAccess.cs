@@ -7,9 +7,12 @@ using ScrumProjectTracking.DataAccess;
 using System.Linq.Expressions;
 namespace ScrumProjectTracking.Sprints.SprintsList
 {
-    class SprintsListDBAccess : ISprintsListDataAccess, IDisposable
+    public class SprintsListTestAccess : ISprintsListDataAccess, IDisposable
     {
-        ScrumDBSource context = new ScrumDBSource();
+         public ScrumTestSource context = new ScrumTestSource();
+
+       
+
 
         public void Dispose()
         {
@@ -19,8 +22,9 @@ namespace ScrumProjectTracking.Sprints.SprintsList
         public List<SprintsListItem> getResults(string sprintName, DateTime endDate)
         {
             
-            var r = from s in context.Sprints where s.EndDate >= endDate
-                     let totalTasksCount = (from t in context.SprintTasks where t.SprintID == s.SprintID && t.TaskStatus != "Cancelled" select t.SprintTaskID)
+            var r = from s in context.Sprints
+                    where s.EndDate >= endDate
+                    let totalTasksCount = (from t in context.SprintTasks where t.SprintID == s.SprintID && t.TaskStatus != "Cancelled" select t.SprintTaskID)
                     let totalStoryPointsCount = (from t in context.SprintTasks where t.SprintID == s.SprintID && t.TaskStatus != "Cancelled" select t.StoryPoints)
                     let completedTasksCount = (from t in context.SprintTasks where t.SprintID == s.SprintID && t.TaskStatus == "Completed" select t.SprintTaskID)
                     let completedStoryPointsCount = (from t in context.SprintTasks where t.SprintID == s.SprintID && t.TaskStatus == "Completed" select t.StoryPoints)
