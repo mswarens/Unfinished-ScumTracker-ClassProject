@@ -144,6 +144,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmBacklog\BacklogData.cs" />
+    <Compile Include="DataAccess\Backlog.cs" />
     <Compile Include="DataAccess\Project.cs" />
     <Compile Include="DataAccess\ScrumContext.cs" />
     <Compile Include="DataAccess\ScrumDBSource.cs" />
@@ -152,6 +154,30 @@
     <Compile Include="DataAccess\SprintTask.cs" />
     <Compile Include="DataAccess\Team.cs" />
     <Compile Include="DataAccess\User.cs" />
+    <Compile Include="FrmBacklog\BacklogAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBacklog\BacklogAdd.Designer.cs">
+      <DependentUpon>BacklogAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\FrmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\FrmUsers.Designer.cs">
+      <DependentUpon>FrmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\FrmTeams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\FrmTeams.Designer.cs">
+      <DependentUpon>FrmTeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\FrmProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\FrmProjects.Designer.cs">
+      <DependentUpon>FrmProjects.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +197,13 @@
       <DependentUpon>TaskDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ValidationError.cs" />
+    <Compile Include="Maintenance\MaintenanceData.cs" />
+    <Compile Include="FrmBacklog\FrmBacklog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBacklog\FrmBacklog.Designer.cs">
+      <DependentUpon>FrmBacklog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\CurrentUser.cs" />
     <Compile Include="Main\FrmMain.cs">
       <SubType>Form</SubType>
@@ -222,8 +255,23 @@
     <Compile Include="Sprints\SprintTaskList\SprintTaskList.Designer.cs">
       <DependentUpon>SprintTaskList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmBacklog\BacklogAdd.resx">
+      <DependentUpon>BacklogAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBacklog\FrmBacklog.resx">
+      <DependentUpon>FrmBacklog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\FrmProjects.resx">
+      <DependentUpon>FrmProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\FrmTeams.resx">
+      <DependentUpon>FrmTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\FrmUsers.resx">
+      <DependentUpon>FrmUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Dashboard_Development.resx">
       <DependentUpon>Frm_Dashboard_Development.cs</DependentUpon>
@@ -401,6 +449,15 @@
     <None Include="packages\System.ValueTuple.4.5.0\ref\xamarintvos10\_._" />
     <None Include="packages\System.ValueTuple.4.5.0\ref\xamarinwatchos10\_._" />
     <None Include="packages\System.ValueTuple.4.5.0\System.ValueTuple.4.5.0.nupkg" />
+    <None Include="Properties\DataSources\ScrumProjectTracking.DataAccess.IDataAccess.datasource" />
+    <None Include="Properties\DataSources\ScrumProjectTracking.DataAccess.Project.datasource" />
+    <None Include="Properties\DataSources\ScrumProjectTracking.DataAccess.ScrumContext.datasource" />
+    <None Include="Properties\DataSources\ScrumProjectTracking.DataAccess.ScrumDBSource.datasource" />
+    <None Include="Properties\DataSources\ScrumProjectTracking.DataAccess.ScrumTestSource.datasource" />
+    <None Include="Properties\DataSources\ScrumProjectTracking.DataAccess.Sprint.datasource" />
+    <None Include="Properties\DataSources\ScrumProjectTracking.DataAccess.SprintTask.datasource" />
+    <None Include="Properties\DataSources\ScrumProjectTracking.DataAccess.Team.datasource" />
+    <None Include="Properties\DataSources\ScrumProjectTracking.DataAccess.User.datasource" />
     <None Include="Properties\DataSources\ScrumProjectTracking.DataModels.SprintTask.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
