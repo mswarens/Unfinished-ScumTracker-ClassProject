@@ -38,10 +38,15 @@
             this.teamsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.backlogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.backlogMenuStripItemView = new System.Windows.Forms.ToolStripMenuItem();
             this.backlogMenuStripItemAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewSprintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sprintTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewSprintToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainFormMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,10 +73,13 @@
             // 
             // sprintTrackingToolStripMenuItem
             // 
+            this.sprintTrackingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.searchToolStripMenuItem,
+            this.addNewSprintToolStripMenuItem,
+            this.sprintTasksToolStripMenuItem});
             this.sprintTrackingToolStripMenuItem.Name = "sprintTrackingToolStripMenuItem";
             this.sprintTrackingToolStripMenuItem.Size = new System.Drawing.Size(55, 22);
             this.sprintTrackingToolStripMenuItem.Text = "Sprints";
-            this.sprintTrackingToolStripMenuItem.Click += new System.EventHandler(this.sprintTrackingToolStripMenuItem_Click);
             // 
             // maintenanceToolStripMenuItem
             // 
@@ -86,21 +94,21 @@
             // projectsToolStripMenuItem3
             // 
             this.projectsToolStripMenuItem3.Name = "projectsToolStripMenuItem3";
-            this.projectsToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.projectsToolStripMenuItem3.Size = new System.Drawing.Size(116, 22);
             this.projectsToolStripMenuItem3.Text = "Projects";
             this.projectsToolStripMenuItem3.Click += new System.EventHandler(this.projectsToolStripMenuItem3_Click);
             // 
             // teamsToolStripMenuItem2
             // 
             this.teamsToolStripMenuItem2.Name = "teamsToolStripMenuItem2";
-            this.teamsToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.teamsToolStripMenuItem2.Size = new System.Drawing.Size(116, 22);
             this.teamsToolStripMenuItem2.Text = "Teams";
             this.teamsToolStripMenuItem2.Click += new System.EventHandler(this.teamsToolStripMenuItem2_Click);
             // 
             // usersToolStripMenuItem1
             // 
             this.usersToolStripMenuItem1.Name = "usersToolStripMenuItem1";
-            this.usersToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.usersToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.usersToolStripMenuItem1.Text = "Users";
             this.usersToolStripMenuItem1.Click += new System.EventHandler(this.usersToolStripMenuItem1_Click);
             // 
@@ -113,6 +121,20 @@
             this.backlogToolStripMenuItem.Size = new System.Drawing.Size(61, 22);
             this.backlogToolStripMenuItem.Text = "Backlog";
             this.backlogToolStripMenuItem.Click += new System.EventHandler(this.backlogToolStripMenuItem_Click);
+            // 
+            // backlogMenuStripItemView
+            // 
+            this.backlogMenuStripItemView.Name = "backlogMenuStripItemView";
+            this.backlogMenuStripItemView.Size = new System.Drawing.Size(99, 22);
+            this.backlogMenuStripItemView.Text = "View";
+            this.backlogMenuStripItemView.Click += new System.EventHandler(this.backlogMenuStripItemView_Click);
+            // 
+            // backlogMenuStripItemAdd
+            // 
+            this.backlogMenuStripItemAdd.Name = "backlogMenuStripItemAdd";
+            this.backlogMenuStripItemAdd.Size = new System.Drawing.Size(99, 22);
+            this.backlogMenuStripItemAdd.Text = "Add";
+            this.backlogMenuStripItemAdd.Click += new System.EventHandler(this.backlogMenuStripItemAdd_Click);
             // 
             // tabControl1
             // 
@@ -135,19 +157,41 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "closeTab");
             // 
-            // backlogMenuStripItemView
+            // searchToolStripMenuItem
             // 
-            this.backlogMenuStripItemView.Name = "backlogMenuStripItemView";
-            this.backlogMenuStripItemView.Size = new System.Drawing.Size(180, 22);
-            this.backlogMenuStripItemView.Text = "View";
-            this.backlogMenuStripItemView.Click += new System.EventHandler(this.backlogMenuStripItemView_Click);
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchToolStripMenuItem.Text = "&Search";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
-            // backlogMenuStripItemAdd
+            // addNewSprintToolStripMenuItem
             // 
-            this.backlogMenuStripItemAdd.Name = "backlogMenuStripItemAdd";
-            this.backlogMenuStripItemAdd.Size = new System.Drawing.Size(180, 22);
-            this.backlogMenuStripItemAdd.Text = "Add";
-            this.backlogMenuStripItemAdd.Click += new System.EventHandler(this.backlogMenuStripItemAdd_Click);
+            this.addNewSprintToolStripMenuItem.Name = "addNewSprintToolStripMenuItem";
+            this.addNewSprintToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewSprintToolStripMenuItem.Text = "&Add New Sprint";
+            // 
+            // sprintTasksToolStripMenuItem
+            // 
+            this.sprintTasksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.searchToolStripMenuItem1,
+            this.addNewSprintToolStripMenuItem1});
+            this.sprintTasksToolStripMenuItem.Name = "sprintTasksToolStripMenuItem";
+            this.sprintTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sprintTasksToolStripMenuItem.Text = "Sprint Tasks";
+            // 
+            // addNewSprintToolStripMenuItem1
+            // 
+            this.addNewSprintToolStripMenuItem1.Name = "addNewSprintToolStripMenuItem1";
+            this.addNewSprintToolStripMenuItem1.Size = new System.Drawing.Size(183, 22);
+            this.addNewSprintToolStripMenuItem1.Text = "&Add New Sprint Task";
+            this.addNewSprintToolStripMenuItem1.Click += new System.EventHandler(this.addNewSprintToolStripMenuItem1_Click);
+            // 
+            // searchToolStripMenuItem1
+            // 
+            this.searchToolStripMenuItem1.Name = "searchToolStripMenuItem1";
+            this.searchToolStripMenuItem1.Size = new System.Drawing.Size(183, 22);
+            this.searchToolStripMenuItem1.Text = "&Search";
+            this.searchToolStripMenuItem1.Click += new System.EventHandler(this.searchToolStripMenuItem1_Click);
             // 
             // FrmMain
             // 
@@ -185,5 +229,10 @@
         private System.Windows.Forms.ToolStripMenuItem backlogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backlogMenuStripItemView;
         private System.Windows.Forms.ToolStripMenuItem backlogMenuStripItemAdd;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewSprintToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sprintTasksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem addNewSprintToolStripMenuItem1;
     }
 }

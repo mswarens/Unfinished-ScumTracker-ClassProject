@@ -11,7 +11,9 @@ using ScrumProjectTracking.Forms;
 using ScrumProjectTracking.DataAccess;
 using System.Resources;
 using ScrumProjectTracking.FrmBacklog;
-
+using ScrumProjectTracking.Sprints.SprintTaskDetail;
+using ScrumProjectTracking.Sprints.SprintTaskList;
+using ScrumProjectTracking.Sprints.SprintsList;
 namespace ScrumProjectTracking.Main
 
 {
@@ -153,6 +155,25 @@ namespace ScrumProjectTracking.Main
         {
             BacklogAdd backlogAdd = new BacklogAdd();
             LoadChildForm(backlogAdd);
+        }
+
+        private void addNewSprintToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            TaskDetail newSprintTask = new TaskDetail();
+            LoadChildForm(newSprintTask);
+        }
+
+        private void searchToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SprintTaskList sprintTaskList = new SprintTaskList(this);
+            LoadChildForm(sprintTaskList);
+
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SprintsList sprintsList = new SprintsList(this);
+            LoadChildForm(sprintsList);
         }
     }
 }

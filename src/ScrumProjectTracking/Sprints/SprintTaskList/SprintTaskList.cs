@@ -118,5 +118,13 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
                 ((FrmMain)parent).LoadChildForm(existingSprintTask);
             }
         }
+
+   
+
+        private void newToolStripButton_Click(object sender, EventArgs e)
+        {
+            TaskDetail newSprintTask = new TaskDetail();
+            ((FrmMain)parent).LoadChildForm(newSprintTask);
+        }
     }
 }
