@@ -42,8 +42,8 @@
             System.Windows.Forms.Label updatedDateTimeLabel;
             System.Windows.Forms.Label label5;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskDetail));
+            System.Windows.Forms.Label label6;
             this.SprintTaskID = new System.Windows.Forms.TextBox();
-            this.sprintTaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TaskName = new System.Windows.Forms.TextBox();
@@ -63,6 +63,8 @@
             this.lbCompletionPercent = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.taskSubstatusComboBox = new System.Windows.Forms.ComboBox();
+            this.sprintTaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             sprintIDLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             Team = new System.Windows.Forms.Label();
@@ -75,17 +77,18 @@
             addedDateTimeLabel = new System.Windows.Forms.Label();
             updatedDateTimeLabel = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).BeginInit();
+            label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // sprintIDLabel
             // 
             sprintIDLabel.AutoSize = true;
             sprintIDLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            sprintIDLabel.Location = new System.Drawing.Point(2, 41);
+            sprintIDLabel.Location = new System.Drawing.Point(3, 69);
             sprintIDLabel.Margin = new System.Windows.Forms.Padding(0);
             sprintIDLabel.Name = "sprintIDLabel";
             sprintIDLabel.Size = new System.Drawing.Size(40, 15);
@@ -96,7 +99,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(2, 65);
+            label3.Location = new System.Drawing.Point(2, 94);
             label3.Margin = new System.Windows.Forms.Padding(0);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(46, 15);
@@ -107,7 +110,7 @@
             // 
             Team.AutoSize = true;
             Team.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            Team.Location = new System.Drawing.Point(2, 89);
+            Team.Location = new System.Drawing.Point(2, 119);
             Team.Margin = new System.Windows.Forms.Padding(0);
             Team.Name = "Team";
             Team.Size = new System.Drawing.Size(35, 15);
@@ -118,7 +121,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(2, 112);
+            label4.Location = new System.Drawing.Point(3, 144);
             label4.Margin = new System.Windows.Forms.Padding(0);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(55, 15);
@@ -149,7 +152,7 @@
             // 
             taskStatusLabel.AutoSize = true;
             taskStatusLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            taskStatusLabel.Location = new System.Drawing.Point(3, 16);
+            taskStatusLabel.Location = new System.Drawing.Point(3, 19);
             taskStatusLabel.Margin = new System.Windows.Forms.Padding(0);
             taskStatusLabel.Name = "taskStatusLabel";
             taskStatusLabel.Size = new System.Drawing.Size(44, 15);
@@ -200,7 +203,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.Location = new System.Drawing.Point(170, 173);
+            label5.Location = new System.Drawing.Point(164, 173);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(112, 15);
             label5.TabIndex = 21;
@@ -218,10 +221,6 @@
             this.SprintTaskID.Size = new System.Drawing.Size(55, 23);
             this.SprintTaskID.TabIndex = 0;
             this.SprintTaskID.TabStop = false;
-            // 
-            // sprintTaskBindingSource
-            // 
-            this.sprintTaskBindingSource.DataSource = typeof(ScrumProjectTracking.DataAccess.SprintTask);
             // 
             // label1
             // 
@@ -254,7 +253,7 @@
             this.TaskName.Margin = new System.Windows.Forms.Padding(2);
             this.TaskName.MaxLength = 100;
             this.TaskName.Name = "TaskName";
-            this.TaskName.Size = new System.Drawing.Size(283, 20);
+            this.TaskName.Size = new System.Drawing.Size(272, 20);
             this.TaskName.TabIndex = 2;
             this.TaskName.TabStop = false;
             // 
@@ -264,11 +263,11 @@
             this.SprintID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SprintID.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SprintID.FormattingEnabled = true;
-            this.SprintID.Location = new System.Drawing.Point(61, 39);
+            this.SprintID.Location = new System.Drawing.Point(72, 66);
             this.SprintID.Margin = new System.Windows.Forms.Padding(0);
             this.SprintID.Name = "SprintID";
-            this.SprintID.Size = new System.Drawing.Size(126, 23);
-            this.SprintID.TabIndex = 7;
+            this.SprintID.Size = new System.Drawing.Size(154, 23);
+            this.SprintID.TabIndex = 8;
             // 
             // ProjectID
             // 
@@ -276,11 +275,11 @@
             this.ProjectID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProjectID.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectID.FormattingEnabled = true;
-            this.ProjectID.Location = new System.Drawing.Point(61, 63);
+            this.ProjectID.Location = new System.Drawing.Point(72, 91);
             this.ProjectID.Margin = new System.Windows.Forms.Padding(0);
             this.ProjectID.Name = "ProjectID";
-            this.ProjectID.Size = new System.Drawing.Size(126, 23);
-            this.ProjectID.TabIndex = 8;
+            this.ProjectID.Size = new System.Drawing.Size(154, 23);
+            this.ProjectID.TabIndex = 9;
             // 
             // TeamID
             // 
@@ -288,11 +287,11 @@
             this.TeamID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TeamID.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeamID.FormattingEnabled = true;
-            this.TeamID.Location = new System.Drawing.Point(61, 88);
+            this.TeamID.Location = new System.Drawing.Point(72, 116);
             this.TeamID.Margin = new System.Windows.Forms.Padding(0);
             this.TeamID.Name = "TeamID";
-            this.TeamID.Size = new System.Drawing.Size(126, 23);
-            this.TeamID.TabIndex = 9;
+            this.TeamID.Size = new System.Drawing.Size(154, 23);
+            this.TeamID.TabIndex = 10;
             this.TeamID.SelectionChangeCommitted += new System.EventHandler(this.TeamID_SelectionChangeCommitted);
             // 
             // AssignedUserID
@@ -302,15 +301,17 @@
             this.AssignedUserID.Enabled = false;
             this.AssignedUserID.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AssignedUserID.FormattingEnabled = true;
-            this.AssignedUserID.Location = new System.Drawing.Point(61, 110);
+            this.AssignedUserID.Location = new System.Drawing.Point(72, 141);
             this.AssignedUserID.Margin = new System.Windows.Forms.Padding(0);
             this.AssignedUserID.Name = "AssignedUserID";
-            this.AssignedUserID.Size = new System.Drawing.Size(126, 23);
-            this.AssignedUserID.TabIndex = 10;
+            this.AssignedUserID.Size = new System.Drawing.Size(154, 23);
+            this.AssignedUserID.TabIndex = 11;
             this.AssignedUserID.Tag = "Sprint Task Detail";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(label6);
+            this.groupBox1.Controls.Add(this.taskSubstatusComboBox);
             this.groupBox1.Controls.Add(taskStatusLabel);
             this.groupBox1.Controls.Add(label3);
             this.groupBox1.Controls.Add(this.taskStatusComboBox);
@@ -321,11 +322,11 @@
             this.groupBox1.Controls.Add(Team);
             this.groupBox1.Controls.Add(this.ProjectID);
             this.groupBox1.Controls.Add(this.TeamID);
-            this.groupBox1.Location = new System.Drawing.Point(535, 34);
+            this.groupBox1.Location = new System.Drawing.Point(524, 32);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(198, 140);
+            this.groupBox1.Size = new System.Drawing.Size(228, 171);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
@@ -335,14 +336,10 @@
             this.taskStatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.taskStatusComboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.taskStatusComboBox.FormattingEnabled = true;
-            this.taskStatusComboBox.Items.AddRange(new object[] {
-            "Pending",
-            "Completed",
-            "Cancelled"});
-            this.taskStatusComboBox.Location = new System.Drawing.Point(61, 13);
+            this.taskStatusComboBox.Location = new System.Drawing.Point(72, 16);
             this.taskStatusComboBox.Margin = new System.Windows.Forms.Padding(0);
             this.taskStatusComboBox.Name = "taskStatusComboBox";
-            this.taskStatusComboBox.Size = new System.Drawing.Size(126, 23);
+            this.taskStatusComboBox.Size = new System.Drawing.Size(154, 23);
             this.taskStatusComboBox.TabIndex = 6;
             this.taskStatusComboBox.SelectionChangeCommitted += new System.EventHandler(this.taskStatusComboBox_SelectionChangeCommitted);
             // 
@@ -353,7 +350,7 @@
             this.descriptionTextBox.Location = new System.Drawing.Point(110, 57);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(420, 107);
+            this.descriptionTextBox.Size = new System.Drawing.Size(409, 107);
             this.descriptionTextBox.TabIndex = 3;
             // 
             // storyPointsTextBox
@@ -414,10 +411,10 @@
             this.trackBar1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.sprintTaskBindingSource, "TaskCompletionPercent", true));
             this.trackBar1.Enabled = false;
             this.trackBar1.LargeChange = 10;
-            this.trackBar1.Location = new System.Drawing.Point(282, 170);
+            this.trackBar1.Location = new System.Drawing.Point(270, 170);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(263, 45);
+            this.trackBar1.Size = new System.Drawing.Size(212, 45);
             this.trackBar1.SmallChange = 5;
             this.trackBar1.TabIndex = 5;
             this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
@@ -425,7 +422,7 @@
             // lbCompletionPercent
             // 
             this.lbCompletionPercent.AutoSize = true;
-            this.lbCompletionPercent.Location = new System.Drawing.Point(543, 177);
+            this.lbCompletionPercent.Location = new System.Drawing.Point(488, 174);
             this.lbCompletionPercent.Name = "lbCompletionPercent";
             this.lbCompletionPercent.Size = new System.Drawing.Size(0, 13);
             this.lbCompletionPercent.TabIndex = 22;
@@ -451,10 +448,38 @@
             this.saveToolStripButton.Text = "&Save";
             this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label6.Location = new System.Drawing.Point(3, 44);
+            label6.Margin = new System.Windows.Forms.Padding(0);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(64, 15);
+            label6.TabIndex = 16;
+            label6.Text = "Substatus:";
+            // 
+            // taskSubstatusComboBox
+            // 
+            this.taskSubstatusComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.sprintTaskBindingSource, "TaskSubStatus", true));
+            this.taskSubstatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.taskSubstatusComboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taskSubstatusComboBox.FormattingEnabled = true;
+            this.taskSubstatusComboBox.Location = new System.Drawing.Point(72, 41);
+            this.taskSubstatusComboBox.Margin = new System.Windows.Forms.Padding(0);
+            this.taskSubstatusComboBox.Name = "taskSubstatusComboBox";
+            this.taskSubstatusComboBox.Size = new System.Drawing.Size(154, 23);
+            this.taskSubstatusComboBox.TabIndex = 7;
+            // 
+            // sprintTaskBindingSource
+            // 
+            this.sprintTaskBindingSource.DataSource = typeof(ScrumProjectTracking.DataAccess.SprintTask);
+            // 
             // TaskDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(880, 345);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lbCompletionPercent);
@@ -487,12 +512,12 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Sprint Task Detail";
-            ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,5 +546,6 @@
         private System.Windows.Forms.Label lbCompletionPercent;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ComboBox taskSubstatusComboBox;
     }
 }

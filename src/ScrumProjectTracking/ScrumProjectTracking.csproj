@@ -190,12 +190,6 @@
     <Compile Include="Forms\Frm_Dashboard_Development.Designer.cs">
       <DependentUpon>Frm_Dashboard_Development.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TaskDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TaskDetail.Designer.cs">
-      <DependentUpon>TaskDetail.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ValidationError.cs" />
     <Compile Include="Maintenance\MaintenanceData.cs" />
     <Compile Include="FrmBacklog\FrmBacklog.cs">
@@ -220,6 +214,7 @@
     </Compile>
     <Compile Include="Sprints\SprintsList\SprintsListDBAccess.cs" />
     <Compile Include="Sprints\SprintsList\SprintsListItem.cs" />
+    <Compile Include="Sprints\SprintsList\SprintsListTestAccess.cs" />
     <Compile Include="Sprints\SprintTaskDetail\IFrmSprintTaskDetailDataAccess.cs" />
     <Compile Include="Sprints\SprintTaskDetail\FrmSprintTaskDetailDBAccess.cs" />
     <Compile Include="Sprints\SprintTaskDetail\ProjectListItem.cs" />
@@ -274,9 +269,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Dashboard_Development.resx">
       <DependentUpon>Frm_Dashboard_Development.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TaskDetail.resx">
-      <DependentUpon>TaskDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>

@@ -66,7 +66,7 @@ namespace ScrumProjectTracking.Sprints.SprintsList
         {
             if (e.ColumnIndex == 1)
             {
-                SprintTaskList.SprintTaskList sprintTaskList = new SprintTaskList.SprintTaskList(int.Parse(dataGridView1.Rows[e.RowIndex].Cells["SprintID"].Value.ToString()));
+                SprintTaskList.SprintTaskList sprintTaskList = new SprintTaskList.SprintTaskList(int.Parse(dataGridView1.Rows[e.RowIndex].Cells["SprintID"].Value.ToString()),parent);
                 ((FrmMain)parent).LoadChildForm(sprintTaskList);
             }
         }

@@ -38,7 +38,7 @@ namespace ScrumProjectTracking.Main
                                 where s.TaskStatus == "Pending" && s.SprintID == sprintID
                                 && s.AssignedUserID == userName
                                 orderby p.ProjectName, s.TaskName
-                                select new PendingSprintTask { TaskName = s.TaskName, TaskCompletionPercent = s.TaskCompletionPercent, StoryPoints = s.StoryPoints, ProjectName = p.ProjectName, SprintTaskID = s.SprintTaskID } );
+                                select new PendingSprintTask { TaskName = s.TaskName, TaskCompletionPercent = s.TaskCompletionPercent, StoryPoints = s.StoryPoints, ProjectName = p.ProjectName, SprintTaskID = s.SprintTaskID, TaskSubStatus = s.TaskSubStatus } );
             return pendingTasks.ToList<PendingSprintTask>();
 
         }

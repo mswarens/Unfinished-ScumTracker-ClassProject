@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 
 namespace ScrumProjectTracking.DataAccess
 {
-    class ScrumTestSource : IDataAccess, IDisposable
+   public class ScrumTestSource : IDataAccess, IDisposable
 
     {
 
-        List<Team> teams = new List<Team>();
-        List<Sprint> sprints = new List<Sprint>();
-        List<Project> projects = new List<Project>();
-        List<SprintTask> sprintTasks = new List<SprintTask>();
-        List<User> users = new List<User>();
-        List<Backlog> backlogs = new List<Backlog>();
 
+        public List<Team> teams { get; } = new List<Team>();
+        public List<Sprint> sprints { get; } = new List<Sprint>();
+        public List<Project> projects { get; } = new List<Project>();
+        public List<SprintTask> sprintTasks { get; } = new List<SprintTask>();
+        public List<User> users { get; } = new List<User>();
+        public List<Backlog> backlogs { get; } = new List<Backlog>();
+
+
+        
 
         public IEnumerable<Team> Teams => teams;
 
