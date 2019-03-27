@@ -7,7 +7,7 @@ using ScrumProjectTracking.DataAccess;
 namespace ScrumProjectTrackingTest.Sprints.SprintsList
 {
     [TestClass]
-    public class SprintsListUnitTest
+    public class SprintsListUnitTests
     {
         [TestMethod]
         public void TestGetResultsCountTest1()

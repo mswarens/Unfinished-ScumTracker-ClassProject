@@ -15,7 +15,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
 {
     public partial class TaskDetail : Form
     {
-        FrmSprintTaskDetailDBAccess DBSource = new FrmSprintTaskDetailDBAccess();
+        SprintTaskDetailDBAccess DBSource = new SprintTaskDetailDBAccess();
         SprintTask currentTask;
         public TaskDetail(int taskID)
         {

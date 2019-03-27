@@ -52,7 +52,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sprints\SprintsList\SprintsListUnitTest.cs" />
+    <Compile Include="Sprints\SprintsList\SprintsListUnitTests.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\SprintTaskDetailUnitTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
