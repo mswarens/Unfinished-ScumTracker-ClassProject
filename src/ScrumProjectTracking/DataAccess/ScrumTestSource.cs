@@ -17,7 +17,7 @@ namespace ScrumProjectTracking.DataAccess
         public List<SprintTask> sprintTasks { get; } = new List<SprintTask>();
         public List<User> users { get; } = new List<User>();
         public List<Backlog> backlogs { get; } = new List<Backlog>();
-
+        public List<SprintTaskNote> sprintTaskNotes { get; } = new List<SprintTaskNote>();
 
         
 
@@ -31,7 +31,10 @@ namespace ScrumProjectTracking.DataAccess
 
         public IEnumerable<User> Users => users;
 
-        public IEnumerable<Backlog> Backlogs => Backlogs;
+        public IEnumerable<Backlog> Backlogs => backlogs;
+
+        public IEnumerable<SprintTaskNote> SprintTaskNotes => sprintTaskNotes;
+
         public void Dispose()
         {
             

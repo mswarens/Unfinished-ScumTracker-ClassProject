@@ -17,7 +17,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
         public List<ValidationError> getValidationErrors() => validationErrors;
 
 
-      //  public ScrumDBSource getDBContext => dc;
+      
 
         
 
@@ -116,6 +116,17 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
         public bool sprintTaskChanged(SprintTask sprintTask)
         {
             return dc.getContext.Entry(sprintTask).State != Microsoft.EntityFrameworkCore.EntityState.Unchanged;
+        }
+
+        public List<SprintTaskNote> getSprintTaskNotes(int sprintTaskID)
+        {
+            return dc.SprintTaskNotes.Where(a => a.SprintTaskID == sprintTaskID).OrderByDescending(b => b.AddedDateTime).ToList();
+        }
+
+        public void deleteSprintTaskNote(int sprintTaskNoteID)
+        {
+            dc.getContext.SprintTaskNotes.Remove(dc.getContext.SprintTaskNotes.Where(a => a.SprintTaskNoteID == sprintTaskNoteID).FirstOrDefault());
+            dc.SaveChanges();
         }
     }
 }
