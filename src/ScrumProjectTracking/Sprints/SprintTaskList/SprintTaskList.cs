@@ -15,7 +15,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
     {
         FrmMain parent;
         ISprintTaskListDataAccess DBSource = new SprintTaskListDBDataAccess();
-        IFrmSprintTaskDetailDataAccess SprintTaskDetailDBSource;
+        ISprintTaskDetailDataAccess SprintTaskDetailDBSource;
         public SprintTaskList(FrmMain parentForm)
         {
             parent = parentForm;
@@ -44,7 +44,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
         private void FillDropDownSelections()
         {
 
-            using (SprintTaskDetailDBSource = new FrmSprintTaskDetailDBAccess())
+            using (SprintTaskDetailDBSource = new SprintTaskDetailDBAccess())
             {
 
                 SprintID.DataSource = SprintTaskDetailDBSource.getSprintList();
@@ -76,7 +76,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
         {
               if (TeamID.SelectedValue != null)
             {
-                using (SprintTaskDetailDBSource = new FrmSprintTaskDetailDBAccess())
+                using (SprintTaskDetailDBSource = new SprintTaskDetailDBAccess())
                 {
                     AssignedUserID.DataSource = SprintTaskDetailDBSource.getUserList((int)TeamID.SelectedValue).ToList();
                     AssignedUserID.DisplayMember = "DisplayName";

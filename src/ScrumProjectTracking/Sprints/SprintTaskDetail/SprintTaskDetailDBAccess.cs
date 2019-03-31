@@ -8,7 +8,7 @@ using ScrumProjectTracking.Forms;
 
 namespace ScrumProjectTracking.Sprints.SprintTaskDetail
 {
-    class FrmSprintTaskDetailDBAccess : IFrmSprintTaskDetailDataAccess
+    class SprintTaskDetailDBAccess : ISprintTaskDetailDataAccess
     {
 
         ScrumDBSource dc = new ScrumDBSource();

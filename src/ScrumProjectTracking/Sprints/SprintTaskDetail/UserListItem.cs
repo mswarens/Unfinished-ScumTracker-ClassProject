@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScrumProjectTracking.Sprints.SprintTaskDetail
 {
-    class UserListItem
+    public class UserListItem
     {
         public string UserID { get; set; }
         public string DisplayName { get; set; }

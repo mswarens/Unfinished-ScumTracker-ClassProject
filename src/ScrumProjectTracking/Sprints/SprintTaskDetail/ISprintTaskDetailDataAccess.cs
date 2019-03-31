@@ -7,13 +7,13 @@ using ScrumProjectTracking.DataAccess;
 using ScrumProjectTracking.Forms;
 namespace ScrumProjectTracking.Sprints.SprintTaskDetail
 {
-    interface IFrmSprintTaskDetailDataAccess : IDisposable
+    interface ISprintTaskDetailDataAccess : IDisposable
     {
         
 
-        List<ValidationError> getValidationErrors();
+         List<ValidationError> getValidationErrors();
 
-        SprintTask getSprintTask(int sprintTaskID);
+         SprintTask getSprintTask(int sprintTaskID);
 
         SprintTask getNewSprintTask();
 

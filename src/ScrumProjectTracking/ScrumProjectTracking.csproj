@@ -178,19 +178,19 @@
     <Compile Include="Maintenance\FrmProjects.Designer.cs">
       <DependentUpon>FrmProjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmLogin.cs">
+    <Compile Include="Main\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmLogin.Designer.cs">
+    <Compile Include="Main\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Dashboard_Development.cs">
+    <Compile Include="Main\Frm_Dashboard_Development.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Dashboard_Development.Designer.cs">
+    <Compile Include="Main\Frm_Dashboard_Development.Designer.cs">
       <DependentUpon>Frm_Dashboard_Development.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ValidationError.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\ValidationError.cs" />
     <Compile Include="Maintenance\MaintenanceData.cs" />
     <Compile Include="FrmBacklog\FrmBacklog.cs">
       <SubType>Form</SubType>
@@ -215,8 +215,9 @@
     <Compile Include="Sprints\SprintsList\SprintsListDBAccess.cs" />
     <Compile Include="Sprints\SprintsList\SprintsListItem.cs" />
     <Compile Include="Sprints\SprintsList\SprintsListTestAccess.cs" />
-    <Compile Include="Sprints\SprintTaskDetail\IFrmSprintTaskDetailDataAccess.cs" />
-    <Compile Include="Sprints\SprintTaskDetail\FrmSprintTaskDetailDBAccess.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\SprintTaskDetailTestAccess.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\ISprintTaskDetailDataAccess.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\SprintTaskDetailDBAccess.cs" />
     <Compile Include="Sprints\SprintTaskDetail\ProjectListItem.cs" />
     <Compile Include="Sprints\SprintTaskDetail\SprintListItem.cs" />
     <Compile Include="Sprints\SprintTaskDetail\TaskDetail.cs">
@@ -255,7 +256,7 @@
     <EmbeddedResource Include="FrmBacklog\FrmBacklog.resx">
       <DependentUpon>FrmBacklog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmLogin.resx">
+    <EmbeddedResource Include="Main\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maintenance\FrmProjects.resx">
@@ -267,7 +268,7 @@
     <EmbeddedResource Include="Maintenance\FrmUsers.resx">
       <DependentUpon>FrmUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Dashboard_Development.resx">
+    <EmbeddedResource Include="Main\Frm_Dashboard_Development.resx">
       <DependentUpon>Frm_Dashboard_Development.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\FrmMain.resx">
@@ -1046,6 +1047,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+    <Folder Include="Forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
