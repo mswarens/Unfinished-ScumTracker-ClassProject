@@ -278,6 +278,7 @@
     <Compile Include="Sprints\SprintTaskList\SprintTaskList.Designer.cs">
       <DependentUpon>SprintTaskList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sprints\SprintTaskList\SprintTaskListTestAccess.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FrmBacklog\BacklogAdd.resx">
       <DependentUpon>BacklogAdd.cs</DependentUpon>
