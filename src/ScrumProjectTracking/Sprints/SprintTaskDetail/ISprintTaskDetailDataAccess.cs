@@ -33,6 +33,10 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
 
         bool sprintTaskChanged(SprintTask sprintTask);
 
+        List<SprintTaskNote> getSprintTaskNotes(int sprintTaskID);
+
+        void deleteSprintTaskNote(int sprintTaskNoteID);
+
 
     }
 }

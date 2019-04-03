@@ -41,8 +41,11 @@
             System.Windows.Forms.Label addedDateTimeLabel;
             System.Windows.Forms.Label updatedDateTimeLabel;
             System.Windows.Forms.Label label5;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskDetail));
             System.Windows.Forms.Label label6;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskDetail));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SprintTaskID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,6 +55,7 @@
             this.TeamID = new System.Windows.Forms.ComboBox();
             this.AssignedUserID = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.taskSubstatusComboBox = new System.Windows.Forms.ComboBox();
             this.taskStatusComboBox = new System.Windows.Forms.ComboBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.storyPointsTextBox = new System.Windows.Forms.TextBox();
@@ -62,8 +66,15 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.lbCompletionPercent = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.dgvNotes = new System.Windows.Forms.DataGridView();
+            this.btnAddNote = new System.Windows.Forms.Button();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.taskSubstatusComboBox = new System.Windows.Forms.ComboBox();
+            this.View = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.NoteText = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SprintTaskNoteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sprintTaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             sprintIDLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -81,6 +92,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,6 +221,17 @@
             label5.TabIndex = 21;
             label5.Text = "Percent Completed:";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label6.Location = new System.Drawing.Point(3, 44);
+            label6.Margin = new System.Windows.Forms.Padding(0);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(64, 15);
+            label6.TabIndex = 16;
+            label6.Text = "Substatus:";
+            // 
             // SprintTaskID
             // 
             this.SprintTaskID.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -330,6 +353,18 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
+            // taskSubstatusComboBox
+            // 
+            this.taskSubstatusComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.sprintTaskBindingSource, "TaskSubStatus", true));
+            this.taskSubstatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.taskSubstatusComboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taskSubstatusComboBox.FormattingEnabled = true;
+            this.taskSubstatusComboBox.Location = new System.Drawing.Point(72, 41);
+            this.taskSubstatusComboBox.Margin = new System.Windows.Forms.Padding(0);
+            this.taskSubstatusComboBox.Name = "taskSubstatusComboBox";
+            this.taskSubstatusComboBox.Size = new System.Drawing.Size(154, 23);
+            this.taskSubstatusComboBox.TabIndex = 7;
+            // 
             // taskStatusComboBox
             // 
             this.taskStatusComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.sprintTaskBindingSource, "TaskStatus", true));
@@ -434,9 +469,59 @@
             this.saveToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(880, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(794, 25);
             this.toolStrip1.TabIndex = 23;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // dgvNotes
+            // 
+            this.dgvNotes.AllowUserToAddRows = false;
+            this.dgvNotes.AllowUserToDeleteRows = false;
+            this.dgvNotes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNotes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvNotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.View,
+            this.Delete,
+            this.NoteText,
+            this.AddedBy,
+            this.AddedDateTime,
+            this.SprintTaskNoteID});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNotes.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvNotes.Location = new System.Drawing.Point(12, 288);
+            this.dgvNotes.MultiSelect = false;
+            this.dgvNotes.Name = "dgvNotes";
+            this.dgvNotes.ReadOnly = true;
+            this.dgvNotes.RowHeadersVisible = false;
+            this.dgvNotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNotes.Size = new System.Drawing.Size(759, 150);
+            this.dgvNotes.TabIndex = 24;
+            this.dgvNotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNotes_CellContentClick);
+            // 
+            // btnAddNote
+            // 
+            this.btnAddNote.Enabled = false;
+            this.btnAddNote.Location = new System.Drawing.Point(12, 444);
+            this.btnAddNote.Name = "btnAddNote";
+            this.btnAddNote.Size = new System.Drawing.Size(75, 23);
+            this.btnAddNote.TabIndex = 25;
+            this.btnAddNote.Text = "&Add Note";
+            this.btnAddNote.UseVisualStyleBackColor = true;
+            this.btnAddNote.Click += new System.EventHandler(this.btnAddNote_Click);
             // 
             // saveToolStripButton
             // 
@@ -448,28 +533,53 @@
             this.saveToolStripButton.Text = "&Save";
             this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
-            // label6
+            // View
             // 
-            label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label6.Location = new System.Drawing.Point(3, 44);
-            label6.Margin = new System.Windows.Forms.Padding(0);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(64, 15);
-            label6.TabIndex = 16;
-            label6.Text = "Substatus:";
+            this.View.FillWeight = 35F;
+            this.View.HeaderText = "View";
+            this.View.Name = "View";
+            this.View.ReadOnly = true;
             // 
-            // taskSubstatusComboBox
+            // Delete
             // 
-            this.taskSubstatusComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.sprintTaskBindingSource, "TaskSubStatus", true));
-            this.taskSubstatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.taskSubstatusComboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taskSubstatusComboBox.FormattingEnabled = true;
-            this.taskSubstatusComboBox.Location = new System.Drawing.Point(72, 41);
-            this.taskSubstatusComboBox.Margin = new System.Windows.Forms.Padding(0);
-            this.taskSubstatusComboBox.Name = "taskSubstatusComboBox";
-            this.taskSubstatusComboBox.Size = new System.Drawing.Size(154, 23);
-            this.taskSubstatusComboBox.TabIndex = 7;
+            this.Delete.FillWeight = 35F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            // 
+            // NoteText
+            // 
+            this.NoteText.DataPropertyName = "NoteText";
+            this.NoteText.FillWeight = 180F;
+            this.NoteText.HeaderText = "Note";
+            this.NoteText.Name = "NoteText";
+            this.NoteText.ReadOnly = true;
+            // 
+            // AddedBy
+            // 
+            this.AddedBy.DataPropertyName = "AddedBy";
+            this.AddedBy.FillWeight = 65F;
+            this.AddedBy.HeaderText = "Added By";
+            this.AddedBy.Name = "AddedBy";
+            this.AddedBy.ReadOnly = true;
+            // 
+            // AddedDateTime
+            // 
+            this.AddedDateTime.DataPropertyName = "AddedDateTime";
+            dataGridViewCellStyle2.NullValue = null;
+            this.AddedDateTime.DefaultCellStyle = dataGridViewCellStyle2;
+            this.AddedDateTime.FillWeight = 80F;
+            this.AddedDateTime.HeaderText = "Added Date/Time";
+            this.AddedDateTime.Name = "AddedDateTime";
+            this.AddedDateTime.ReadOnly = true;
+            // 
+            // SprintTaskNoteID
+            // 
+            this.SprintTaskNoteID.DataPropertyName = "SprintTaskNoteID";
+            this.SprintTaskNoteID.HeaderText = "SprintTaskNoteID";
+            this.SprintTaskNoteID.Name = "SprintTaskNoteID";
+            this.SprintTaskNoteID.ReadOnly = true;
+            this.SprintTaskNoteID.Visible = false;
             // 
             // sprintTaskBindingSource
             // 
@@ -480,7 +590,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(880, 345);
+            this.ClientSize = new System.Drawing.Size(794, 475);
+            this.Controls.Add(this.btnAddNote);
+            this.Controls.Add(this.dgvNotes);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lbCompletionPercent);
             this.Controls.Add(label5);
@@ -517,6 +629,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -547,5 +660,13 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
         private System.Windows.Forms.ComboBox taskSubstatusComboBox;
+        private System.Windows.Forms.DataGridView dgvNotes;
+        private System.Windows.Forms.Button btnAddNote;
+        private System.Windows.Forms.DataGridViewButtonColumn View;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoteText;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AddedBy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AddedDateTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SprintTaskNoteID;
     }
 }

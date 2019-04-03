@@ -117,5 +117,15 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
         {
             return true;
         }
+
+        public List<SprintTaskNote> getSprintTaskNotes(int sprintTaskID)
+        {
+            return dc.SprintTaskNotes.Where(a => a.SprintTaskID == sprintTaskID).OrderByDescending(b => b.AddedDateTime).ToList();
+        }
+
+        public void deleteSprintTaskNote(int sprintTaskNoteID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

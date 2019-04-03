@@ -22,6 +22,8 @@ namespace ScrumProjectTracking.DataAccess
 
         public IEnumerable<Backlog> Backlogs => context.Backlogs;
 
+        public IEnumerable<SprintTaskNote> SprintTaskNotes => context.SprintTaskNotes;
+
         public void Dispose()
         {
             context.Dispose();

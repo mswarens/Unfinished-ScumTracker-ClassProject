@@ -32,6 +32,9 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
          
             if (currentTask.TaskStatus != "Cancelled")
                 trackBar1.Enabled = true;
+
+            dgvNotes.DataSource = DBSource.getSprintTaskNotes(currentTask.SprintTaskID);
+            btnAddNote.Enabled = true;
         }
 
         public TaskDetail()
@@ -49,6 +52,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
 
         private void FillDropDownSelections()
         {
+            dgvNotes.AutoGenerateColumns = false;
 
             taskStatusComboBox.Items.Add(String.Empty);
             taskStatusComboBox.Items.Add("Pending");
@@ -125,6 +129,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
 
                     DBSource.saveSprintTask();
                     sprintTaskBindingSource.ResetBindings(false);
+                    btnAddNote.Enabled = true;
                     ((ScrumProjectTracking.Main.FrmMain)this.ParentForm).refreshDashboard();
                 }
             }
@@ -162,6 +167,32 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
             }
             else
                 trackBar1.Enabled = true;
+        }
+
+        private void btnAddNote_Click(object sender, EventArgs e)
+        {
+            NoteDetail noteDetail = new NoteDetail(currentTask.SprintTaskID);
+            noteDetail.ShowDialog();
+            dgvNotes.DataSource = DBSource.getSprintTaskNotes(currentTask.SprintTaskID);
+
+        }
+
+        private void dgvNotes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                NoteDetail noteDetail = new NoteDetail(dgvNotes.Rows[e.RowIndex].Cells[2].Value.ToString());
+                noteDetail.ShowDialog();
+                
+            }
+            else if (e.ColumnIndex == 1)
+            {
+                if (MessageBox.Show("Are you sure wish to delete the selected note?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    DBSource.deleteSprintTaskNote((int)dgvNotes.Rows[e.RowIndex].Cells[5].Value);
+                    dgvNotes.DataSource = DBSource.getSprintTaskNotes(currentTask.SprintTaskID);
+                }
+            }
         }
     }
 }
