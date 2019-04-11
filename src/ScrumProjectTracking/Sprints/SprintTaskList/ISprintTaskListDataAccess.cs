@@ -10,6 +10,8 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
     {
         List<SprintTaskListItem> getResults(string taskName, int sprintID, int projectID, int teamID, string assignedUserID, List<string> taskStatus);
 
-        
+        List<SprintTaskListItem> getResultsByID(int sprintTaskID);
+
+
     }
 }

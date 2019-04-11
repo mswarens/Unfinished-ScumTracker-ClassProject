@@ -15,10 +15,13 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
         public string AssignedToUserID { get; set; }
         public string TaskName { get; set; }
         public string TaskStatus { get; set; }
+        public string TaskSubstatus { get; set; }
         public string ProjectName { get; set; }
         public string TeamName { get; set; }
         public string AssignedToName { get; set; }
         public string SprintName { get; set; }
+        public int TaskCompletionPercent { get; set; }
+        public int StoryPoints { get; set; }
 
     }
 }

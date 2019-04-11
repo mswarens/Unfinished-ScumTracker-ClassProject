@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ScrumProjectTracking.Sprints.SprintTaskDetail;
 using ScrumProjectTracking.Main;
+using Microsoft.Reporting.WinForms;
+using System.IO;
+using ScrumProjectTracking.DataExports;
 namespace ScrumProjectTracking.Sprints.SprintTaskList
 {
     public partial class SprintTaskList : Form
@@ -16,12 +19,15 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
         FrmMain parent;
         ISprintTaskListDataAccess DBSource = new SprintTaskListDBDataAccess();
         ISprintTaskDetailDataAccess SprintTaskDetailDBSource;
+        List<SprintTaskListItem> results;
         public SprintTaskList(FrmMain parentForm)
         {
             parent = parentForm;
             InitializeComponent();
             FillDropDownSelections();
             dgvTaskList.AutoGenerateColumns = false;
+            dgvTaskList.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
+
         }
 
 
@@ -104,10 +110,15 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
 
         private void applySearch()
         {
-            
-            
-                dgvTaskList.DataSource = DBSource.getResults(tbTaskName.Text == String.Empty ? null : tbTaskName.Text, int.Parse(SprintID.SelectedValue.ToString()), int.Parse(ProjectID.SelectedValue.ToString()), int.Parse(TeamID.SelectedValue.ToString()), AssignedUserID.SelectedValue == null ? null : AssignedUserID.SelectedValue.ToString(), lbTaskStatus.SelectedItems.Cast<String>().ToList());
-                            
+
+            if (tbSprintTaskID.Text == "")
+                results = DBSource.getResults(tbTaskName.Text == String.Empty ? null : tbTaskName.Text, int.Parse(SprintID.SelectedValue.ToString()), int.Parse(ProjectID.SelectedValue.ToString()), int.Parse(TeamID.SelectedValue.ToString()), AssignedUserID.SelectedValue == null ? null : AssignedUserID.SelectedValue.ToString(), lbTaskStatus.SelectedItems.Cast<String>().ToList());
+            else
+                results = DBSource.getResultsByID(tbSprintTaskID.Text.ToString() == "" ? 0 : int.Parse(tbSprintTaskID.Text.ToString()));
+
+
+
+                dgvTaskList.DataSource = results;
         }
 
         private void dgvTaskList_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -125,6 +136,70 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
         {
             TaskDetail newSprintTask = new TaskDetail();
             ((FrmMain)parent).LoadChildForm(newSprintTask);
+        }
+
+ 
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            if (dgvTaskList.RowCount > 0 && (cbExportFormat.SelectedItem ?? "").ToString() != "")
+            {
+                btnExport.Text = "Generating...";
+                btnExport.Enabled = false;
+                SaveFileDialog sfd = new SaveFileDialog();
+                IExportDocument exportDocument;
+                sfd.FilterIndex = 0;
+                sfd.RestoreDirectory = true;
+                switch (cbExportFormat.Text)
+                {
+                    case "PDF":
+                        sfd.Filter = "PDF (*.pdf)|*.pdf";
+                        break;
+                    case "Excel":
+                        sfd.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
+                        break;
+                }
+               
+                
+
+                sfd.ShowDialog();
+                if (sfd.FileName != "")
+                {
+                    exportDocument = ExportDocumentFactory.getExportDocument(cbExportFormat.Text, sfd.FileName);
+                    string exportResponse = exportDocument.exportData(results);
+                    if (exportResponse == "Success")
+                        System.Diagnostics.Process.Start(sfd.FileName);
+                    else
+                        MessageBox.Show(exportResponse, "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
+                btnExport.Text = "Export";
+                btnExport.Enabled = true;
+            }
+        }
+
+        private void tbSprintTaskID_TextChanged(object sender, EventArgs e)
+        {
+            if (tbSprintTaskID.Text.ToString() != "")
+            {
+                tbTaskName.Enabled = false;
+                lbTaskStatus.Enabled = false;
+                SprintID.Enabled = false;
+                ProjectID.Enabled = false;
+                TeamID.Enabled = false;
+                AssignedUserID.Enabled = false;
+            }
+            else
+            {
+                tbTaskName.Enabled = true;
+                lbTaskStatus.Enabled = true;
+                SprintID.Enabled = true;
+                ProjectID.Enabled = true;
+                TeamID.Enabled = true;
+                AssignedUserID.Enabled = true;
+
+            }
         }
     }
 }
