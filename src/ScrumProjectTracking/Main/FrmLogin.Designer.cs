@@ -39,25 +39,27 @@ namespace ScrumProjectTracking
             // 
             // loginUsername
             // 
-            this.loginUsername.Location = new System.Drawing.Point(241, 255);
+            this.loginUsername.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginUsername.Location = new System.Drawing.Point(149, 77);
             this.loginUsername.Name = "loginUsername";
-            this.loginUsername.Size = new System.Drawing.Size(303, 20);
+            this.loginUsername.Size = new System.Drawing.Size(123, 27);
             this.loginUsername.TabIndex = 1;
             // 
             // loginPassword
             // 
-            this.loginPassword.Location = new System.Drawing.Point(241, 323);
+            this.loginPassword.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginPassword.Location = new System.Drawing.Point(149, 106);
             this.loginPassword.Name = "loginPassword";
-            this.loginPassword.Size = new System.Drawing.Size(303, 20);
+            this.loginPassword.Size = new System.Drawing.Size(123, 27);
             this.loginPassword.TabIndex = 2;
             this.loginPassword.UseSystemPasswordChar = true;
             // 
             // loginButton
             // 
-            this.loginButton.Font = new System.Drawing.Font("Times New Roman", 8.5F, System.Drawing.FontStyle.Bold);
-            this.loginButton.Location = new System.Drawing.Point(241, 382);
+            this.loginButton.Font = new System.Drawing.Font("Calibri", 12F);
+            this.loginButton.Location = new System.Drawing.Point(278, 77);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(303, 25);
+            this.loginButton.Size = new System.Drawing.Size(82, 27);
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
@@ -67,40 +69,40 @@ namespace ScrumProjectTracking
             // 
             this.projectTitleLogin.AutoSize = true;
             this.projectTitleLogin.CausesValidation = false;
-            this.projectTitleLogin.Font = new System.Drawing.Font("Times New Roman", 40F);
-            this.projectTitleLogin.Location = new System.Drawing.Point(34, 79);
+            this.projectTitleLogin.Font = new System.Drawing.Font("Calibri", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectTitleLogin.Location = new System.Drawing.Point(12, 18);
             this.projectTitleLogin.Name = "projectTitleLogin";
-            this.projectTitleLogin.Size = new System.Drawing.Size(708, 61);
+            this.projectTitleLogin.Size = new System.Drawing.Size(449, 42);
             this.projectTitleLogin.TabIndex = 4;
             this.projectTitleLogin.Text = "Scrum Project Tracking System";
             // 
             // usernameLabelLogin
             // 
             this.usernameLabelLogin.AutoSize = true;
-            this.usernameLabelLogin.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.usernameLabelLogin.Location = new System.Drawing.Point(153, 254);
+            this.usernameLabelLogin.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabelLogin.Location = new System.Drawing.Point(68, 80);
             this.usernameLabelLogin.Name = "usernameLabelLogin";
-            this.usernameLabelLogin.Size = new System.Drawing.Size(82, 20);
+            this.usernameLabelLogin.Size = new System.Drawing.Size(75, 19);
             this.usernameLabelLogin.TabIndex = 5;
             this.usernameLabelLogin.Text = "Username";
             // 
             // passwordLabelLogin
             // 
             this.passwordLabelLogin.AutoSize = true;
-            this.passwordLabelLogin.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.passwordLabelLogin.Location = new System.Drawing.Point(156, 322);
+            this.passwordLabelLogin.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabelLogin.Location = new System.Drawing.Point(71, 109);
             this.passwordLabelLogin.Name = "passwordLabelLogin";
-            this.passwordLabelLogin.Size = new System.Drawing.Size(79, 20);
+            this.passwordLabelLogin.Size = new System.Drawing.Size(71, 19);
             this.passwordLabelLogin.TabIndex = 6;
             this.passwordLabelLogin.Text = "Password";
             // 
             // FrmLoginMsg
             // 
             this.FrmLoginMsg.AutoSize = true;
-            this.FrmLoginMsg.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
-            this.FrmLoginMsg.Location = new System.Drawing.Point(208, 441);
+            this.FrmLoginMsg.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.FrmLoginMsg.Location = new System.Drawing.Point(48, 165);
             this.FrmLoginMsg.Name = "FrmLoginMsg";
-            this.FrmLoginMsg.Size = new System.Drawing.Size(354, 17);
+            this.FrmLoginMsg.Size = new System.Drawing.Size(331, 17);
             this.FrmLoginMsg.TabIndex = 7;
             this.FrmLoginMsg.Text = "Username: MSWARENS or SSHROUT Password: test123";
             // 
@@ -109,7 +111,7 @@ namespace ScrumProjectTracking
             this.AcceptButton = this.loginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 485);
+            this.ClientSize = new System.Drawing.Size(488, 227);
             this.Controls.Add(this.FrmLoginMsg);
             this.Controls.Add(this.passwordLabelLogin);
             this.Controls.Add(this.usernameLabelLogin);
@@ -118,6 +120,8 @@ namespace ScrumProjectTracking
             this.Controls.Add(this.loginPassword);
             this.Controls.Add(this.loginUsername);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmLogin";
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);
