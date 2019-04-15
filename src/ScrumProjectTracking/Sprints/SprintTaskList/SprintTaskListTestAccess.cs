@@ -26,6 +26,8 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
                         join sp in DBSource.Sprints on s.SprintID equals sp.SprintID
                         select new SprintTaskListItem { SprintTaskID = s.SprintTaskID, AssignedToName = u.LastName + ", " + u.FirstName, ProjectName = p.ProjectName, TaskName = s.TaskName, TaskStatus = s.TaskStatus, TeamName = t.TeamName, AssignedToUserID = s.AssignedUserID, ProjectID = s.ProjectID, SprintID = s.SprintID, TeamID = s.TeamID, SprintName = sp.SprintName };
 
+           
+            
                 if (taskName != null)
                     a = a.Where(x => x.TaskName.Contains(taskName));
 
@@ -51,6 +53,21 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
 
 
             
+
+        }
+        public List<SprintTaskListItem> getResultsByID(int sprintTaskID)
+        {
+
+            
+                var a = from s in DBSource.SprintTasks
+                        join p in DBSource.Projects on s.ProjectID equals p.ProjectID
+                        join t in DBSource.Teams on s.TeamID equals t.TeamID
+                        join u in DBSource.Users on s.AssignedUserID equals u.UserID
+                        join sp in DBSource.Sprints on s.SprintID equals sp.SprintID
+                        where s.SprintTaskID == sprintTaskID
+                        select new SprintTaskListItem { SprintTaskID = s.SprintTaskID, AssignedToName = u.LastName + ", " + u.FirstName, ProjectName = p.ProjectName, TaskName = s.TaskName, TaskStatus = s.TaskStatus, TeamName = t.TeamName, AssignedToUserID = s.AssignedUserID, ProjectID = s.ProjectID, SprintID = s.SprintID, TeamID = s.TeamID, SprintName = sp.SprintName, TaskCompletionPercent = s.TaskCompletionPercent, StoryPoints = s.StoryPoints, TaskSubstatus = s.TaskSubStatus };
+                return a.ToList();
+           
 
         }
     }

@@ -166,6 +166,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\SprintTaskNote.cs" />
+    <Compile Include="DataExports\ExportDocumentFactory.cs" />
+    <Compile Include="DataExports\ExportExcelDocument.cs" />
+    <Compile Include="DataExports\ExportPDFDocument.cs" />
+    <Compile Include="DataExports\IExportDocument.cs" />
     <Compile Include="FrmBacklog\BacklogData.cs" />
     <Compile Include="DataAccess\Backlog.cs" />
     <Compile Include="DataAccess\Project.cs" />
@@ -212,6 +216,7 @@
     <Compile Include="Main\Frm_Dashboard_Development.Designer.cs">
       <DependentUpon>Frm_Dashboard_Development.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataExports\SprintTaskListReportItem.cs" />
     <Compile Include="Sprints\SprintTaskDetail\NoteDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +309,7 @@
     <EmbeddedResource Include="Main\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataExports\SprintTaskListReport.rdlc" />
     <EmbeddedResource Include="Sprints\SprintsList\SprintsList.resx">
       <DependentUpon>SprintsList.cs</DependentUpon>
     </EmbeddedResource>
@@ -484,6 +490,9 @@
     <None Include="Properties\DataSources\ScrumProjectTracking.DataAccess.Team.datasource" />
     <None Include="Properties\DataSources\ScrumProjectTracking.DataAccess.User.datasource" />
     <None Include="Properties\DataSources\ScrumProjectTracking.DataModels.SprintTask.datasource" />
+    <None Include="Properties\DataSources\ScrumProjectTracking.Reports.ReportViewer.datasource" />
+    <None Include="Properties\DataSources\ScrumProjectTracking.Reports.SprintTaskListReportItem.datasource" />
+    <None Include="Properties\DataSources\ScrumProjectTracking.Reports.SprintTaskListReportItem1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1093,6 +1102,35 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
