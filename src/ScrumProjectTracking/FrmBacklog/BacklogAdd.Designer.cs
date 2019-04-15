@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,22 +38,12 @@
             this.projectIDTextBox = new System.Windows.Forms.TextBox();
             this.priorityTextBox = new System.Windows.Forms.TextBox();
             this.storyPointsTextBox = new System.Windows.Forms.TextBox();
-            this.backlogIDTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 308);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Backlog ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(221, 308);
+            this.label2.Location = new System.Drawing.Point(127, 312);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 12;
@@ -72,7 +61,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(391, 308);
+            this.label6.Location = new System.Drawing.Point(305, 311);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 16;
@@ -81,7 +70,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(565, 308);
+            this.label7.Location = new System.Drawing.Point(508, 311);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 17;
@@ -118,38 +107,30 @@
             // 
             // projectIDTextBox
             // 
-            this.projectIDTextBox.Location = new System.Drawing.Point(278, 305);
+            this.projectIDTextBox.Location = new System.Drawing.Point(184, 308);
             this.projectIDTextBox.Name = "projectIDTextBox";
             this.projectIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.projectIDTextBox.TabIndex = 30;
             // 
             // priorityTextBox
             // 
-            this.priorityTextBox.Location = new System.Drawing.Point(609, 305);
+            this.priorityTextBox.Location = new System.Drawing.Point(552, 309);
             this.priorityTextBox.Name = "priorityTextBox";
             this.priorityTextBox.Size = new System.Drawing.Size(100, 20);
             this.priorityTextBox.TabIndex = 31;
             // 
             // storyPointsTextBox
             // 
-            this.storyPointsTextBox.Location = new System.Drawing.Point(459, 305);
+            this.storyPointsTextBox.Location = new System.Drawing.Point(374, 309);
             this.storyPointsTextBox.Name = "storyPointsTextBox";
             this.storyPointsTextBox.Size = new System.Drawing.Size(100, 20);
             this.storyPointsTextBox.TabIndex = 32;
-            // 
-            // backlogIDTextBox
-            // 
-            this.backlogIDTextBox.Location = new System.Drawing.Point(115, 305);
-            this.backlogIDTextBox.Name = "backlogIDTextBox";
-            this.backlogIDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.backlogIDTextBox.TabIndex = 33;
             // 
             // BacklogAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 511);
-            this.Controls.Add(this.backlogIDTextBox);
             this.Controls.Add(this.storyPointsTextBox);
             this.Controls.Add(this.priorityTextBox);
             this.Controls.Add(this.projectIDTextBox);
@@ -160,7 +141,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "BacklogAdd";
             this.Text = "BacklogAdd";
             this.Load += new System.EventHandler(this.BacklogAdd_Load);
@@ -170,7 +150,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
@@ -181,6 +160,5 @@
         private System.Windows.Forms.TextBox projectIDTextBox;
         private System.Windows.Forms.TextBox priorityTextBox;
         private System.Windows.Forms.TextBox storyPointsTextBox;
-        private System.Windows.Forms.TextBox backlogIDTextBox;
     }
 }

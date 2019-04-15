@@ -32,8 +32,12 @@ namespace ScrumProjectTracking.FrmBacklog
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            DateTime dateTime = new DateTime();
-            b.newBacklogRow(int.Parse(backlogIDTextBox.Text), int.Parse(projectIDTextBox.Text), CurrentUser.TeamID, userStoryTextBox.Text, int.Parse(storyPointsTextBox.Text), int.Parse(priorityTextBox.Text), CurrentUser.UserID, dateTime);
+            DateTime dateTime = DateTime.Now;
+            b.newBacklogRow(int.Parse(projectIDTextBox.Text), CurrentUser.TeamID, userStoryTextBox.Text, int.Parse(storyPointsTextBox.Text), int.Parse(priorityTextBox.Text), CurrentUser.UserID, dateTime);
+            userStoryTextBox.Clear();
+            priorityTextBox.Clear();
+            projectIDTextBox.Clear();
+            storyPointsTextBox.Clear();
         }
     }
 }
