@@ -186,24 +186,6 @@
     <Compile Include="FrmBacklog\BacklogAdd.Designer.cs">
       <DependentUpon>BacklogAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maintenance\FrmUsers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Maintenance\FrmUsers.Designer.cs">
-      <DependentUpon>FrmUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Maintenance\FrmTeams.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Maintenance\FrmTeams.Designer.cs">
-      <DependentUpon>FrmTeams.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Maintenance\FrmProjects.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Maintenance\FrmProjects.Designer.cs">
-      <DependentUpon>FrmProjects.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,14 +199,21 @@
       <DependentUpon>Frm_Dashboard_Development.cs</DependentUpon>
     </Compile>
     <Compile Include="DataExports\SprintTaskListReportItem.cs" />
+    <Compile Include="Sprints\SprintDetail\ISprintDetailDataAccess.cs" />
+    <Compile Include="Sprints\SprintDetail\SprintDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sprints\SprintDetail\SprintDetail.Designer.cs">
+      <DependentUpon>SprintDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sprints\SprintDetail\SprintDetailTestAccess.cs" />
+    <Compile Include="Sprints\SprintDetail\SprintDetailDBAccess.cs" />
     <Compile Include="Sprints\SprintTaskDetail\NoteDetail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sprints\SprintTaskDetail\NoteDetail.Designer.cs">
       <DependentUpon>NoteDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sprints\SprintTaskDetail\ValidationError.cs" />
-    <Compile Include="Maintenance\MaintenanceData.cs" />
     <Compile Include="FrmBacklog\FrmBacklog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,17 +237,9 @@
     <Compile Include="Sprints\SprintsList\SprintsListDBAccess.cs" />
     <Compile Include="Sprints\SprintsList\SprintsListItem.cs" />
     <Compile Include="Sprints\SprintsList\SprintsListTestAccess.cs" />
-    <Compile Include="Sprints\SprintTaskDetail\SprintTaskDetailTestAccess.cs" />
     <Compile Include="Sprints\SprintTaskDetail\ISprintTaskDetailDataAccess.cs" />
-    <Compile Include="Sprints\SprintTaskDetail\SprintTaskDetailDBAccess.cs" />
     <Compile Include="Sprints\SprintTaskDetail\ProjectListItem.cs" />
     <Compile Include="Sprints\SprintTaskDetail\SprintListItem.cs" />
-    <Compile Include="Sprints\SprintTaskDetail\TaskDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sprints\SprintTaskDetail\TaskDetail.Designer.cs">
-      <DependentUpon>TaskDetail.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataAccess\IDataAccess.cs" />
     <Compile Include="Main\FrmMainDBDataAccess.cs" />
     <Compile Include="Main\IFrmMainDataAccess.cs" />
@@ -272,8 +253,17 @@
       <DependentUpon>ProgressBar.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\SprintTaskDetailDBAccess.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\SprintTaskDetailTestAccess.cs" />
+    <Compile Include="Sprints\SprintTaskDetail\TaskDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sprints\SprintTaskDetail\TaskDetail.Designer.cs">
+      <DependentUpon>TaskDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sprints\SprintTaskDetail\TeamListItem.cs" />
     <Compile Include="Sprints\SprintTaskDetail\UserListItem.cs" />
+    <Compile Include="Forms\ValidationError.cs" />
     <Compile Include="Sprints\SprintTaskList\ISprintTaskListDataAccess.cs" />
     <Compile Include="Sprints\SprintTaskList\SprintTaskListDBDataAccess.cs" />
     <Compile Include="Sprints\SprintTaskList\SprintTaskListItem.cs" />
@@ -294,15 +284,6 @@
     <EmbeddedResource Include="Main\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance\FrmProjects.resx">
-      <DependentUpon>FrmProjects.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance\FrmTeams.resx">
-      <DependentUpon>FrmTeams.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance\FrmUsers.resx">
-      <DependentUpon>FrmUsers.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Main\Frm_Dashboard_Development.resx">
       <DependentUpon>Frm_Dashboard_Development.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,14 +291,14 @@
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataExports\SprintTaskListReport.rdlc" />
+    <EmbeddedResource Include="Sprints\SprintDetail\SprintDetail.resx">
+      <DependentUpon>SprintDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sprints\SprintsList\SprintsList.resx">
       <DependentUpon>SprintsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sprints\SprintTaskDetail\NoteDetail.resx">
       <DependentUpon>NoteDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sprints\SprintTaskDetail\TaskDetail.resx">
-      <DependentUpon>TaskDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressBar.resx">
       <DependentUpon>ProgressBar.cs</DependentUpon>
@@ -332,6 +313,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Sprints\SprintTaskDetail\TaskDetail.resx">
+      <DependentUpon>TaskDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sprints\SprintTaskList\SprintTaskList.resx">
       <DependentUpon>SprintTaskList.cs</DependentUpon>
     </EmbeddedResource>
@@ -1102,6 +1086,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+    <Folder Include="Maintenance\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

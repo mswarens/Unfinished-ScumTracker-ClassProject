@@ -32,10 +32,20 @@
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label Team;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SprintTaskList));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTaskList = new System.Windows.Forms.DataGridView();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Sprint = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SprintTaskID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeamName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Assignee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TaskStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbSprintTaskID = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.AssignedUserID = new System.Windows.Forms.ComboBox();
             this.ProjectID = new System.Windows.Forms.ComboBox();
@@ -50,16 +60,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbExportFormat = new System.Windows.Forms.ComboBox();
             this.btnExport = new System.Windows.Forms.Button();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Sprint = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SprintTaskID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TeamName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Assignee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TaskStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbSprintTaskID = new System.Windows.Forms.MaskedTextBox();
             sprintIDLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
@@ -139,6 +139,71 @@
             this.dgvTaskList.TabIndex = 0;
             this.dgvTaskList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaskList_CellContentClick);
             // 
+            // Edit
+            // 
+            this.Edit.FillWeight = 50F;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Sprint
+            // 
+            this.Sprint.DataPropertyName = "SprintName";
+            this.Sprint.HeaderText = "Sprint";
+            this.Sprint.Name = "Sprint";
+            this.Sprint.ReadOnly = true;
+            // 
+            // Project
+            // 
+            this.Project.DataPropertyName = "ProjectName";
+            this.Project.HeaderText = "Project";
+            this.Project.Name = "Project";
+            this.Project.ReadOnly = true;
+            // 
+            // SprintTaskID
+            // 
+            this.SprintTaskID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.SprintTaskID.DataPropertyName = "SprintTaskID";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.SprintTaskID.DefaultCellStyle = dataGridViewCellStyle1;
+            this.SprintTaskID.FillWeight = 55F;
+            this.SprintTaskID.HeaderText = "Sprint Task ID";
+            this.SprintTaskID.Name = "SprintTaskID";
+            this.SprintTaskID.ReadOnly = true;
+            this.SprintTaskID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // TaskName
+            // 
+            this.TaskName.DataPropertyName = "TaskName";
+            this.TaskName.FillWeight = 200F;
+            this.TaskName.HeaderText = "Task Name";
+            this.TaskName.MinimumWidth = 250;
+            this.TaskName.Name = "TaskName";
+            this.TaskName.ReadOnly = true;
+            // 
+            // TeamName
+            // 
+            this.TeamName.DataPropertyName = "TeamName";
+            this.TeamName.HeaderText = "Team";
+            this.TeamName.Name = "TeamName";
+            this.TeamName.ReadOnly = true;
+            // 
+            // Assignee
+            // 
+            this.Assignee.DataPropertyName = "AssignedtoName";
+            this.Assignee.HeaderText = "Assignee";
+            this.Assignee.Name = "Assignee";
+            this.Assignee.ReadOnly = true;
+            // 
+            // TaskStatus
+            // 
+            this.TaskStatus.DataPropertyName = "TaskStatus";
+            this.TaskStatus.HeaderText = "Task Status";
+            this.TaskStatus.Name = "TaskStatus";
+            this.TaskStatus.ReadOnly = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tbSprintTaskID);
@@ -163,6 +228,27 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
+            // 
+            // tbSprintTaskID
+            // 
+            this.tbSprintTaskID.Location = new System.Drawing.Point(99, 22);
+            this.tbSprintTaskID.Mask = "000000";
+            this.tbSprintTaskID.Name = "tbSprintTaskID";
+            this.tbSprintTaskID.PromptChar = ' ';
+            this.tbSprintTaskID.Size = new System.Drawing.Size(48, 23);
+            this.tbSprintTaskID.TabIndex = 0;
+            this.tbSprintTaskID.ValidatingType = typeof(int);
+            this.tbSprintTaskID.TextChanged += new System.EventHandler(this.tbSprintTaskID_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 15);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Sprint Task ID";
             // 
             // btnSearch
             // 
@@ -318,91 +404,6 @@
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
-            // Edit
-            // 
-            this.Edit.FillWeight = 50F;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Sprint
-            // 
-            this.Sprint.DataPropertyName = "SprintName";
-            this.Sprint.HeaderText = "Sprint";
-            this.Sprint.Name = "Sprint";
-            this.Sprint.ReadOnly = true;
-            // 
-            // Project
-            // 
-            this.Project.DataPropertyName = "ProjectName";
-            this.Project.HeaderText = "Project";
-            this.Project.Name = "Project";
-            this.Project.ReadOnly = true;
-            // 
-            // SprintTaskID
-            // 
-            this.SprintTaskID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.SprintTaskID.DataPropertyName = "SprintTaskID";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.SprintTaskID.DefaultCellStyle = dataGridViewCellStyle4;
-            this.SprintTaskID.FillWeight = 55F;
-            this.SprintTaskID.HeaderText = "Sprint Task ID";
-            this.SprintTaskID.Name = "SprintTaskID";
-            this.SprintTaskID.ReadOnly = true;
-            this.SprintTaskID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // TaskName
-            // 
-            this.TaskName.DataPropertyName = "TaskName";
-            this.TaskName.FillWeight = 200F;
-            this.TaskName.HeaderText = "Task Name";
-            this.TaskName.MinimumWidth = 250;
-            this.TaskName.Name = "TaskName";
-            this.TaskName.ReadOnly = true;
-            // 
-            // TeamName
-            // 
-            this.TeamName.DataPropertyName = "TeamName";
-            this.TeamName.HeaderText = "Team";
-            this.TeamName.Name = "TeamName";
-            this.TeamName.ReadOnly = true;
-            // 
-            // Assignee
-            // 
-            this.Assignee.DataPropertyName = "AssignedtoName";
-            this.Assignee.HeaderText = "Assignee";
-            this.Assignee.Name = "Assignee";
-            this.Assignee.ReadOnly = true;
-            // 
-            // TaskStatus
-            // 
-            this.TaskStatus.DataPropertyName = "TaskStatus";
-            this.TaskStatus.HeaderText = "Task Status";
-            this.TaskStatus.Name = "TaskStatus";
-            this.TaskStatus.ReadOnly = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 15);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Sprint Task ID";
-            // 
-            // tbSprintTaskID
-            // 
-            this.tbSprintTaskID.Location = new System.Drawing.Point(99, 22);
-            this.tbSprintTaskID.Mask = "000000";
-            this.tbSprintTaskID.Name = "tbSprintTaskID";
-            this.tbSprintTaskID.Size = new System.Drawing.Size(48, 23);
-            this.tbSprintTaskID.TabIndex = 0;
-            this.tbSprintTaskID.ValidatingType = typeof(int);
-            this.tbSprintTaskID.TextChanged += new System.EventHandler(this.tbSprintTaskID_TextChanged);
-            // 
             // SprintTaskList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,7 +419,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SprintTaskList";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Sprint Tasks - Search";
+            this.Text = "Sprint Tasks-Search";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaskList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

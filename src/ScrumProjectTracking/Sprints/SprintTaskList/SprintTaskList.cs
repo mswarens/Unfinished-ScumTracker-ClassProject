@@ -34,7 +34,9 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
         public SprintTaskList (int sprintID, FrmMain parentForm) : this(parentForm)
         {
             SprintID.SelectedValue = sprintID;
-
+            lbTaskStatus.SetSelected(0, true);
+            lbTaskStatus.SetSelected(1, true);
+            applySearch();
 
 
 

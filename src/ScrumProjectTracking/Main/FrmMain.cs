@@ -14,6 +14,7 @@ using ScrumProjectTracking.FrmBacklog;
 using ScrumProjectTracking.Sprints.SprintTaskDetail;
 using ScrumProjectTracking.Sprints.SprintTaskList;
 using ScrumProjectTracking.Sprints.SprintsList;
+using ScrumProjectTracking.Sprints.SprintDetail;
 namespace ScrumProjectTracking.Main
 
 {
@@ -98,7 +99,7 @@ namespace ScrumProjectTracking.Main
 
 
             e.Graphics.DrawString(tabControl1.TabPages[e.Index].Text, this.Font, titleBrush, new PointF(r.X, r.Y));
-            e.Graphics.DrawImage(ScrumProjectTracking.Properties.Resources.btnClose, r.X + tabControl1.GetTabRect(e.Index).Width - 17, 4, 10, 10);
+            e.Graphics.DrawImage(ScrumProjectTracking.Properties.Resources.btnClose, r.X + tabControl1.GetTabRect(e.Index).Width - 17, 5, 10, 10);
         }
 
 
@@ -124,20 +125,17 @@ namespace ScrumProjectTracking.Main
 
         private void usersToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FrmUsers frmUsers = new FrmUsers();
-            LoadChildForm(frmUsers);
+           
         }
 
         private void teamsToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            FrmTeams frmTeams = new FrmTeams();
-            LoadChildForm(frmTeams);
+         
         }
 
         private void projectsToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            FrmProjects frmProjects = new FrmProjects();
-            LoadChildForm(frmProjects);
+           
         }
 
         private void backlogToolStripMenuItem_Click(object sender, EventArgs e)
@@ -176,6 +174,15 @@ namespace ScrumProjectTracking.Main
             LoadChildForm(sprintsList);
         }
 
-  
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void addNewSprintToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SprintDetail sprintDetail = new SprintDetail();
+            LoadChildForm(sprintDetail);
+        }
     }
 }
