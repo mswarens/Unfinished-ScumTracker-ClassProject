@@ -31,7 +31,7 @@ namespace ScrumProjectTracking.Sprints.SprintsList
                     let pendingTasksCount = (from t in context.SprintTasks where t.SprintID == s.SprintID && t.TaskStatus == "Pending" select t.SprintTaskID)
                     let pendingStoryPointsCount = (from t in context.SprintTasks where t.SprintID == s.SprintID && t.TaskStatus == "Pending" select t.StoryPoints)
                     orderby s.BeginDate descending
-                    select new SprintsListItem { SprintName = s.SprintName, TotalTasks = totalTasksCount.Count(), TotalStoryPoints = totalStoryPointsCount.Sum(a => a), CompletedTasks = completedTasksCount.Count(), CompletedStoryPoints = completedStoryPointsCount.Sum(a => a), PendingTasks = pendingTasksCount.Count(), PendingStoryPoints = pendingStoryPointsCount.Sum(a => a), BeginDate = s.BeginDate, EndDate = s.EndDate, SprintID = s.SprintID };
+                    select new SprintsListItem { SprintName = s.SprintName, TotalTasks = totalTasksCount.Count(), TotalStoryPoints = totalStoryPointsCount.Sum(a => a), CompletedTasks = completedTasksCount.Count(), CompletedStoryPoints = completedStoryPointsCount.Sum(a => a), PendingTasks = pendingTasksCount.Count(), PendingStoryPoints = pendingStoryPointsCount.Sum(a => a), BeginDate = (DateTime)s.BeginDate, EndDate = (DateTime)s.EndDate, SprintID = s.SprintID };
             if (sprintName != "")
                 r = r.Where(s => s.SprintName.ToLower().Contains(sprintName.ToLower()));
 
