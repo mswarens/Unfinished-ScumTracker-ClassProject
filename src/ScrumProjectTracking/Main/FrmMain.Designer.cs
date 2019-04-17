@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.mainFormMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sprintTrackingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewSprintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,10 +46,9 @@
             this.backlogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backlogMenuStripItemView = new System.Windows.Forms.ToolStripMenuItem();
             this.backlogMenuStripItemAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sprintTasksToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainFormMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +60,7 @@
             this.sprintTrackingToolStripMenuItem,
             this.maintenanceToolStripMenuItem,
             this.backlogToolStripMenuItem,
-            this.reportsToolStripMenuItem});
+            this.aboutToolStripMenuItem});
             this.mainFormMenu.Location = new System.Drawing.Point(0, 0);
             this.mainFormMenu.Name = "mainFormMenu";
             this.mainFormMenu.Padding = new System.Windows.Forms.Padding(2, 1, 0, 1);
@@ -70,9 +70,18 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // sprintTrackingToolStripMenuItem
             // 
@@ -87,15 +96,16 @@
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.searchToolStripMenuItem.Text = "&Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
             // addNewSprintToolStripMenuItem
             // 
             this.addNewSprintToolStripMenuItem.Name = "addNewSprintToolStripMenuItem";
-            this.addNewSprintToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.addNewSprintToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewSprintToolStripMenuItem.Text = "&Add New Sprint";
+            this.addNewSprintToolStripMenuItem.Click += new System.EventHandler(this.addNewSprintToolStripMenuItem_Click);
             // 
             // sprintTasksToolStripMenuItem
             // 
@@ -103,7 +113,7 @@
             this.searchToolStripMenuItem1,
             this.addNewSprintToolStripMenuItem1});
             this.sprintTasksToolStripMenuItem.Name = "sprintTasksToolStripMenuItem";
-            this.sprintTasksToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.sprintTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sprintTasksToolStripMenuItem.Text = "Sprint Tasks";
             // 
             // searchToolStripMenuItem1
@@ -175,6 +185,12 @@
             this.backlogMenuStripItemAdd.Text = "Add";
             this.backlogMenuStripItemAdd.Click += new System.EventHandler(this.backlogMenuStripItemAdd_Click);
             // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
             // tabControl1
             // 
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
@@ -195,21 +211,6 @@
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "closeTab");
-            // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sprintTasksToolStripMenuItem1});
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 22);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            // 
-            // sprintTasksToolStripMenuItem1
-            // 
-            this.sprintTasksToolStripMenuItem1.Name = "sprintTasksToolStripMenuItem1";
-            this.sprintTasksToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.sprintTasksToolStripMenuItem1.Text = "Sprint Tasks";
-           
             // 
             // FrmMain
             // 
@@ -252,7 +253,7 @@
         private System.Windows.Forms.ToolStripMenuItem sprintTasksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addNewSprintToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sprintTasksToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }

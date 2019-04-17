@@ -12,8 +12,8 @@ namespace ScrumProjectTracking.DataAccess
      
         public int SprintID { get; set; }
         public string SprintName { get; set; }
-        public DateTime BeginDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateTime? BeginDate { get; set; }
+        public DateTime? EndDate { get; set; }
         public string AddedBy { get; set; }
         public string UpdatedBy { get; set; }
         public DateTime AddedDateTime { get; set; }

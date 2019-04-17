@@ -105,6 +105,7 @@ namespace ScrumProjectTracking
             this.FrmLoginMsg.Size = new System.Drawing.Size(331, 17);
             this.FrmLoginMsg.TabIndex = 7;
             this.FrmLoginMsg.Text = "Username: MSWARENS or SSHROUT Password: test123";
+            this.FrmLoginMsg.Visible = false;
             // 
             // FrmLogin
             // 

@@ -42,11 +42,12 @@
             System.Windows.Forms.Label updatedDateTimeLabel;
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label6;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskDetail));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskDetail));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SprintTaskID = new System.Windows.Forms.TextBox();
+            this.sprintTaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TaskName = new System.Windows.Forms.TextBox();
@@ -58,7 +59,6 @@
             this.taskSubstatusComboBox = new System.Windows.Forms.ComboBox();
             this.taskStatusComboBox = new System.Windows.Forms.ComboBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.storyPointsTextBox = new System.Windows.Forms.TextBox();
             this.addedByTextBox = new System.Windows.Forms.TextBox();
             this.updatedByTextBox = new System.Windows.Forms.TextBox();
             this.addedDateTimeTextBox = new System.Windows.Forms.TextBox();
@@ -66,16 +66,16 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.lbCompletionPercent = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dgvNotes = new System.Windows.Forms.DataGridView();
-            this.btnAddNote = new System.Windows.Forms.Button();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.dgvNotes = new System.Windows.Forms.DataGridView();
             this.View = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.NoteText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SprintTaskNoteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sprintTaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAddNote = new System.Windows.Forms.Button();
+            this.storyPointsTextBox = new System.Windows.Forms.MaskedTextBox();
             sprintIDLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             Team = new System.Windows.Forms.Label();
@@ -89,11 +89,11 @@
             updatedDateTimeLabel = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // sprintIDLabel
@@ -245,6 +245,10 @@
             this.SprintTaskID.TabIndex = 0;
             this.SprintTaskID.TabStop = false;
             // 
+            // sprintTaskBindingSource
+            // 
+            this.sprintTaskBindingSource.DataSource = typeof(ScrumProjectTracking.DataAccess.SprintTask);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -383,19 +387,11 @@
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "Description", true));
             this.descriptionTextBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionTextBox.Location = new System.Drawing.Point(110, 57);
+            this.descriptionTextBox.MaxLength = 2000;
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(409, 107);
             this.descriptionTextBox.TabIndex = 3;
-            // 
-            // storyPointsTextBox
-            // 
-            this.storyPointsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "StoryPoints", true));
-            this.storyPointsTextBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storyPointsTextBox.Location = new System.Drawing.Point(110, 170);
-            this.storyPointsTextBox.Name = "storyPointsTextBox";
-            this.storyPointsTextBox.Size = new System.Drawing.Size(49, 23);
-            this.storyPointsTextBox.TabIndex = 4;
             // 
             // addedByTextBox
             // 
@@ -473,6 +469,16 @@
             this.toolStrip1.TabIndex = 23;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.saveToolStripButton.Text = "&Save";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
+            // 
             // dgvNotes
             // 
             this.dgvNotes.AllowUserToAddRows = false;
@@ -511,27 +517,6 @@
             this.dgvNotes.Size = new System.Drawing.Size(759, 150);
             this.dgvNotes.TabIndex = 24;
             this.dgvNotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNotes_CellContentClick);
-            // 
-            // btnAddNote
-            // 
-            this.btnAddNote.Enabled = false;
-            this.btnAddNote.Location = new System.Drawing.Point(12, 444);
-            this.btnAddNote.Name = "btnAddNote";
-            this.btnAddNote.Size = new System.Drawing.Size(75, 23);
-            this.btnAddNote.TabIndex = 25;
-            this.btnAddNote.Text = "&Add Note";
-            this.btnAddNote.UseVisualStyleBackColor = true;
-            this.btnAddNote.Click += new System.EventHandler(this.btnAddNote_Click);
-            // 
-            // saveToolStripButton
-            // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.saveToolStripButton.Text = "&Save";
-            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
             // View
             // 
@@ -581,9 +566,26 @@
             this.SprintTaskNoteID.ReadOnly = true;
             this.SprintTaskNoteID.Visible = false;
             // 
-            // sprintTaskBindingSource
+            // btnAddNote
             // 
-            this.sprintTaskBindingSource.DataSource = typeof(ScrumProjectTracking.DataAccess.SprintTask);
+            this.btnAddNote.Enabled = false;
+            this.btnAddNote.Location = new System.Drawing.Point(12, 444);
+            this.btnAddNote.Name = "btnAddNote";
+            this.btnAddNote.Size = new System.Drawing.Size(75, 23);
+            this.btnAddNote.TabIndex = 25;
+            this.btnAddNote.Text = "&Add Note";
+            this.btnAddNote.UseVisualStyleBackColor = true;
+            this.btnAddNote.Click += new System.EventHandler(this.btnAddNote_Click);
+            // 
+            // storyPointsTextBox
+            // 
+            this.storyPointsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sprintTaskBindingSource, "StoryPoints", true));
+            this.storyPointsTextBox.Location = new System.Drawing.Point(110, 170);
+            this.storyPointsTextBox.Mask = "999";
+            this.storyPointsTextBox.Name = "storyPointsTextBox";
+            this.storyPointsTextBox.PromptChar = ' ';
+            this.storyPointsTextBox.Size = new System.Drawing.Size(40, 20);
+            this.storyPointsTextBox.TabIndex = 4;
             // 
             // TaskDetail
             // 
@@ -591,6 +593,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(794, 475);
+            this.Controls.Add(this.storyPointsTextBox);
             this.Controls.Add(this.btnAddNote);
             this.Controls.Add(this.dgvNotes);
             this.Controls.Add(this.toolStrip1);
@@ -606,7 +609,6 @@
             this.Controls.Add(addedByLabel);
             this.Controls.Add(this.addedByTextBox);
             this.Controls.Add(storyPointsLabel);
-            this.Controls.Add(this.storyPointsTextBox);
             this.Controls.Add(descriptionLabel);
             this.Controls.Add(this.descriptionTextBox);
             this.Controls.Add(this.groupBox1);
@@ -623,14 +625,14 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Sprint Task Detail";
+            this.Text = "Sprint Task-Detail";
+            ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sprintTaskBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -650,7 +652,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox taskStatusComboBox;
         private System.Windows.Forms.TextBox descriptionTextBox;
-        private System.Windows.Forms.TextBox storyPointsTextBox;
         private System.Windows.Forms.TextBox addedByTextBox;
         private System.Windows.Forms.TextBox updatedByTextBox;
         private System.Windows.Forms.TextBox addedDateTimeTextBox;
@@ -668,5 +669,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AddedBy;
         private System.Windows.Forms.DataGridViewTextBoxColumn AddedDateTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn SprintTaskNoteID;
+        private System.Windows.Forms.MaskedTextBox storyPointsTextBox;
     }
 }

@@ -16,7 +16,7 @@ namespace ScrumProjectTracking.Main
         {
             var currentSprint = from s in dc.Sprints
                                 where s.BeginDate <= DateTime.Today && s.EndDate >= DateTime.Today
-                                select new SprintInfo { SprintName = s.SprintName, BeginDate = s.BeginDate, EndDate = s.EndDate, SprintID = s.SprintID };
+                                select new SprintInfo { SprintName = s.SprintName, BeginDate = (DateTime)s.BeginDate, EndDate = (DateTime)s.EndDate, SprintID = s.SprintID };
 
             return currentSprint.FirstOrDefault();
         }
@@ -26,7 +26,7 @@ namespace ScrumProjectTracking.Main
             var nextSprintInfo = (from s in dc.Sprints
                                   where s.BeginDate > DateTime.Today
                                   orderby s.BeginDate
-                                  select new SprintInfo { SprintName = s.SprintName, BeginDate = s.BeginDate, EndDate = s.EndDate });
+                                  select new SprintInfo { SprintName = s.SprintName, BeginDate = (DateTime)s.BeginDate, EndDate = (DateTime)s.EndDate });
             return nextSprintInfo.FirstOrDefault();
         }
 

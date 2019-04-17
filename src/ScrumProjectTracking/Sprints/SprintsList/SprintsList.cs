@@ -64,11 +64,25 @@ namespace ScrumProjectTracking.Sprints.SprintsList
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 1)
+            switch (e.ColumnIndex)
             {
-                SprintTaskList.SprintTaskList sprintTaskList = new SprintTaskList.SprintTaskList(int.Parse(dataGridView1.Rows[e.RowIndex].Cells["SprintID"].Value.ToString()),parent);
-                ((FrmMain)parent).LoadChildForm(sprintTaskList);
+                case 0:
+                    SprintDetail.SprintDetail sprintDetail = new SprintDetail.SprintDetail(int.Parse(dataGridView1.Rows[e.RowIndex].Cells["SprintID"].Value.ToString()));
+                    ((FrmMain)parent).LoadChildForm(sprintDetail);
+                    break;
+                case 1:
+                    SprintTaskList.SprintTaskList sprintTaskList = new SprintTaskList.SprintTaskList(int.Parse(dataGridView1.Rows[e.RowIndex].Cells["SprintID"].Value.ToString()), parent);
+                    ((FrmMain)parent).LoadChildForm(sprintTaskList);
+                    break;
+                    
+
             }
+        }
+
+        private void newToolStripButton_Click(object sender, EventArgs e)
+        {
+            SprintDetail.SprintDetail sprintDetail = new SprintDetail.SprintDetail();
+            ((FrmMain)parent).LoadChildForm(sprintDetail);
         }
     }
 }

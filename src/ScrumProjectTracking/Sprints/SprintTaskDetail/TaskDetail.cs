@@ -66,7 +66,8 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
             taskSubstatusComboBox.Items.Add("Unit testing");
             taskSubstatusComboBox.Items.Add("Integration testing");
             taskSubstatusComboBox.Items.Add("User acceptance testing");
-            taskSubstatusComboBox.Items.Add("Relese pending");
+            taskSubstatusComboBox.Items.Add("Release pending");
+            taskSubstatusComboBox.Items.Add("Release completed");
 
 
             SprintID.DataSource = DBSource.getSprintList();
