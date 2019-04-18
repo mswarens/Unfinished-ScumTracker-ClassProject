@@ -6,7 +6,8 @@
 I have personally found the project to be engaging and an interesting learning experience both from a technical perspective and from a project management/time management perspective.  I feel the various sprint activities have given us a glimpse into *real-world* software development practices.  As part of this project, I strengthened my knowledge of C# and largely newly learned Entity Framework.  My role included coding, documentation, and testing activities.
 Although I'm satisfied with the product of this effort, in future projects I would likely try to make a more concerted effort to better communicate with other members of the team and ensure we are all on the same page in terms of expectations and direction.
 
-
+#### Matthew Swarens
+It was my first time using C# and a .net  environment (including winforms) and I personally thought it was interesting, and that I learned a quite a lot. It was also my first time working with another person on a coding project and extensively using version control (git), which was also a good experience. I agree with my group-mate that exact goals, project vision, and overall communication could have been better. 
 
 
 ### Final Design Patterns

@@ -106,7 +106,7 @@
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
       <HintPath>packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
@@ -186,6 +186,24 @@
     <Compile Include="FrmBacklog\BacklogAdd.Designer.cs">
       <DependentUpon>BacklogAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBacklog\BacklogViewProjectSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBacklog\BacklogViewProjectSelection.Designer.cs">
+      <DependentUpon>BacklogViewProjectSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBacklog\BacklogProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBacklog\BacklogProject.Designer.cs">
+      <DependentUpon>BacklogProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBacklog\BacklogEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBacklog\BacklogEdit.Designer.cs">
+      <DependentUpon>BacklogEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,12 +231,6 @@
     </Compile>
     <Compile Include="Sprints\SprintTaskDetail\NoteDetail.Designer.cs">
       <DependentUpon>NoteDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmBacklog\FrmBacklog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmBacklog\FrmBacklog.Designer.cs">
-      <DependentUpon>FrmBacklog.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\CurrentUser.cs" />
     <Compile Include="Main\FrmMain.cs">
@@ -278,8 +290,14 @@
     <EmbeddedResource Include="FrmBacklog\BacklogAdd.resx">
       <DependentUpon>BacklogAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBacklog\FrmBacklog.resx">
-      <DependentUpon>FrmBacklog.cs</DependentUpon>
+    <EmbeddedResource Include="FrmBacklog\BacklogViewProjectSelection.resx">
+      <DependentUpon>BacklogViewProjectSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBacklog\BacklogProject.resx">
+      <DependentUpon>BacklogProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBacklog\BacklogEdit.resx">
+      <DependentUpon>BacklogEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

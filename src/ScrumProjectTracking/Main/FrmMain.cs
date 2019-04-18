@@ -145,7 +145,7 @@ namespace ScrumProjectTracking.Main
 
         private void backlogMenuStripItemView_Click(object sender, EventArgs e)
         {
-            Backlog backlog = new Backlog();
+            BacklogViewProjectSelection backlog = new BacklogViewProjectSelection(this);
             LoadChildForm(backlog);
         }
 
