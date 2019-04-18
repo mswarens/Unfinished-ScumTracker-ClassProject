@@ -195,5 +195,15 @@ namespace ScrumProjectTracking.Sprints.SprintTaskDetail
                 }
             }
         }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void TaskDetail_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ScrumProjectTracking.Main;
-
+using System.ComponentModel.DataAnnotations.Schema;
 namespace ScrumProjectTracking.FrmBacklog
 {
     public partial class BacklogAdd : Form
@@ -16,6 +16,9 @@ namespace ScrumProjectTracking.FrmBacklog
         public BacklogAdd()
         {
             InitializeComponent();
+            BindingSource bindingSource1 = new BindingSource();
+            bindingSource1.DataSource = (from u in b.projectData() orderby u.ProjectID ascending select u.ProjectName);
+            projectNameTextBox.DataSource = bindingSource1;
         }
 
         BacklogData b = new BacklogData();
@@ -30,14 +33,20 @@ namespace ScrumProjectTracking.FrmBacklog
 
         }
 
-        private void submitButton_Click(object sender, EventArgs e)
+        private void saveToolStripButton_Click(object sender, EventArgs e)
         {
             DateTime dateTime = DateTime.Now;
-            b.newBacklogRow(int.Parse(projectIDTextBox.Text), CurrentUser.TeamID, userStoryTextBox.Text, int.Parse(storyPointsTextBox.Text), int.Parse(priorityTextBox.Text), CurrentUser.UserID, dateTime);
+            int pid = (from u in b.projectData() where u.ProjectName == projectNameTextBox.Text select u.ProjectID).First();
+            b.newBacklogRow(pid, CurrentUser.TeamID, projectNameTextBox.Text, userStoryTextBox.Text, int.Parse(storyPointsTextBox.Text), int.Parse(priorityTextBox.Text), CurrentUser.UserID, dateTime);
             userStoryTextBox.Clear();
             priorityTextBox.Clear();
-            projectIDTextBox.Clear();
+            projectNameTextBox.SelectedIndex = 0;
             storyPointsTextBox.Clear();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
