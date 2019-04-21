@@ -27,6 +27,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
             FillDropDownSelections();
             dgvTaskList.AutoGenerateColumns = false;
             dgvTaskList.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
+            dgvTaskList.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
         }
 

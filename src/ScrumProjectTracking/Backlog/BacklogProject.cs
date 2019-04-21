@@ -19,6 +19,8 @@ namespace ScrumProjectTracking.Backlog
         {
             InitializeComponent();
             dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             dataGridView1.AutoGenerateColumns = false;
             cbStoryStatus.SelectedIndex = 0;
             dataGridView1.DataSource = b.getStoryList(i, cbStoryStatus.SelectedItem.ToString());

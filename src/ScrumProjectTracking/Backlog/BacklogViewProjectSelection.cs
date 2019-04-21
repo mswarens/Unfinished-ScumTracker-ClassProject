@@ -18,8 +18,9 @@ namespace ScrumProjectTracking.Backlog
         {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
-         
-           dataGridView1.DataSource = b.getActiveProjectList();
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            dataGridView1.DataSource = b.getActiveProjectList();
           
             parent = formParent;
         }

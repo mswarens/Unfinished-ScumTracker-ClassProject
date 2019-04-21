@@ -37,6 +37,7 @@ namespace ScrumProjectTracking.Sprints.SprintsList
             dataGridView1.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
 
             tbEndDate.Text = DateTime.Today.AddMonths(-3).ToString("MM/dd/yyyy");
+            this.Refresh();
             refreshData();
         }
 
@@ -69,11 +70,11 @@ namespace ScrumProjectTracking.Sprints.SprintsList
                 switch (e.ColumnIndex)
                 {
                     case 0:
-                        SprintDetail.SprintDetail sprintDetail = new SprintDetail.SprintDetail(int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ProjectID"].Value.ToString()));
+                        SprintDetail.SprintDetail sprintDetail = new SprintDetail.SprintDetail(int.Parse(dataGridView1.Rows[e.RowIndex].Cells["SprintID"].Value.ToString()));
                         ((FrmMain)parent).LoadChildForm(sprintDetail);
                         break;
                     case 1:
-                        SprintTaskList.SprintTaskList sprintTaskList = new SprintTaskList.SprintTaskList(int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ProjectID"].Value.ToString()), parent);
+                        SprintTaskList.SprintTaskList sprintTaskList = new SprintTaskList.SprintTaskList(int.Parse(dataGridView1.Rows[e.RowIndex].Cells["SprintID"].Value.ToString()), parent);
                         ((FrmMain)parent).LoadChildForm(sprintTaskList);
                         break;
 
