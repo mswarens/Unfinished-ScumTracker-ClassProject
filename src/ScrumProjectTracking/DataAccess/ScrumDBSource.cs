@@ -20,7 +20,7 @@ namespace ScrumProjectTracking.DataAccess
 
         public IEnumerable<Project> Projects => context.Projects;
 
-        public IEnumerable<Backlog> Backlogs => context.Backlogs;
+        public IEnumerable<Story> Stories => context.Stories;
 
         public IEnumerable<SprintTaskNote> SprintTaskNotes => context.SprintTaskNotes;
 

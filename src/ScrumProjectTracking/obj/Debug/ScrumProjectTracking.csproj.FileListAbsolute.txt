@@ -622,8 +622,6 @@ Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\ru\Microsoft.
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.exe.config
-Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.FrmBacklog.BacklogAdd.resources
-Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Main.Backlog.resources
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.FrmLogin.resources
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Frm_Dashboard_Development.resources
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Main.FrmMain.resources
@@ -640,9 +638,6 @@ Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectT
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.pdb
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csproj.ResolveComReference.cache
 Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Sprints.SprintDetail.SprintDetail.resources
-Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csprojAssemblyReference.cache
-Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\RdlCompile.cache
-Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\RdlCompile.compiled
 C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csproj.ResolveComReference.cache
 C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.FrmBacklog.BacklogAdd.resources
 C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Main.FrmMain.resources
@@ -716,3 +711,9 @@ C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\bin\Debug\
 C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.FrmBacklog.BacklogViewProjectSelection.resources
 C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.FrmBacklog.ProjectBacklog.resources
 C:\Users\Matthew\Source\Repos\ProjectTracker\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.FrmBacklog.EditBacklog.resources
+Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Backlog.BacklogViewProjectSelection.resources
+Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Backlog.ProjectBacklog.resources
+Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.Backlog.BacklogDetail.resources
+Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\ScrumProjectTracking.csprojAssemblyReference.cache
+Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\RdlCompile.cache
+Z:\ScrumBuckets\TheScrumBuckets\src\ScrumProjectTracking\obj\Debug\RdlCompile.compiled

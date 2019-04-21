@@ -10,7 +10,7 @@ namespace ScrumProjectTracking.Sprints.SprintDetail
 {
     public class SprintDetailTestAccess : ISprintDetailDataAccess
     {
-        ScrumTestSource dc = new ScrumTestSource();
+        public ScrumTestSource dc = new ScrumTestSource();
         List<ValidationError> validationErrors = new List<ValidationError>();
 
         public List<ValidationError> getValidationErrors() => validationErrors;
@@ -60,11 +60,11 @@ namespace ScrumProjectTracking.Sprints.SprintDetail
             if (st.EndDate != null && st.EndDate > DateTime.Now.AddDays(120))
                 addValidationError("End Date", "The end date cannot be greater than 120 days from the current date.");
             if (st.EndDate != null && st.EndDate < DateTime.Now.AddDays(-90))
-                addValidationError("End Date", "The end date cannot be less than 90 days from the current date.");
+                addValidationError("End Date", "The end date cannot be more than than 90 days prior to the current date.");
             if (st.EndDate != null && st.BeginDate > DateTime.Now.AddDays(90))
                 addValidationError("Begin Date", "The begin date cannot be greater than 90 days from the current date.");
             if (st.BeginDate != null && st.BeginDate < DateTime.Now.AddDays(-120))
-                addValidationError("Begin Date", "The begin date cannot be less than 120 days from the current date.");
+                addValidationError("Begin Date", "The begin date cannot be more than 120 days prior to the current date.");
             if (dc.Sprints.Where(a => a.EndDate >= st.BeginDate && a.BeginDate <= st.EndDate).Count() > 0)
                 addValidationError("Begin/End Date", "The begin and end date range overlaps with an existing sprint.");
             if (st.EndDate != null && st.BeginDate != null && st.BeginDate >= st.EndDate)

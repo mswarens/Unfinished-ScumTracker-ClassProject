@@ -96,14 +96,14 @@
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.searchToolStripMenuItem.Text = "&Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
             // addNewSprintToolStripMenuItem
             // 
             this.addNewSprintToolStripMenuItem.Name = "addNewSprintToolStripMenuItem";
-            this.addNewSprintToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewSprintToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.addNewSprintToolStripMenuItem.Text = "&Add New Sprint";
             this.addNewSprintToolStripMenuItem.Click += new System.EventHandler(this.addNewSprintToolStripMenuItem_Click);
             // 
@@ -113,7 +113,7 @@
             this.searchToolStripMenuItem1,
             this.addNewSprintToolStripMenuItem1});
             this.sprintTasksToolStripMenuItem.Name = "sprintTasksToolStripMenuItem";
-            this.sprintTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sprintTasksToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.sprintTasksToolStripMenuItem.Text = "Sprint Tasks";
             // 
             // searchToolStripMenuItem1
@@ -174,15 +174,15 @@
             // backlogMenuStripItemView
             // 
             this.backlogMenuStripItemView.Name = "backlogMenuStripItemView";
-            this.backlogMenuStripItemView.Size = new System.Drawing.Size(99, 22);
-            this.backlogMenuStripItemView.Text = "View";
+            this.backlogMenuStripItemView.Size = new System.Drawing.Size(205, 22);
+            this.backlogMenuStripItemView.Text = "Edit/View Existing Stories";
             this.backlogMenuStripItemView.Click += new System.EventHandler(this.backlogMenuStripItemView_Click);
             // 
             // backlogMenuStripItemAdd
             // 
             this.backlogMenuStripItemAdd.Name = "backlogMenuStripItemAdd";
-            this.backlogMenuStripItemAdd.Size = new System.Drawing.Size(99, 22);
-            this.backlogMenuStripItemAdd.Text = "Add";
+            this.backlogMenuStripItemAdd.Size = new System.Drawing.Size(205, 22);
+            this.backlogMenuStripItemAdd.Text = "Add New Story";
             this.backlogMenuStripItemAdd.Click += new System.EventHandler(this.backlogMenuStripItemAdd_Click);
             // 
             // aboutToolStripMenuItem

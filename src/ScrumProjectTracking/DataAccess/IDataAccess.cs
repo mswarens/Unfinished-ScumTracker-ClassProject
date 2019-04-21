@@ -15,7 +15,7 @@ namespace ScrumProjectTracking.DataAccess
         IEnumerable<SprintTask> SprintTasks { get;  }
         IEnumerable<Project> Projects { get;  }
         IEnumerable<User> Users { get; }
-        IEnumerable<Backlog> Backlogs { get; }
+        IEnumerable<Story> Stories { get; }
        
 
 

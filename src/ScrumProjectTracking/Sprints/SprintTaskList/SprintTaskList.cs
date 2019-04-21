@@ -125,7 +125,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
 
         private void dgvTaskList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0 && e.RowIndex > -1)
             {
                 TaskDetail existingSprintTask = new TaskDetail(int.Parse(dgvTaskList.Rows[e.RowIndex].Cells["SprintTaskID"].Value.ToString()));
                 ((FrmMain)parent).LoadChildForm(existingSprintTask);
