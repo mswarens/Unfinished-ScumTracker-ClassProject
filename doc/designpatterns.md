@@ -3,6 +3,8 @@
 
 ### Final Design Patterns
 Our final project includes examples of two design patterns:
+
+
 **Singleton**
 The Singleton design pattern is used in our Main/CurrentUser class; it is a static class that maintains the authentication status, userID, roleID, and teamID for the user currently logged into the system.
 
