@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using ScrumProjectTracking.Forms;
 using ScrumProjectTracking.DataAccess;
 using System.Resources;
-using ScrumProjectTracking.FrmBacklog;
+using ScrumProjectTracking.Backlog;
 using ScrumProjectTracking.Sprints.SprintTaskDetail;
 using ScrumProjectTracking.Sprints.SprintTaskList;
 using ScrumProjectTracking.Sprints.SprintsList;
@@ -151,7 +151,7 @@ namespace ScrumProjectTracking.Main
 
         private void backlogMenuStripItemAdd_Click(object sender, EventArgs e)
         {
-            BacklogAdd backlogAdd = new BacklogAdd();
+            BacklogDetail backlogAdd = new BacklogDetail();
             LoadChildForm(backlogAdd);
         }
 

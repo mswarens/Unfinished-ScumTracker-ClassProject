@@ -95,7 +95,7 @@ namespace ScrumProjectTracking
 
         private void dgvCurrentSprintTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0 && e.RowIndex > 0)
             {
                 TaskDetail openTask = new TaskDetail((int)dgvCurrentSprintTasks.CurrentRow.Cells[6].Value);
                 parentForm.LoadChildForm(openTask);

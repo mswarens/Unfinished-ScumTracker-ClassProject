@@ -16,7 +16,7 @@ namespace ScrumProjectTracking.DataAccess
         public List<Project> projects { get; } = new List<Project>();
         public List<SprintTask> sprintTasks { get; } = new List<SprintTask>();
         public List<User> users { get; } = new List<User>();
-        public List<Backlog> backlogs { get; } = new List<Backlog>();
+        public List<Story> stories { get; } = new List<Story>();
         public List<SprintTaskNote> sprintTaskNotes { get; } = new List<SprintTaskNote>();
 
         
@@ -31,20 +31,13 @@ namespace ScrumProjectTracking.DataAccess
 
         public IEnumerable<User> Users => users;
 
-        public IEnumerable<Backlog> Backlogs => backlogs;
+        public IEnumerable<Story> Stories => stories;
 
         public IEnumerable<SprintTaskNote> SprintTaskNotes => sprintTaskNotes;
 
-        public void Dispose()
-        {
-            
+        public void Dispose() { }
 
-        }
-
-        public void SaveChanges()
-        {
-
-        }
+        public void SaveChanges() { }
 
         public ScrumTestSource getContext() => this;
     }

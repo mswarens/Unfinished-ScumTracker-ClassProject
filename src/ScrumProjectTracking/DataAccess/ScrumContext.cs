@@ -17,7 +17,7 @@ namespace ScrumProjectTracking.DataAccess
         public DbSet<SprintTask> SprintTasks { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<Backlog> Backlogs { get; set; }
+        public DbSet<Story> Stories { get; set; }
         public DbSet<SprintTaskNote> SprintTaskNotes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {

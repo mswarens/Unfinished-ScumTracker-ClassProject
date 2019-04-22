@@ -35,6 +35,7 @@ namespace ScrumProjectTracking
             this.usernameLabelLogin = new System.Windows.Forms.Label();
             this.passwordLabelLogin = new System.Windows.Forms.Label();
             this.FrmLoginMsg = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // loginUsername
@@ -107,12 +108,23 @@ namespace ScrumProjectTracking
             this.FrmLoginMsg.Text = "Username: MSWARENS or SSHROUT Password: test123";
             this.FrmLoginMsg.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 9.25F);
+            this.label1.Location = new System.Drawing.Point(408, 203);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 15);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Version 1.0";
+            // 
             // FrmLogin
             // 
             this.AcceptButton = this.loginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 227);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.FrmLoginMsg);
             this.Controls.Add(this.passwordLabelLogin);
             this.Controls.Add(this.usernameLabelLogin);
@@ -121,6 +133,7 @@ namespace ScrumProjectTracking
             this.Controls.Add(this.loginPassword);
             this.Controls.Add(this.loginUsername);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLogin";
@@ -139,5 +152,6 @@ namespace ScrumProjectTracking
         private System.Windows.Forms.Label usernameLabelLogin;
         private System.Windows.Forms.Label passwordLabelLogin;
         private System.Windows.Forms.Label FrmLoginMsg;
+        private System.Windows.Forms.Label label1;
     }
 }

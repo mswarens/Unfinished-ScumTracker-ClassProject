@@ -27,6 +27,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
             FillDropDownSelections();
             dgvTaskList.AutoGenerateColumns = false;
             dgvTaskList.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.TopRight;
+            dgvTaskList.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
         }
 
@@ -125,7 +126,7 @@ namespace ScrumProjectTracking.Sprints.SprintTaskList
 
         private void dgvTaskList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0 && e.RowIndex > -1)
             {
                 TaskDetail existingSprintTask = new TaskDetail(int.Parse(dgvTaskList.Rows[e.RowIndex].Cells["SprintTaskID"].Value.ToString()));
                 ((FrmMain)parent).LoadChildForm(existingSprintTask);
